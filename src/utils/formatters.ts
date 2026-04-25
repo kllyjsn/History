@@ -39,7 +39,7 @@ export function getLongestPeacePeriod(
   conflicts: { startYear: number; endYear: number | null }[],
   earliestYear = 1500,
 ): number {
-  if (conflicts.length === 0) return new Date().getFullYear() - earliestYear;
+  if (conflicts.length === 0) return new Date().getFullYear() - earliestYear + 1;
 
   const currentYear = new Date().getFullYear();
   const warYears = new Set<number>();

@@ -62,7 +62,7 @@ export function useConflictData() {
         }
       }
 
-      const yearsAtPeace = Math.max(0, new Date().getFullYear() - startYear - yearsAtWar);
+      const yearsAtPeace = Math.max(0, new Date().getFullYear() - startYear + 1 - yearsAtWar);
       const totalYears = yearsAtWar + yearsAtPeace;
       const peacePct = totalYears > 0 ? yearsAtPeace / totalYears : 1;
       const activeWeight = active.length > 0 ? 0.7 : 1;
