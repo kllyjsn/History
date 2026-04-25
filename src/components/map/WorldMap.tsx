@@ -63,6 +63,7 @@ const ISO_NUMERIC_TO_ALPHA3: Record<string, string> = {
   '795': 'TKM', '800': 'UGA', '804': 'UKR', '807': 'MKD', '826': 'GBR',
   '834': 'TZA', '840': 'USA', '854': 'BFA', '858': 'URY', '860': 'UZB',
   '862': 'VEN', '887': 'YEM', '894': 'ZMB', '275': 'PSE', '070': 'BIH',
+  '108': 'BDI', '140': 'CAF', '148': 'TCD', '174': 'COM',
 };
 
 const WorldMap: FC<WorldMapProps> = ({

@@ -1559,43 +1559,6 @@ export const conflicts: Conflict[] = [
     tags: ['war_on_terror', 'longest_us_war', 'nation_building_failure', 'taliban_return'],
   },
   {
-    id: 'colombian-conflict',
-    name: 'Colombian Armed Conflict',
-    alternateNames: [
-      { name: 'La Violencia and its aftermath', perspective: 'Historical framing' },
-    ],
-    type: 'civil_war',
-    startYear: 1964,
-    endYear: 2016,
-    parties: [
-      { countryId: 'COL', role: 'belligerent' },
-      { countryId: 'USA', role: 'ally', perspectiveNote: 'Plan Colombia military aid' },
-    ],
-    casualties: {
-      military: { low: 40000, high: 60000 },
-      civilian: { low: 200000, high: 260000 },
-      total: { low: 220000, high: 260000 },
-      source: 'Colombian Truth Commission (2022)',
-    },
-    territorialChanges: 'None.',
-    outcome: 'Peace agreement between government and FARC (2016). ELN negotiations ongoing. Transitional justice system established.',
-    summary: 'One of the Western Hemisphere\'s longest internal conflicts, involving the government, leftist guerrillas (FARC, ELN), right-wing paramilitaries, and drug cartels. The 2016 peace agreement with FARC was a landmark achievement, though implementation challenges persist.',
-    perspectives: [
-      {
-        viewpoint: 'Government perspective',
-        description: 'A fight against narco-terrorism and communist insurgency threatening democratic governance and economic development.',
-        source: 'Colombian Truth Commission. Final Report. 2022.',
-      },
-      {
-        viewpoint: 'FARC perspective',
-        description: 'An armed struggle against oligarchic state violence, extreme inequality, and the exclusion of rural populations from political participation.',
-        source: 'Colombian Truth Commission. Final Report. 2022.',
-      },
-    ],
-    sources: ['Colombian Truth Commission (2022)', 'UCDP', 'COW Project'],
-    tags: ['guerrilla', 'narcotics', 'peace_process', 'truth_commission'],
-  },
-  {
     id: 'winter-war',
     name: 'Winter War',
     alternateNames: [
@@ -2152,43 +2115,6 @@ export const conflicts: Conflict[] = [
     tags: ['independence', 'guerrilla', 'partition', 'colonialism'],
   },
   {
-    id: 'myanmar-civil-war',
-    name: 'Myanmar Civil War',
-    alternateNames: [
-      { name: 'Burmese Internal Conflict', perspective: 'Historical framing' },
-      { name: 'Spring Revolution', perspective: 'Post-2021 pro-democracy framing' },
-    ],
-    type: 'civil_war',
-    startYear: 1948,
-    endYear: null,
-    parties: [
-      { countryId: 'MMR', role: 'belligerent' },
-    ],
-    casualties: {
-      military: null,
-      civilian: null,
-      total: { low: 130000, high: 250000 },
-      source: 'Various estimates; UCDP',
-    },
-    territorialChanges: 'Various ethnic armed organizations control territories along borders.',
-    outcome: 'Ongoing. World\'s longest running civil war. 2021 military coup reignited conflict across the country.',
-    summary: 'The world\'s longest-running civil war, beginning at independence in 1948 between the central government and numerous ethnic armed organizations. The 2021 military coup and crackdown on pro-democracy protesters created new armed resistance across the country.',
-    perspectives: [
-      {
-        viewpoint: 'Ethnic minorities perspective',
-        description: 'A fight for federalism, self-determination, and protection against Bamar-dominated military rule that has oppressed ethnic minorities for decades.',
-        source: 'Thant Myint-U. The Hidden History of Burma. 2019.',
-      },
-      {
-        viewpoint: 'Military (Tatmadaw) perspective',
-        description: 'The military is the guarantor of national unity against separatism and foreign interference.',
-        source: 'Various state sources',
-      },
-    ],
-    sources: ['Thant Myint-U (2019)', 'UCDP', 'ICG reports'],
-    tags: ['longest_civil_war', 'ethnic_conflict', 'military_coup', 'rohingya', 'ongoing'],
-  },
-  {
     id: 'seven-years-war',
     name: "Seven Years' War",
     alternateNames: [
@@ -2499,53 +2425,6 @@ export const conflicts: Conflict[] = [
     keyFigures: [
       { name: 'Imre Nagy', role: 'Hungarian Prime Minister', country: 'HUN' },
     ],
-  },
-  {
-    id: 'northern-ireland-troubles',
-    name: 'The Troubles',
-    alternateNames: [
-      { name: 'Northern Ireland Conflict', perspective: 'Academic usage' },
-      { name: 'Long War', perspective: 'IRA perspective' },
-    ],
-    type: 'ethnic_conflict',
-    startYear: 1968,
-    endYear: 1998,
-    parties: [
-      { countryId: 'GBR', role: 'belligerent' },
-      { countryId: 'IRL', role: 'belligerent', perspectiveNote: 'Republic of Ireland involvement through border community ties' },
-    ],
-    casualties: {
-      military: { low: 1000, high: 1100 },
-      civilian: { low: 2500, high: 2600 },
-      total: { low: 3500, high: 3700 },
-      source: 'McKittrick (2007)',
-    },
-    territorialChanges: null,
-    outcome: 'Good Friday Agreement (1998). Power-sharing government in Northern Ireland. Decommissioning of paramilitary weapons.',
-    summary: 'A three-decade ethno-nationalist conflict in Northern Ireland between Irish nationalist/republican communities (primarily Catholic) seeking unification with Ireland, and unionist/loyalist communities (primarily Protestant) wanting to remain part of the United Kingdom.',
-    perspectives: [
-      {
-        viewpoint: 'Republican/Nationalist perspective',
-        description: 'A legitimate struggle against British colonial occupation and systemic discrimination against the Catholic/nationalist community in Northern Ireland.',
-        source: 'English, Richard. Armed Struggle. 2003.',
-      },
-      {
-        viewpoint: 'Unionist/Loyalist perspective',
-        description: 'A defense of Northern Ireland\'s constitutional position within the UK against terrorist campaigns seeking to coerce the majority unionist population into a united Ireland.',
-        source: 'Patterson, Henry. Ireland Since 1939. 2006.',
-      },
-      {
-        viewpoint: 'British state perspective',
-        description: 'A security operation to maintain order and protect both communities from paramilitary violence while working toward a political solution.',
-        source: 'Hennessey, Thomas. The Evolution of the Troubles. 2007.',
-      },
-    ],
-    sources: ['McKittrick (2007)', 'English (2003)', 'Patterson (2006)'],
-    tags: ['ethno_nationalist', 'civil_rights', 'paramilitaries', 'peace_process'],
-    keyFigures: [
-      { name: 'Gerry Adams', role: 'Sinn Féin President', country: 'IRL' },
-    ],
-    treaties: [{ name: 'Good Friday Agreement', year: 1998, description: 'Established power-sharing government and cross-border institutions' }],
   },
   {
     id: 'balkan-wars',
@@ -3010,79 +2889,6 @@ export const conflicts: Conflict[] = [
     tags: ['blood_diamonds', 'child_soldiers', 'war_crimes', 'british_intervention'],
   },
   {
-    id: 'somali-civil-war',
-    name: 'Somali Civil War',
-    alternateNames: [],
-    type: 'civil_war',
-    startYear: 1991,
-    endYear: null,
-    parties: [
-      { countryId: 'SOM', role: 'belligerent' },
-      { countryId: 'USA', role: 'belligerent', perspectiveNote: 'Operation Restore Hope (1992-93)' },
-      { countryId: 'ETH', role: 'belligerent', perspectiveNote: 'Ethiopian intervention 2006' },
-      { countryId: 'KEN', role: 'belligerent', perspectiveNote: 'AMISOM contribution' },
-    ],
-    casualties: {
-      military: null,
-      civilian: null,
-      total: { low: 300000, high: 500000 },
-      source: 'UCDP; various estimates',
-    },
-    territorialChanges: 'Somaliland declared independence (unrecognized). Puntland autonomous.',
-    outcome: 'Ongoing. Federal government established but controls limited territory. Al-Shabaab insurgency continues.',
-    summary: 'Began with the overthrow of dictator Siad Barre and descended into clan-based warfare, state collapse, and famine. Multiple international interventions, including the US "Black Hawk Down" incident (1993).',
-    perspectives: [
-      {
-        viewpoint: 'International perspective',
-        description: 'The archetypal "failed state" — clan warfare, state collapse, piracy, and terrorism requiring sustained international engagement.',
-        source: 'Menkhaus, Ken. "Governance without Government in Somalia." International Security, 2006.',
-      },
-      {
-        viewpoint: 'Somali perspective',
-        description: 'Foreign interference (Cold War support for Barre, Ethiopian invasions, drone strikes) has repeatedly prevented organic reconciliation.',
-        source: 'Lewis, I.M. Understanding Somalia and Somaliland. 2008.',
-      },
-    ],
-    sources: ['Menkhaus (2006)', 'Lewis (2008)', 'UCDP'],
-    tags: ['failed_state', 'clan_warfare', 'famine', 'piracy', 'terrorism'],
-  },
-  {
-    id: 'darfur-conflict',
-    name: 'Darfur Conflict',
-    alternateNames: [
-      { name: 'Darfur Genocide', perspective: 'International/US designation' },
-    ],
-    type: 'genocide',
-    startYear: 2003,
-    endYear: null,
-    parties: [
-      { countryId: 'SDN', role: 'belligerent' },
-    ],
-    casualties: {
-      military: null,
-      civilian: null,
-      total: { low: 200000, high: 400000 },
-      source: 'UN estimates; various',
-    },
-    territorialChanges: null,
-    outcome: 'Ongoing low-level conflict. ICC issued arrest warrant for President al-Bashir (2009). 2.7 million displaced.',
-    summary: 'An armed conflict in western Sudan between government forces/allied Janjaweed militia and rebel groups from non-Arab communities. The US government declared it a genocide in 2004.',
-    perspectives: [
-      {
-        viewpoint: 'International/human rights perspective',
-        description: 'A genocide by the Sudanese government using Arab militias (Janjaweed) to systematically destroy non-Arab communities in Darfur.',
-        source: 'Flint, Julie & de Waal, Alex. Darfur: A New History of a Long War. 2008.',
-      },
-      {
-        viewpoint: 'Sudanese government perspective',
-        description: 'A counter-insurgency campaign against armed rebel movements, not genocide. The scale of violence was exaggerated by Western media.',
-        source: 'Mamdani, Mahmood. Saviors and Survivors. 2009.',
-      },
-    ],
-    sources: ['Flint & de Waal (2008)', 'Mamdani (2009)', 'UN Panel of Experts'],
-    tags: ['genocide', 'icc', 'displacement', 'janjaweed'],
-  },
-  {
     id: 'boko-haram-insurgency',
     name: 'Boko Haram Insurgency',
     alternateNames: [
@@ -3307,43 +3113,6 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Walker (2003)', 'Kagan (1996)'],
     tags: ['cold_war', 'iran_contra', 'revolution', 'us_intervention'],
-  },
-  {
-    id: 'mexican-drug-war',
-    name: 'Mexican Drug War',
-    alternateNames: [
-      { name: 'War on Drugs', perspective: 'US policy framing' },
-    ],
-    type: 'insurgency',
-    startYear: 2006,
-    endYear: null,
-    parties: [
-      { countryId: 'MEX', role: 'belligerent' },
-      { countryId: 'USA', role: 'ally', perspectiveNote: 'Mérida Initiative support' },
-    ],
-    casualties: {
-      military: null,
-      civilian: null,
-      total: { low: 350000, high: 400000 },
-      source: 'Mexican government statistics; various',
-    },
-    territorialChanges: null,
-    outcome: 'Ongoing. Over 350,000 killed since 2006. Cartels remain powerful.',
-    summary: 'An armed conflict between the Mexican government and various drug trafficking organizations (cartels). President Calderón deployed the military against cartels in 2006, dramatically escalating violence.',
-    perspectives: [
-      {
-        viewpoint: 'Mexican government perspective',
-        description: 'A necessary war against organized crime that threatens national sovereignty and public safety.',
-        source: 'Grillo, Ioan. El Narco. 2011.',
-      },
-      {
-        viewpoint: 'Structural/critical perspective',
-        description: 'US drug demand and gun supply, combined with militarized enforcement, have created a profitable violent cycle. Prohibition itself drives the violence.',
-        source: 'Watt, Peter & Zepeda, Roberto. Drug War Mexico. 2012.',
-      },
-    ],
-    sources: ['Grillo (2011)', 'Watt & Zepeda (2012)'],
-    tags: ['drug_war', 'organized_crime', 'cartels', 'disappearances'],
   },
 
   // ═══════════════════════════════════════
@@ -3792,46 +3561,6 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['De Waal (2003)', 'UCDP'],
     tags: ['ethnic_conflict', 'self_determination', 'territorial_integrity', 'ethnic_cleansing'],
-  },
-  {
-    id: 'chechen-wars',
-    name: 'Chechen Wars',
-    alternateNames: [
-      { name: 'Russian-Chechen Wars', perspective: 'International usage' },
-      { name: 'Counter-Terrorism Operation', perspective: 'Russian government (Second War)' },
-    ],
-    type: 'independence_war',
-    startYear: 1994,
-    endYear: 2009,
-    parties: [
-      { countryId: 'RUS', role: 'aggressor' },
-    ],
-    casualties: {
-      military: { low: 20000, high: 30000 },
-      civilian: { low: 50000, high: 200000 },
-      total: { low: 70000, high: 230000 },
-      source: 'Various estimates; human rights organizations',
-    },
-    territorialChanges: null,
-    outcome: 'Russian control restored. Grozny devastated and rebuilt. Kadyrov regime installed. Ongoing human rights concerns.',
-    summary: 'Two wars fought between Russia and Chechen separatists. The First War (1994-96) ended in Chechen de facto independence. The Second War (1999-2009) restored Russian control under Putin, with devastating destruction of Grozny.',
-    perspectives: [
-      {
-        viewpoint: 'Chechen/separatist perspective',
-        description: 'A national liberation struggle for independence from Russia, which had occupied Chechnya since the 19th century.',
-        source: 'Politkovskaya, Anna. A Small Corner of Hell. 2003.',
-      },
-      {
-        viewpoint: 'Russian perspective',
-        description: 'A counter-terrorism operation to prevent the disintegration of the Russian Federation and eliminate Islamist extremism following apartment bombings.',
-        source: 'Hughes, James. Chechnya: From Nationalism to Jihad. 2007.',
-      },
-    ],
-    sources: ['Politkovskaya (2003)', 'Hughes (2007)'],
-    tags: ['independence', 'terrorism', 'urban_destruction', 'human_rights'],
-    keyFigures: [
-      { name: 'Ramzan Kadyrov', role: 'Chechen leader (Russian-aligned)', country: 'RUS' },
-    ],
   },
 
   // ═══════════════════════════════════════
@@ -5844,6 +5573,1968 @@ export const conflicts: Conflict[] = [
     tags: ['political_crisis', 'displacement', 'extrajudicial_killings', 'mining', 'ongoing'],
     relatedConflicts: ['colombian-conflict'],
   },
+  // ═══════════════════════════════════════
+  // ADDITIONAL CONFLICTS — EXPANSION PASS
+  // ═══════════════════════════════════════
+
+  // ── AFRICA ──────────────────────────────
+
+  {
+    id: 'first-congo-war',
+    name: 'First Congo War',
+    alternateNames: [
+      { name: "Africa's World War (prelude)", perspective: 'Academic framing' },
+      { name: 'Liberation of Zaire', perspective: 'Rwandan/Ugandan perspective' },
+    ],
+    type: 'civil_war',
+    startYear: 1996,
+    endYear: 1997,
+    parties: [
+      { countryId: 'COD', role: 'belligerent' },
+      { countryId: 'RWA', role: 'belligerent' },
+      { countryId: 'UGA', role: 'belligerent' },
+      { countryId: 'AGO', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 15000 },
+      civilian: { low: 200000, high: 350000 },
+      total: { low: 200000, high: 350000 },
+      source: 'IRC; Human Rights Watch',
+    },
+    territorialChanges: 'Mobutu Sese Seko overthrown; Zaire renamed Democratic Republic of Congo.',
+    outcome: 'Rebel victory led by Laurent-Désiré Kabila with Rwandan and Ugandan support. Mobutu fled into exile.',
+    summary: 'A rebellion against Mobutu\'s kleptocratic regime, triggered by the Rwandan genocide aftermath and presence of Hutu militias in eastern Zaire. Multiple African nations intervened.',
+    perspectives: [
+      {
+        viewpoint: 'Rwandan security perspective',
+        description: 'Rwanda pursued génocidaires who had fled to eastern Zaire. The Mobutu regime\'s protection of these militias made regime change a security imperative.',
+        source: 'Prunier, Gérard. Africa\'s World War. 2009.',
+      },
+      {
+        viewpoint: 'Congolese nationalist perspective',
+        description: 'The war was an overthrow of a corrupt dictator, but also the beginning of foreign exploitation of Congolese resources and sovereignty.',
+        source: 'Stearns, Jason. Dancing in the Glory of Monsters. 2011.',
+      },
+      {
+        viewpoint: 'International humanitarian perspective',
+        description: 'The international community failed to prevent mass atrocities against Hutu refugees. The war destabilized the entire Great Lakes region for decades.',
+        source: 'United Nations Mapping Report. 2010.',
+      },
+    ],
+    sources: ['Prunier (2009)', 'Stearns (2011)', 'UN Mapping Report (2010)'],
+    tags: ['regime_change', 'genocide_aftermath', 'resource_conflict', 'great_lakes'],
+    keyFigures: [
+      { name: 'Laurent-Désiré Kabila', role: 'Rebel leader / President', country: 'COD' },
+      { name: 'Mobutu Sese Seko', role: 'President of Zaire', country: 'COD' },
+      { name: 'Paul Kagame', role: 'Rwandan military leader', country: 'RWA' },
+    ],
+    relatedConflicts: ['rwandan-genocide', 'congo-wars'],
+  },
+  {
+    id: 'second-congo-war',
+    name: 'Second Congo War',
+    alternateNames: [
+      { name: "Africa's World War", perspective: 'Academic consensus term' },
+      { name: 'The Great African War', perspective: 'International media' },
+    ],
+    type: 'interstate_war',
+    startYear: 1998,
+    endYear: 2003,
+    parties: [
+      { countryId: 'COD', role: 'belligerent' },
+      { countryId: 'RWA', role: 'belligerent' },
+      { countryId: 'UGA', role: 'belligerent' },
+      { countryId: 'AGO', role: 'belligerent' },
+      { countryId: 'ZAF', role: 'mediator' },
+    ],
+    casualties: {
+      military: { low: 50000, high: 100000 },
+      civilian: { low: 2500000, high: 5400000 },
+      total: { low: 3000000, high: 5400000 },
+      source: 'IRC mortality surveys; Coghlan et al. (2006)',
+    },
+    territorialChanges: 'Fragmentation of Congolese sovereignty in eastern provinces. De facto partition.',
+    outcome: 'Transitional government formed. Foreign forces officially withdrew but instability continued in the east. Sun City Agreement (2002).',
+    summary: 'The deadliest conflict since WWII by death toll. Nine African nations and dozens of armed groups fought over control of eastern Congo\'s mineral wealth and regional security concerns.',
+    perspectives: [
+      {
+        viewpoint: 'Congolese civilian perspective',
+        description: 'The war was fought over resources on Congolese soil by foreign armies. Civilians bore the overwhelming cost through mass displacement, sexual violence, and disease.',
+        source: 'Stearns, Jason. Dancing in the Glory of Monsters. 2011.',
+      },
+      {
+        viewpoint: 'Rwandan/Ugandan security perspective',
+        description: 'Intervention was necessary to prevent cross-border attacks from rebel groups operating in ungoverned Congolese territory.',
+        source: 'Prunier, Gérard. Africa\'s World War. 2009.',
+      },
+      {
+        viewpoint: 'Resource-conflict perspective',
+        description: 'The war was driven by competition for coltan, gold, diamonds, and other minerals. Armed groups funded themselves through mining operations.',
+        source: 'UN Panel of Experts on DRC. Various reports.',
+      },
+    ],
+    sources: ['IRC (2007)', 'Stearns (2011)', 'Prunier (2009)', 'UN Panel of Experts'],
+    tags: ['deadliest_since_ww2', 'resource_conflict', 'sexual_violence', 'child_soldiers', 'great_lakes'],
+    keyFigures: [
+      { name: 'Laurent-Désiré Kabila', role: 'President of DRC (assassinated 2001)', country: 'COD' },
+      { name: 'Joseph Kabila', role: 'President of DRC (succeeded father)', country: 'COD' },
+      { name: 'Paul Kagame', role: 'President of Rwanda', country: 'RWA' },
+      { name: 'Yoweri Museveni', role: 'President of Uganda', country: 'UGA' },
+    ],
+    treaties: [
+      { name: 'Lusaka Ceasefire Agreement', year: 1999, description: 'Ceasefire framework signed by belligerents; largely violated.' },
+      { name: 'Sun City Agreement', year: 2002, description: 'Power-sharing deal establishing transitional government.' },
+    ],
+    relatedConflicts: ['first-congo-war', 'congo-wars', 'rwandan-genocide'],
+  },
+  {
+    id: 'central-african-republic-conflict',
+    name: 'Central African Republic Conflict',
+    alternateNames: [
+      { name: 'CAR Civil War', perspective: 'Simplified usage' },
+      { name: 'Séléka–Anti-balaka War', perspective: 'Factional framing' },
+    ],
+    type: 'civil_war',
+    startYear: 2012,
+    endYear: null,
+    parties: [
+      { countryId: 'CAF', role: 'belligerent' },
+      { countryId: 'FRA', role: 'coalition_member' },
+      { countryId: 'RUS', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 3000, high: 6000 },
+      civilian: { low: 5000, high: 10000 },
+      total: { low: 8000, high: 16000 },
+      source: 'ACLED; Crisis Group',
+    },
+    territorialChanges: 'Fragmented territorial control between government, rebel groups, and Wagner/Africa Corps mercenaries.',
+    outcome: 'Ongoing. Government retained Bangui with Russian military support; rebels control parts of the countryside. Khartoum Peace Agreement (2019) partially implemented.',
+    summary: 'Complex multi-factional conflict driven by religious and ethnic tensions between Muslim Séléka and Christian/animist Anti-balaka militias, exacerbated by resource competition and foreign intervention.',
+    perspectives: [
+      {
+        viewpoint: 'Government/French perspective',
+        description: 'French intervention (Operation Sangaris) aimed to prevent genocide and restore order after Séléka coup. Russia later filled the security vacuum.',
+        source: 'International Crisis Group. 2017–2023 reports.',
+      },
+      {
+        viewpoint: 'Rebel/opposition perspective',
+        description: 'Decades of marginalization of northern Muslim populations by southern-dominated governments drove the initial Séléka rebellion.',
+        source: 'Lombard, Louisa. State of Rebellion. 2016.',
+      },
+    ],
+    sources: ['ACLED', 'Crisis Group', 'Lombard (2016)', 'UN MINUSCA reports'],
+    tags: ['religious_conflict', 'wagner_group', 'ongoing', 'displacement', 'peacekeeping'],
+    keyFigures: [
+      { name: 'Michel Djotodia', role: 'Séléka leader / President (2013)', country: 'CAF' },
+      { name: 'Faustin-Archange Touadéra', role: 'President (2016–present)', country: 'CAF' },
+    ],
+  },
+  {
+    id: 'cameroon-anglophone-crisis',
+    name: 'Anglophone Crisis',
+    alternateNames: [
+      { name: 'Ambazonia War', perspective: 'Separatist framing' },
+      { name: 'Northwest and Southwest Crisis', perspective: 'Government framing' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 2017,
+    endYear: null,
+    parties: [
+      { countryId: 'CMR', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 2000, high: 4000 },
+      civilian: { low: 4000, high: 6000 },
+      total: { low: 6000, high: 10000 },
+      source: 'International Crisis Group; ACLED',
+    },
+    territorialChanges: null,
+    outcome: 'Ongoing. Separatist armed groups control rural areas; government holds cities. Over 700,000 internally displaced.',
+    summary: 'English-speaking regions of Cameroon launched protests against marginalization by the Francophone-majority government. Peaceful protests were violently suppressed, leading to armed separatist movement declaring the "Republic of Ambazonia."',
+    perspectives: [
+      {
+        viewpoint: 'Anglophone/separatist perspective',
+        description: 'Decades of linguistic and cultural marginalization by the Francophone government violate the 1961 reunification agreement. Self-determination is the only solution.',
+        source: 'International Crisis Group. "Cameroon\'s Anglophone Crisis at the Crossroads." 2017.',
+      },
+      {
+        viewpoint: 'Cameroon government perspective',
+        description: 'The crisis is driven by external agitators and criminals. Cameroon is indivisible and decentralization addresses legitimate grievances.',
+        source: 'Republic of Cameroon official statements.',
+      },
+    ],
+    sources: ['Crisis Group', 'ACLED', 'Human Rights Watch'],
+    tags: ['separatism', 'linguistic_conflict', 'colonial_legacy', 'ongoing'],
+    keyFigures: [
+      { name: 'Sisiku Julius Ayuk Tabe', role: 'Ambazonia interim president (imprisoned)', country: 'CMR' },
+      { name: 'Paul Biya', role: 'President of Cameroon (since 1982)', country: 'CMR' },
+    ],
+  },
+  {
+    id: 'burundi-civil-war',
+    name: 'Burundi Civil War',
+    alternateNames: [
+      { name: 'Burundian Ethnic Conflict', perspective: 'Simplified framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1993,
+    endYear: 2005,
+    parties: [
+      { countryId: 'BDI', role: 'belligerent' },
+      { countryId: 'ZAF', role: 'mediator' },
+    ],
+    casualties: {
+      military: { low: 10000, high: 20000 },
+      civilian: { low: 280000, high: 320000 },
+      total: { low: 300000, high: 340000 },
+      source: 'Lemarchand (2009); UCDP',
+    },
+    territorialChanges: null,
+    outcome: 'Arusha Peace Agreement (2000) established power-sharing government between Hutu and Tutsi. CNDD-FDD eventually won elections in 2005.',
+    summary: 'An ethnic conflict between Hutu and Tutsi groups, closely linked to the Rwandan genocide. Cyclical massacres and retaliatory violence devastated the population for over a decade.',
+    perspectives: [
+      {
+        viewpoint: 'Hutu majority perspective',
+        description: 'Tutsi minority had monopolized power and the military since independence. The 1993 assassination of the first Hutu president by Tutsi soldiers triggered justified resistance.',
+        source: 'Lemarchand, René. The Dynamics of Violence in Central Africa. 2009.',
+      },
+      {
+        viewpoint: 'Tutsi perspective',
+        description: 'Tutsi communities faced existential threats from Hutu extremists emboldened by the Rwandan genocide. Security forces acted to prevent a similar genocide in Burundi.',
+        source: 'Daley, Patricia. Gender & Genocide in Burundi. 2008.',
+      },
+      {
+        viewpoint: 'Regional mediation perspective',
+        description: 'South African-led mediation under Nelson Mandela proved that patient, inclusive dialogue could end even deeply entrenched ethnic conflicts.',
+        source: 'Arusha Peace and Reconciliation Agreement. 2000.',
+      },
+    ],
+    sources: ['Lemarchand (2009)', 'UCDP', 'Arusha Agreement text'],
+    tags: ['ethnic_conflict', 'great_lakes', 'peace_process', 'power_sharing'],
+    keyFigures: [
+      { name: 'Nelson Mandela', role: 'Chief mediator', country: 'ZAF' },
+      { name: 'Pierre Nkurunziza', role: 'CNDD-FDD leader / President', country: 'BDI' },
+      { name: 'Melchior Ndadaye', role: 'First Hutu president (assassinated 1993)', country: 'BDI' },
+    ],
+    treaties: [
+      { name: 'Arusha Peace and Reconciliation Agreement', year: 2000, description: 'Power-sharing framework between Hutu and Tutsi factions.' },
+    ],
+    relatedConflicts: ['rwandan-genocide'],
+  },
+  {
+    id: 'chad-civil-wars',
+    name: 'Chadian Civil Wars',
+    alternateNames: [
+      { name: 'Chad-Libya Conflict', perspective: 'Regional framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1965,
+    endYear: 2010,
+    parties: [
+      { countryId: 'TCD', role: 'belligerent' },
+      { countryId: 'LBY', role: 'belligerent' },
+      { countryId: 'FRA', role: 'coalition_member' },
+      { countryId: 'SDN', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 20000, high: 40000 },
+      civilian: { low: 20000, high: 40000 },
+      total: { low: 40000, high: 80000 },
+      source: 'Various estimates; UCDP',
+    },
+    territorialChanges: 'Libya occupied Aouzou Strip (1973–1994) before ICJ ruling returned it to Chad.',
+    outcome: 'Cycle of coups, rebellions, and foreign interventions. Idriss Déby seized power in 1990 and ruled until killed in battle in 2021.',
+    summary: 'Decades of intermittent civil wars driven by north-south ethnic divisions, Libyan expansionism, and competition for power among military factions.',
+    perspectives: [
+      {
+        viewpoint: 'Chadian government perspective',
+        description: 'Successive governments faced existential threats from Libya-backed rebels and internal dissidents. French military support was essential for state survival.',
+        source: 'Azevedo, Mario. Roots of Violence: A History of War in Chad. 1998.',
+      },
+      {
+        viewpoint: 'Northern rebel perspective',
+        description: 'Southern-dominated governments marginalized the Muslim north. Rebellion was a response to exclusion from power and development.',
+        source: 'Buijtenhuijs, Robert. Le FROLINAT et les guerres civiles du Tchad. 1987.',
+      },
+    ],
+    sources: ['Azevedo (1998)', 'UCDP', 'ICJ Territorial Dispute ruling (1994)'],
+    tags: ['civil_war', 'french_intervention', 'libyan_expansionism', 'north_south_divide'],
+    keyFigures: [
+      { name: 'Idriss Déby', role: 'President (1990–2021)', country: 'TCD' },
+      { name: 'Hissène Habré', role: 'President (1982–1990), convicted of crimes against humanity', country: 'TCD' },
+      { name: 'Muammar Gaddafi', role: 'Libyan leader supporting Chadian rebels', country: 'LBY' },
+    ],
+  },
+  {
+    id: 'ivory-coast-civil-wars',
+    name: 'Ivorian Civil Wars',
+    alternateNames: [
+      { name: 'Côte d\'Ivoire Crisis', perspective: 'French diplomatic usage' },
+    ],
+    type: 'civil_war',
+    startYear: 2002,
+    endYear: 2011,
+    parties: [
+      { countryId: 'CIV', role: 'belligerent' },
+      { countryId: 'FRA', role: 'coalition_member' },
+    ],
+    casualties: {
+      military: { low: 2000, high: 5000 },
+      civilian: { low: 1000, high: 3000 },
+      total: { low: 3000, high: 8000 },
+      source: 'UCDP; Human Rights Watch',
+    },
+    territorialChanges: 'Country split north-south during 2002–2007 period.',
+    outcome: 'Alassane Ouattara took power after 2010–2011 post-election crisis with French military support. Laurent Gbagbo tried at ICC.',
+    summary: 'Two civil wars rooted in the politics of "Ivoirité" (national identity), land rights, and north-south ethnic divisions. The 2010 post-election crisis saw the incumbent refuse to concede defeat.',
+    perspectives: [
+      {
+        viewpoint: 'Ouattara/northern perspective',
+        description: 'Northern Muslims were systematically excluded from political participation through discriminatory citizenship laws. The rebellions sought equal rights.',
+        source: 'McGovern, Mike. Making War in Côte d\'Ivoire. 2011.',
+      },
+      {
+        viewpoint: 'Gbagbo/southern perspective',
+        description: 'Foreign interference (France, Burkina Faso) and illegal immigration from the north threatened Ivorian sovereignty and cultural identity.',
+        source: 'Akindès, Francis. The Roots of the Military-Political Crises in Côte d\'Ivoire. 2004.',
+      },
+    ],
+    sources: ['McGovern (2011)', 'ICC Trial records', 'Human Rights Watch'],
+    tags: ['post_election_violence', 'icc', 'french_intervention', 'identity_politics'],
+    keyFigures: [
+      { name: 'Laurent Gbagbo', role: 'President (2000–2011), ICC defendant', country: 'CIV' },
+      { name: 'Alassane Ouattara', role: 'President (2011–present)', country: 'CIV' },
+    ],
+  },
+  {
+    id: 'south-african-apartheid',
+    name: 'Anti-Apartheid Struggle',
+    alternateNames: [
+      { name: 'South African Liberation Struggle', perspective: 'ANC framing' },
+      { name: 'Total Onslaught', perspective: 'Apartheid government framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1960,
+    endYear: 1994,
+    parties: [
+      { countryId: 'ZAF', role: 'belligerent' },
+      { countryId: 'AGO', role: 'ally' },
+      { countryId: 'MOZ', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 15000 },
+      civilian: { low: 15000, high: 30000 },
+      total: { low: 20000, high: 45000 },
+      source: 'TRC Final Report (1998); various estimates',
+    },
+    territorialChanges: 'End of Bantustans system; reintegration into unified South Africa.',
+    outcome: 'Negotiated transition to democracy. ANC won 1994 elections. Truth and Reconciliation Commission (TRC) addressed past crimes.',
+    summary: 'Decades of resistance against the apartheid system of racial segregation, ranging from peaceful protest to armed struggle by the ANC\'s Umkhonto we Sizwe. International sanctions and internal pressure forced negotiations.',
+    perspectives: [
+      {
+        viewpoint: 'ANC/liberation perspective',
+        description: 'Armed struggle was a last resort after peaceful means were exhausted (Sharpeville 1960). The international community was morally obligated to support sanctions.',
+        source: 'Mandela, Nelson. Long Walk to Freedom. 1994.',
+      },
+      {
+        viewpoint: 'Apartheid government perspective',
+        description: 'The ANC was a communist-aligned terrorist organization. Apartheid was necessary for separate development and to prevent the "Total Onslaught" of communism.',
+        source: 'TRC Final Report, Vol. 2. 1998.',
+      },
+      {
+        viewpoint: 'International solidarity perspective',
+        description: 'Global anti-apartheid movement demonstrated the power of economic sanctions, cultural boycotts, and moral pressure in forcing political change without full-scale war.',
+        source: 'Klotz, Audie. Norms in International Relations. 1995.',
+      },
+    ],
+    sources: ['TRC Final Report (1998)', 'Mandela (1994)', 'Klotz (1995)'],
+    tags: ['apartheid', 'racial_justice', 'sanctions', 'truth_commission', 'peaceful_transition'],
+    keyFigures: [
+      { name: 'Nelson Mandela', role: 'ANC leader / President', country: 'ZAF' },
+      { name: 'F.W. de Klerk', role: 'Last apartheid President', country: 'ZAF' },
+      { name: 'Desmond Tutu', role: 'TRC Chair / Archbishop', country: 'ZAF' },
+    ],
+    treaties: [
+      { name: 'Convention for a Democratic South Africa (CODESA)', year: 1991, description: 'Multi-party negotiations framework leading to democratic constitution.' },
+    ],
+  },
+
+  // ── ASIA ──────────────────────────────
+
+  {
+    id: 'xinjiang-conflict',
+    name: 'Xinjiang Conflict',
+    alternateNames: [
+      { name: 'Uyghur Genocide', perspective: 'Western/human rights framing' },
+      { name: 'Counter-terrorism Campaign', perspective: 'Chinese government framing' },
+      { name: 'East Turkestan Independence Movement', perspective: 'Uyghur separatist framing' },
+    ],
+    type: 'ethnic_conflict',
+    startYear: 2014,
+    endYear: null,
+    parties: [
+      { countryId: 'CHN', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: { low: 1000, high: 10000 },
+      total: { low: 1000, high: 10000 },
+      source: 'Estimates uncertain; ASPI; Zenz (2020)',
+    },
+    territorialChanges: null,
+    outcome: 'Ongoing. Mass detention of estimated 1–1.8 million Uyghurs. Multiple countries have declared it a genocide.',
+    summary: 'The Chinese government\'s campaign against Uyghur Muslims in Xinjiang ranges from mass surveillance and internment camps to forced labor and cultural erasure, framed officially as counter-terrorism and de-radicalization.',
+    perspectives: [
+      {
+        viewpoint: 'Chinese government perspective',
+        description: 'Vocational education and training centers counter extremism and terrorism following deadly attacks in 2013–2014. The program has successfully prevented further attacks.',
+        source: 'State Council Information Office White Papers (2019, 2020).',
+      },
+      {
+        viewpoint: 'Uyghur diaspora / human rights perspective',
+        description: 'A systematic campaign of cultural genocide targeting Uyghur identity, religion, and language through mass detention, forced sterilization, and surveillance.',
+        source: 'Zenz, Adrian. "Sterilizations, IUDs, and Mandatory Birth Control." 2020.',
+      },
+      {
+        viewpoint: 'Academic/analytical perspective',
+        description: 'The campaign represents the largest mass internment of an ethnic-religious minority since WWII. It reflects broader patterns of authoritarian control over minority populations.',
+        source: 'Australian Strategic Policy Institute (ASPI). Xinjiang Data Project.',
+      },
+    ],
+    sources: ['ASPI', 'Zenz (2020)', 'UN OHCHR Assessment (2022)', 'Xinjiang Police Files (2022)'],
+    tags: ['genocide_debate', 'surveillance_state', 'cultural_erasure', 'ongoing', 'detention'],
+  },
+  {
+    id: 'tibet-conflict',
+    name: 'Tibetan Resistance',
+    alternateNames: [
+      { name: 'Liberation of Tibet', perspective: 'Chinese government framing' },
+      { name: 'Tibetan Independence Movement', perspective: 'Tibetan exile framing' },
+    ],
+    type: 'ethnic_conflict',
+    startYear: 1950,
+    endYear: null,
+    parties: [
+      { countryId: 'CHN', role: 'belligerent' },
+      { countryId: 'IND', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 20000 },
+      civilian: { low: 80000, high: 1200000 },
+      total: { low: 85000, high: 1200000 },
+      source: 'Tibetan Government-in-Exile; disputed by PRC; Smith (1996)',
+    },
+    territorialChanges: 'Tibet incorporated into PRC. Dalai Lama fled to India (1959). Central Tibetan Administration operates in exile from Dharamsala.',
+    outcome: 'China maintains control. Active resistance shifted to nonviolent protest, self-immolation, and international advocacy.',
+    summary: 'China\'s 1950 invasion of Tibet and subsequent cultural policies have been contested by Tibetans for over seven decades. The 1959 uprising led to the Dalai Lama\'s exile. Periodic protests continue.',
+    perspectives: [
+      {
+        viewpoint: 'Chinese government perspective',
+        description: 'Tibet was historically part of China. Liberation freed Tibetans from feudal serfdom and brought modernization, infrastructure, and economic development.',
+        source: 'State Council White Paper on Tibet. Various years.',
+      },
+      {
+        viewpoint: 'Tibetan exile perspective',
+        description: 'Tibet was an independent nation invaded by force. China has committed cultural genocide through population transfer, religious suppression, and political repression.',
+        source: 'Smith, Warren. Tibetan Nation: A History of Tibetan Nationalism. 1996.',
+      },
+    ],
+    sources: ['Smith (1996)', 'Shakya (1999)', 'ICT reports'],
+    tags: ['occupation', 'cultural_erasure', 'nonviolent_resistance', 'ongoing', 'self_immolation'],
+    keyFigures: [
+      { name: 'Dalai Lama (Tenzin Gyatso)', role: 'Spiritual leader / Head of state in exile', country: 'CHN' },
+    ],
+  },
+  {
+    id: 'rohingya-crisis',
+    name: 'Rohingya Crisis',
+    alternateNames: [
+      { name: 'Rohingya Genocide', perspective: 'International/human rights framing' },
+      { name: 'Rakhine State Operations', perspective: 'Myanmar military framing' },
+    ],
+    type: 'genocide',
+    startYear: 2017,
+    endYear: 2017,
+    parties: [
+      { countryId: 'MMR', role: 'aggressor' },
+      { countryId: 'BGD', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 100, high: 500 },
+      civilian: { low: 10000, high: 30000 },
+      total: { low: 10000, high: 30000 },
+      source: 'Médecins Sans Frontières survey (2017); AP investigation',
+    },
+    territorialChanges: 'Over 740,000 Rohingya fled to Bangladesh. Rakhine State largely depopulated of Rohingya.',
+    outcome: 'ICJ genocide case filed by The Gambia. ICC investigation ongoing. Most Rohingya remain in Bangladesh refugee camps.',
+    summary: 'Myanmar military launched "clearance operations" against Rohingya Muslims in Rakhine State, involving mass killings, sexual violence, and village burning. The UN described it as a "textbook example of ethnic cleansing."',
+    perspectives: [
+      {
+        viewpoint: 'International/human rights perspective',
+        description: 'The Myanmar military committed genocide against the Rohingya with systematic planning, including sexual violence as a weapon of war.',
+        source: 'UN Fact-Finding Mission. Report A/HRC/39/64. 2018.',
+      },
+      {
+        viewpoint: 'Myanmar government perspective',
+        description: 'Security operations were a proportionate response to ARSA terrorist attacks on police posts. Civilian casualties were regrettable but not systematic.',
+        source: 'Myanmar government Independent Commission of Enquiry. 2020.',
+      },
+      {
+        viewpoint: 'Rohingya perspective',
+        description: 'Decades of citizenship denial, movement restrictions, and periodic pogroms culminated in a planned campaign to permanently remove the Rohingya from their ancestral homeland.',
+        source: 'Ibrahim, Azeem. The Rohingyas: Inside Myanmar\'s Genocide. 2018.',
+      },
+    ],
+    sources: ['UN FFM (2018)', 'MSF (2017)', 'ICJ Case (2020)', 'Ibrahim (2018)'],
+    tags: ['genocide', 'ethnic_cleansing', 'refugees', 'icj', 'sexual_violence'],
+    keyFigures: [
+      { name: 'Min Aung Hlaing', role: 'Commander-in-Chief of Myanmar military', country: 'MMR' },
+      { name: 'Aung San Suu Kyi', role: 'State Counsellor (defended military at ICJ)', country: 'MMR' },
+    ],
+    relatedConflicts: ['myanmar-civil-war'],
+  },
+  {
+    id: 'hong-kong-protests',
+    name: 'Hong Kong Pro-Democracy Movement',
+    alternateNames: [
+      { name: 'Anti-ELAB Movement', perspective: 'Protest movement framing' },
+      { name: 'Hong Kong Riots', perspective: 'Chinese government/pro-Beijing framing' },
+    ],
+    type: 'revolution',
+    startYear: 2019,
+    endYear: 2020,
+    parties: [
+      { countryId: 'CHN', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: { low: 2, high: 10 },
+      total: { low: 2, high: 10 },
+      source: 'Various media reports; disputed',
+    },
+    territorialChanges: null,
+    outcome: 'National Security Law imposed (2020). Mass arrests of pro-democracy figures. Many activists fled abroad. Civil liberties significantly curtailed.',
+    summary: 'Massive protests against an extradition bill evolved into a broad pro-democracy movement demanding universal suffrage and police accountability. Beijing responded with the National Security Law.',
+    perspectives: [
+      {
+        viewpoint: 'Pro-democracy perspective',
+        description: 'Hong Kong\'s autonomy under "One Country, Two Systems" was being systematically eroded. The movement defended fundamental freedoms guaranteed until 2047.',
+        source: 'Veg, Sebastian. "The Rise of Hong Kong as a Political Community." 2017.',
+      },
+      {
+        viewpoint: 'Chinese government perspective',
+        description: 'The protests were fomented by foreign interference (US, UK) and threatened national sovereignty. The NSL restored stability and the rule of law.',
+        source: 'Xinhua/PRC State Council statements (2019–2020).',
+      },
+    ],
+    sources: ['HKFP', 'Reuters', 'Veg (2017)', 'CECC Annual Reports'],
+    tags: ['democracy', 'one_country_two_systems', 'national_security_law', 'civil_liberties'],
+    keyFigures: [
+      { name: 'Jimmy Lai', role: 'Media mogul / Activist (imprisoned)', country: 'CHN' },
+      { name: 'Joshua Wong', role: 'Student activist (imprisoned)', country: 'CHN' },
+      { name: 'Carrie Lam', role: 'Chief Executive of Hong Kong', country: 'CHN' },
+    ],
+  },
+  {
+    id: 'taiwan-strait-crises',
+    name: 'Taiwan Strait Crises',
+    alternateNames: [
+      { name: 'Cross-Strait Tensions', perspective: 'Diplomatic usage' },
+      { name: 'Taiwan Liberation', perspective: 'PRC perspective' },
+    ],
+    type: 'border_conflict',
+    startYear: 1954,
+    endYear: null,
+    parties: [
+      { countryId: 'CHN', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally' },
+      { countryId: 'JPN', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 2000, high: 5000 },
+      civilian: { low: 500, high: 2000 },
+      total: { low: 2500, high: 7000 },
+      source: 'Historical estimates from 1954–1958 crises; SIPRI',
+    },
+    territorialChanges: null,
+    outcome: 'Ongoing strategic competition. Status quo of de facto independence maintained. Periodic military escalation (1995–96, 2022).',
+    summary: 'Multiple crises over Taiwan\'s political status, from artillery exchanges in the 1950s to modern missile tests and air incursions. The question of Taiwan\'s sovereignty remains one of the most dangerous flashpoints in global geopolitics.',
+    perspectives: [
+      {
+        viewpoint: 'PRC perspective',
+        description: 'Taiwan is an inalienable part of China. Reunification is inevitable and may be achieved by force if peaceful means fail. Foreign interference in Chinese internal affairs is unacceptable.',
+        source: 'PRC Anti-Secession Law. 2005.',
+      },
+      {
+        viewpoint: 'Taiwan/ROC perspective',
+        description: 'Taiwan is a self-governing democracy of 23 million people. Its future should be determined by its citizens. The ROC has never been governed by the PRC.',
+        source: 'Rigger, Shelley. Why Taiwan Matters. 2011.',
+      },
+      {
+        viewpoint: 'US strategic perspective',
+        description: 'Strategic ambiguity serves regional stability — deterring both PRC aggression and Taiwan independence declaration. The Taiwan Relations Act provides a security framework.',
+        source: 'Bush, Richard. Uncharted Strait. 2013.',
+      },
+    ],
+    sources: ['Rigger (2011)', 'Bush (2013)', 'SIPRI', 'Anti-Secession Law (2005)'],
+    tags: ['geopolitical_flashpoint', 'nuclear_risk', 'strategic_ambiguity', 'ongoing', 'semiconductors'],
+    keyFigures: [
+      { name: 'Chiang Kai-shek', role: 'ROC President (original crisis)', country: 'CHN' },
+      { name: 'Tsai Ing-wen', role: 'ROC President (2016–2024)', country: 'CHN' },
+      { name: 'Xi Jinping', role: 'PRC President', country: 'CHN' },
+    ],
+    relatedConflicts: ['chinese-civil-war'],
+  },
+  {
+    id: 'korean-war-dmz-tension',
+    name: 'Korean DMZ Tensions',
+    alternateNames: [
+      { name: 'Korean Armistice Violations', perspective: 'Military framing' },
+    ],
+    type: 'border_conflict',
+    startYear: 1953,
+    endYear: null,
+    parties: [
+      { countryId: 'PRK', role: 'belligerent' },
+      { countryId: 'KOR', role: 'defender' },
+      { countryId: 'USA', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 500, high: 1500 },
+      civilian: { low: 100, high: 500 },
+      total: { low: 600, high: 2000 },
+      source: 'Various incidents compilations; USFK records',
+    },
+    territorialChanges: null,
+    outcome: 'Ongoing. No peace treaty signed. Periodic diplomacy (Panmunjom 2018) followed by renewed tensions. North Korea\'s nuclear program adds existential dimension.',
+    summary: 'The Korean War never formally ended. The DMZ remains the most heavily militarized border in the world, with periodic incidents including the Axe Murder Incident (1976), naval clashes, tunnel infiltrations, and CHEONAN sinking (2010).',
+    perspectives: [
+      {
+        viewpoint: 'South Korean perspective',
+        description: 'The North remains a grave security threat. The alliance with the US is essential for deterrence. Unification remains a constitutional goal but peace must come first.',
+        source: 'ROK Ministry of National Defense White Papers.',
+      },
+      {
+        viewpoint: 'North Korean perspective',
+        description: 'The US military presence in the South is an occupation force preventing peaceful reunification. Nuclear weapons are a necessary deterrent against American aggression.',
+        source: 'KCNA/DPRK official statements; Cumings (2004).',
+      },
+    ],
+    sources: ['USFK', 'Cumings (2004)', 'ROK MND White Papers'],
+    tags: ['nuclear_proliferation', 'cold_war_legacy', 'ongoing', 'dmz', 'armistice'],
+    relatedConflicts: ['korean-war'],
+  },
+
+  // ── EUROPE ──────────────────────────────
+
+  {
+    id: 'greek-civil-war',
+    name: 'Greek Civil War',
+    alternateNames: [
+      { name: 'Συμμοριτοπόλεμος (Bandit War)', perspective: 'Greek government propaganda' },
+      { name: 'Democratic Army Struggle', perspective: 'Communist/left perspective' },
+    ],
+    type: 'civil_war',
+    startYear: 1946,
+    endYear: 1949,
+    parties: [
+      { countryId: 'GRC', role: 'belligerent' },
+      { countryId: 'GBR', role: 'ally' },
+      { countryId: 'USA', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 30000, high: 50000 },
+      civilian: { low: 100000, high: 158000 },
+      total: { low: 130000, high: 158000 },
+      source: 'Close, David. The Origins of the Greek Civil War. 1995.',
+    },
+    territorialChanges: null,
+    outcome: 'Government victory with British and American support. Communist insurgents defeated. Truman Doctrine established US Cold War containment policy.',
+    summary: 'The first major Cold War proxy conflict. Communist-led partisans who had fought the Nazi occupation attempted to seize power, opposed by the royalist government backed by Britain and the US.',
+    perspectives: [
+      {
+        viewpoint: 'Government/Western perspective',
+        description: 'The conflict was part of Soviet expansionism. The Truman Doctrine correctly identified and countered communist aggression in the Mediterranean.',
+        source: 'Close, David. The Origins of the Greek Civil War. 1995.',
+      },
+      {
+        viewpoint: 'Communist/left perspective',
+        description: 'The resistance fighters who liberated Greece from the Nazis were betrayed by the British who restored the monarchy and right-wing collaborators.',
+        source: 'Mazower, Mark. Inside Hitler\'s Greece. 1993.',
+      },
+    ],
+    sources: ['Close (1995)', 'Mazower (1993)', 'Truman Doctrine text (1947)'],
+    tags: ['cold_war', 'proxy_war', 'truman_doctrine', 'resistance_legacy'],
+    keyFigures: [
+      { name: 'Markos Vafiadis', role: 'Democratic Army commander', country: 'GRC' },
+      { name: 'Harry Truman', role: 'US President (Truman Doctrine)', country: 'USA' },
+    ],
+    treaties: [
+      { name: 'Truman Doctrine', year: 1947, description: 'US policy to provide military and economic aid to countries threatened by communism.' },
+    ],
+  },
+  {
+    id: 'cyprus-conflict',
+    name: 'Cyprus Conflict',
+    alternateNames: [
+      { name: 'Turkish Invasion of Cyprus', perspective: 'Greek Cypriot perspective' },
+      { name: 'Cyprus Peace Operation', perspective: 'Turkish perspective' },
+    ],
+    type: 'ethnic_conflict',
+    startYear: 1974,
+    endYear: 1974,
+    parties: [
+      { countryId: 'TUR', role: 'aggressor' },
+      { countryId: 'GRC', role: 'belligerent' },
+      { countryId: 'GBR', role: 'mediator' },
+    ],
+    casualties: {
+      military: { low: 3000, high: 6000 },
+      civilian: { low: 1000, high: 2000 },
+      total: { low: 4000, high: 8000 },
+      source: 'Various estimates; Ker-Lindsay (2011)',
+    },
+    territorialChanges: 'Island divided. Turkish Republic of Northern Cyprus declared (recognized only by Turkey). Buffer zone patrolled by UNFICYP.',
+    outcome: 'Island remains divided. Northern Cyprus recognized only by Turkey. Reunification talks have repeatedly failed (Annan Plan rejected 2004).',
+    summary: 'Turkey invaded Cyprus in response to a Greek military junta-backed coup attempting union with Greece. The resulting partition displaced 200,000 Greek Cypriots and 50,000 Turkish Cypriots.',
+    perspectives: [
+      {
+        viewpoint: 'Greek Cypriot perspective',
+        description: 'The Turkish invasion was an illegal act of aggression and occupation. Northern Cyprus must be reunified under a single sovereign state.',
+        source: 'Ker-Lindsay, James. The Cyprus Problem. 2011.',
+      },
+      {
+        viewpoint: 'Turkish/Turkish Cypriot perspective',
+        description: 'The intervention was a legal guarantor action to prevent ethnic cleansing of Turkish Cypriots and forced union with Greece.',
+        source: 'Dodd, Clement. The History and Politics of the Cyprus Conflict. 2010.',
+      },
+    ],
+    sources: ['Ker-Lindsay (2011)', 'Dodd (2010)', 'UNFICYP reports'],
+    tags: ['partition', 'ethnic_cleansing', 'frozen_conflict', 'eu_accession', 'unficyp'],
+    keyFigures: [
+      { name: 'Bülent Ecevit', role: 'Turkish PM who ordered intervention', country: 'TUR' },
+      { name: 'Archbishop Makarios III', role: 'President of Cyprus (deposed by coup)', country: 'GRC' },
+    ],
+  },
+  {
+    id: 'northern-ireland-peace-process',
+    name: 'Northern Ireland Peace Process',
+    alternateNames: [
+      { name: 'Good Friday Agreement Era', perspective: 'Standard usage' },
+    ],
+    type: 'civil_war',
+    startYear: 1994,
+    endYear: 1998,
+    parties: [
+      { countryId: 'GBR', role: 'belligerent' },
+      { countryId: 'IRL', role: 'mediator' },
+      { countryId: 'USA', role: 'mediator' },
+    ],
+    casualties: {
+      military: null,
+      civilian: { low: 50, high: 100 },
+      total: { low: 50, high: 100 },
+      source: 'CAIN (Conflict Archive on the Internet)',
+    },
+    territorialChanges: null,
+    outcome: 'Good Friday Agreement (1998) established power-sharing government, cross-border institutions, and decommissioning of paramilitary weapons.',
+    summary: 'The peace process that ended The Troubles through multi-party negotiations, culminating in the Good Friday Agreement — widely regarded as one of the most successful peace processes in modern history.',
+    perspectives: [
+      {
+        viewpoint: 'Unionist perspective',
+        description: 'The Agreement secured Northern Ireland\'s place in the UK while creating cross-community governance. The principle of consent was paramount.',
+        source: 'Cochrane, Feargal. Northern Ireland: The Reluctant Peace. 2013.',
+      },
+      {
+        viewpoint: 'Republican perspective',
+        description: 'The Agreement was a stepping stone, not a settlement. It created the framework for eventual Irish unity through democratic means.',
+        source: 'Moloney, Ed. A Secret History of the IRA. 2002.',
+      },
+      {
+        viewpoint: 'International mediation perspective',
+        description: 'Senator George Mitchell\'s patient, inclusive approach and Clinton administration engagement were crucial. The process offers lessons for other conflicts.',
+        source: 'Mitchell, George. Making Peace. 1999.',
+      },
+    ],
+    sources: ['Mitchell (1999)', 'Cochrane (2013)', 'CAIN Archive'],
+    tags: ['peace_process', 'power_sharing', 'decommissioning', 'model_peace_agreement'],
+    keyFigures: [
+      { name: 'George Mitchell', role: 'US Special Envoy / Chair of negotiations', country: 'USA' },
+      { name: 'Tony Blair', role: 'UK Prime Minister', country: 'GBR' },
+      { name: 'Bertie Ahern', role: 'Irish Taoiseach', country: 'IRL' },
+      { name: 'Gerry Adams', role: 'Sinn Féin President', country: 'GBR' },
+      { name: 'David Trimble', role: 'Ulster Unionist leader', country: 'GBR' },
+    ],
+    treaties: [
+      { name: 'Good Friday Agreement (Belfast Agreement)', year: 1998, description: 'Power-sharing agreement establishing devolved government, cross-border bodies, and paramilitary decommissioning.' },
+    ],
+    relatedConflicts: ['northern-ireland-troubles'],
+  },
+
+  // ── MIDDLE EAST ──────────────────────────────
+
+  {
+    id: 'iran-iraq-tanker-war',
+    name: 'Tanker War',
+    alternateNames: [
+      { name: 'War of the Cities', perspective: 'Expanded campaign framing' },
+    ],
+    type: 'interstate_war',
+    startYear: 1984,
+    endYear: 1988,
+    parties: [
+      { countryId: 'IRN', role: 'belligerent' },
+      { countryId: 'IRQ', role: 'belligerent' },
+      { countryId: 'USA', role: 'coalition_member' },
+      { countryId: 'SAU', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 500, high: 1000 },
+      civilian: { low: 200, high: 500 },
+      total: { low: 700, high: 1500 },
+      source: 'Navias & Hooton (1996); naval histories',
+    },
+    territorialChanges: null,
+    outcome: 'UN-brokered ceasefire. US Navy escorted Kuwaiti tankers. USS Vincennes shot down Iran Air Flight 655 killing 290 civilians.',
+    summary: 'Phase of the Iran-Iraq War where both sides attacked oil tankers in the Persian Gulf. The US Navy intervened to protect oil shipping lanes, leading to direct US-Iran naval clashes.',
+    perspectives: [
+      {
+        viewpoint: 'US/Western perspective',
+        description: 'Freedom of navigation in the Persian Gulf was a vital interest. Escorting tankers prevented Iran from disrupting global oil supplies.',
+        source: 'Navias, Martin & Hooton, E.R. Tanker Wars. 1996.',
+      },
+      {
+        viewpoint: 'Iranian perspective',
+        description: 'The US intervention was a hostile act supporting Iraq. The downing of Flight 655 was a war crime that was never properly acknowledged.',
+        source: 'Hiro, Dilip. The Longest War. 1991.',
+      },
+    ],
+    sources: ['Navias & Hooton (1996)', 'Hiro (1991)'],
+    tags: ['oil', 'naval_warfare', 'freedom_of_navigation', 'iran_air_655'],
+    relatedConflicts: ['iran-iraq-war'],
+  },
+  {
+    id: 'first-intifada',
+    name: 'First Intifada',
+    alternateNames: [
+      { name: 'Palestinian Uprising', perspective: 'Standard usage' },
+      { name: 'War of the Stones', perspective: 'Palestinian popular framing' },
+    ],
+    type: 'independence_war',
+    startYear: 1987,
+    endYear: 1993,
+    parties: [
+      { countryId: 'ISR', role: 'belligerent' },
+      { countryId: 'PSE', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 200, high: 400 },
+      civilian: { low: 1200, high: 2200 },
+      total: { low: 1400, high: 2600 },
+      source: "B'Tselem; Palestinian Red Crescent",
+    },
+    territorialChanges: null,
+    outcome: 'Oslo Accords (1993) established the Palestinian Authority and mutual recognition between Israel and PLO.',
+    summary: 'A largely spontaneous Palestinian uprising against Israeli occupation of the West Bank and Gaza. Characterized by stone-throwing, strikes, and civil disobedience. Led to the Oslo peace process.',
+    perspectives: [
+      {
+        viewpoint: 'Palestinian perspective',
+        description: 'The uprising was a legitimate popular resistance against 20 years of military occupation, land confiscation, and denial of political rights.',
+        source: 'Lockman, Zachary & Beinin, Joel. Intifada. 1989.',
+      },
+      {
+        viewpoint: 'Israeli perspective',
+        description: 'The violence was incited by PLO and Islamist organizations. Israel had a right to restore order in territories under its security responsibility.',
+        source: 'Schiff, Ze\'ev & Ya\'ari, Ehud. Intifada. 1990.',
+      },
+    ],
+    sources: ["B'Tselem", 'Lockman & Beinin (1989)', 'Schiff & Ya\'ari (1990)'],
+    tags: ['occupation', 'civil_disobedience', 'oslo_process', 'stone_throwing'],
+    keyFigures: [
+      { name: 'Yasser Arafat', role: 'PLO Chairman', country: 'PSE' },
+      { name: 'Yitzhak Rabin', role: 'Israeli Defense Minister / PM', country: 'ISR' },
+    ],
+    treaties: [
+      { name: 'Oslo Accords', year: 1993, description: 'Mutual recognition between Israel and PLO; established Palestinian Authority.' },
+    ],
+    relatedConflicts: ['israel-palestine', 'arab-israeli-1948', 'six-day-war'],
+  },
+  {
+    id: 'second-intifada',
+    name: 'Second Intifada',
+    alternateNames: [
+      { name: 'Al-Aqsa Intifada', perspective: 'Palestinian framing' },
+      { name: 'Oslo War', perspective: 'Israeli revisionist framing' },
+    ],
+    type: 'independence_war',
+    startYear: 2000,
+    endYear: 2005,
+    parties: [
+      { countryId: 'ISR', role: 'belligerent' },
+      { countryId: 'PSE', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 400, high: 600 },
+      civilian: { low: 4500, high: 6500 },
+      total: { low: 5000, high: 7100 },
+      source: "B'Tselem; MFA Israel",
+    },
+    territorialChanges: 'Israel began construction of the West Bank separation barrier. Unilateral withdrawal from Gaza (2005).',
+    outcome: 'No peace agreement. Significant security barrier built. Suicide bombings ceased. Political split between Fatah (West Bank) and Hamas (Gaza).',
+    summary: 'A far more violent confrontation than the First Intifada, featuring suicide bombings, military incursions, targeted assassinations, and significant civilian casualties on both sides.',
+    perspectives: [
+      {
+        viewpoint: 'Palestinian perspective',
+        description: 'The failure of Camp David talks and Sharon\'s provocative visit to the Temple Mount / Haram al-Sharif showed that Israel was not serious about peace.',
+        source: 'Kimmerling, Baruch. Politicide. 2003.',
+      },
+      {
+        viewpoint: 'Israeli perspective',
+        description: 'Arafat rejected a generous peace offer and launched a pre-planned terror campaign. The security barrier was essential to stop suicide bombings.',
+        source: 'Benny Morris. One State, Two States. 2009.',
+      },
+    ],
+    sources: ["B'Tselem", 'Kimmerling (2003)', 'Morris (2009)'],
+    tags: ['suicide_bombings', 'separation_barrier', 'camp_david', 'targeted_killings'],
+    keyFigures: [
+      { name: 'Yasser Arafat', role: 'PA President', country: 'PSE' },
+      { name: 'Ariel Sharon', role: 'Israeli PM', country: 'ISR' },
+    ],
+    relatedConflicts: ['israel-palestine', 'first-intifada'],
+  },
+  {
+    id: 'second-lebanon-war',
+    name: 'Second Lebanon War',
+    alternateNames: [
+      { name: 'July War', perspective: 'Lebanese perspective' },
+      { name: 'Operation Change of Direction', perspective: 'Israeli military designation' },
+    ],
+    type: 'interstate_war',
+    startYear: 2006,
+    endYear: 2006,
+    parties: [
+      { countryId: 'ISR', role: 'belligerent' },
+      { countryId: 'LBN', role: 'belligerent' },
+      { countryId: 'IRN', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 250, high: 400 },
+      civilian: { low: 1000, high: 1500 },
+      total: { low: 1250, high: 1900 },
+      source: 'Human Rights Watch; Amnesty International',
+    },
+    territorialChanges: null,
+    outcome: 'UN Resolution 1701 ceasefire. UNIFIL expanded. Hezbollah claimed "divine victory." Israel\'s deterrence questioned.',
+    summary: 'A 34-day conflict between Israel and Hezbollah triggered by a cross-border raid. Extensive Israeli bombing of Lebanese infrastructure and Hezbollah rocket attacks on northern Israel.',
+    perspectives: [
+      {
+        viewpoint: 'Israeli perspective',
+        description: 'Israel acted in self-defense after an unprovoked cross-border attack. Hezbollah deliberately operated from civilian areas.',
+        source: 'Winograd Commission Report. 2008.',
+      },
+      {
+        viewpoint: 'Lebanese/Hezbollah perspective',
+        description: 'Israel\'s disproportionate destruction of civilian infrastructure amounted to collective punishment. Hezbollah defended Lebanese sovereignty.',
+        source: 'Norton, Augustus R. Hezbollah: A Short History. 2007.',
+      },
+    ],
+    sources: ['Winograd Commission (2008)', 'Norton (2007)', 'HRW/AI reports'],
+    tags: ['hezbollah', 'asymmetric_warfare', 'urban_warfare', 'un_resolution'],
+    relatedConflicts: ['lebanese-civil-war', 'israel-palestine'],
+  },
+
+  // ── LATIN AMERICA ──────────────────────────────
+
+  {
+    id: 'dirty-war-argentina',
+    name: 'Argentine Dirty War',
+    alternateNames: [
+      { name: 'Guerra Sucia', perspective: 'Standard Spanish term' },
+      { name: 'Process of National Reorganization', perspective: 'Military junta designation' },
+    ],
+    type: 'civil_war',
+    startYear: 1976,
+    endYear: 1983,
+    parties: [
+      { countryId: 'ARG', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'Supported via Operation Condor' },
+    ],
+    casualties: {
+      military: { low: 500, high: 1000 },
+      civilian: { low: 10000, high: 30000 },
+      total: { low: 10000, high: 30000 },
+      source: 'CONADEP (Nunca Más report); human rights organizations',
+    },
+    territorialChanges: null,
+    outcome: 'Military junta collapsed after Falklands War defeat (1982). Democracy restored 1983. Trials of junta leaders. "Nunca Más" report documented crimes.',
+    summary: 'Argentina\'s military dictatorship waged state terror against suspected leftists, using forced disappearance, torture, and death flights. An estimated 30,000 "desaparecidos" were killed.',
+    perspectives: [
+      {
+        viewpoint: 'Human rights perspective',
+        description: 'The military committed crimes against humanity including systematic torture, disappearance, and theft of babies from imprisoned mothers. Operation Condor coordinated repression across South America.',
+        source: 'CONADEP. Nunca Más. 1984.',
+      },
+      {
+        viewpoint: 'Military junta perspective',
+        description: 'Argentina faced a genuine threat from Marxist guerrilla movements (ERP, Montoneros). The "Process" saved the nation from communist subversion.',
+        source: 'Trial testimonies of junta members; declassified documents.',
+      },
+      {
+        viewpoint: 'Mothers of the Plaza de Mayo',
+        description: 'The mothers who marched weekly in Buenos Aires became a global symbol of nonviolent resistance against state terror and the demand for truth and justice.',
+        source: 'Bouvard, Marguerite. Revolutionizing Motherhood. 1994.',
+      },
+    ],
+    sources: ['CONADEP (1984)', 'Bouvard (1994)', 'Feitlowitz (1998)'],
+    tags: ['state_terror', 'disappearances', 'operation_condor', 'truth_commission', 'mothers_plaza_mayo'],
+    keyFigures: [
+      { name: 'Jorge Rafael Videla', role: 'Military dictator (convicted)', country: 'ARG' },
+      { name: 'Hebe de Bonafini', role: 'Mothers of the Plaza de Mayo leader', country: 'ARG' },
+    ],
+  },
+  {
+    id: 'chilean-coup-repression',
+    name: 'Chilean Military Dictatorship',
+    alternateNames: [
+      { name: 'Pinochet Era', perspective: 'Common usage' },
+      { name: 'Military Pronouncement', perspective: 'Junta euphemism' },
+    ],
+    type: 'revolution',
+    startYear: 1973,
+    endYear: 1990,
+    parties: [
+      { countryId: 'CHL', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'CIA involvement in destabilization' },
+    ],
+    casualties: {
+      military: { low: 100, high: 300 },
+      civilian: { low: 3000, high: 5000 },
+      total: { low: 3000, high: 5000 },
+      source: 'Rettig Commission (1991); Valech Commission (2004)',
+    },
+    territorialChanges: null,
+    outcome: 'Pinochet lost 1988 plebiscite. Democracy restored 1990. Truth commissions documented 40,000+ victims of torture and 3,000+ killed/disappeared.',
+    summary: 'A US-backed military coup overthrew democratically elected socialist president Salvador Allende. The Pinochet dictatorship implemented neoliberal economic policies while systematically repressing political opposition.',
+    perspectives: [
+      {
+        viewpoint: 'Human rights / left perspective',
+        description: 'The coup was an illegal US-supported overthrow of democracy. Pinochet\'s regime tortured and killed thousands while enriching elites through shock therapy economics.',
+        source: 'Kornbluh, Peter. The Pinochet File. 2003.',
+      },
+      {
+        viewpoint: 'Conservative / economic perspective',
+        description: 'The military saved Chile from becoming another Cuba. Economic reforms ("Chilean Miracle") laid the foundation for Chile becoming Latin America\'s most prosperous country.',
+        source: 'Friedman, Milton. Capitalism and Freedom. Referenced in various contexts.',
+      },
+    ],
+    sources: ['Rettig Commission (1991)', 'Kornbluh (2003)', 'Valech Commission (2004)'],
+    tags: ['coup', 'cia', 'operation_condor', 'neoliberalism', 'truth_commission'],
+    keyFigures: [
+      { name: 'Augusto Pinochet', role: 'Military dictator', country: 'CHL' },
+      { name: 'Salvador Allende', role: 'Democratically elected president (died in coup)', country: 'CHL' },
+      { name: 'Henry Kissinger', role: 'US Secretary of State', country: 'USA' },
+    ],
+  },
+
+  // ── ADDITIONAL MODERN CONFLICTS ──────────────────────────────
+
+  {
+    id: 'nagorno-karabakh-2020',
+    name: 'Second Nagorno-Karabakh War',
+    alternateNames: [
+      { name: '44-Day War', perspective: 'Common usage' },
+      { name: 'Patriotic War', perspective: 'Azerbaijani framing' },
+    ],
+    type: 'interstate_war',
+    startYear: 2020,
+    endYear: 2020,
+    parties: [
+      { countryId: 'AZE', role: 'belligerent' },
+      { countryId: 'ARM', role: 'belligerent' },
+      { countryId: 'TUR', role: 'ally' },
+      { countryId: 'RUS', role: 'mediator' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 8000 },
+      civilian: { low: 150, high: 300 },
+      total: { low: 5000, high: 8000 },
+      source: 'Official statements from both sides; IISS estimates',
+    },
+    territorialChanges: 'Azerbaijan recaptured most of Nagorno-Karabakh and surrounding districts. Russian peacekeeping force deployed.',
+    outcome: 'Trilateral ceasefire statement (Nov 2020). Azerbaijan recovered territories lost in the 1990s. In 2023, Azerbaijan took full control and ethnic Armenian population fled.',
+    summary: 'Azerbaijan launched a military offensive using Turkish-supplied drones to recapture territories held by Armenian forces since the 1990s. The war showcased the transformative impact of drone warfare on modern conflict.',
+    perspectives: [
+      {
+        viewpoint: 'Azerbaijani perspective',
+        description: 'Azerbaijan liberated its internationally recognized territories after 30 years of Armenian occupation. The military victory was legitimate and legally justified.',
+        source: 'Republic of Azerbaijan official statements.',
+      },
+      {
+        viewpoint: 'Armenian perspective',
+        description: 'The war resulted in ethnic cleansing of Armenians from their historic homeland. Turkey\'s military support and recruitment of Syrian mercenaries were destabilizing.',
+        source: 'Armenian National Committee of America; Crisis Group reports.',
+      },
+      {
+        viewpoint: 'Military-strategic perspective',
+        description: 'The war demonstrated the decisive impact of unmanned aerial systems and precision-guided munitions in modern warfare, changing global military calculations.',
+        source: 'International Institute for Strategic Studies (IISS). 2021.',
+      },
+    ],
+    sources: ['IISS (2021)', 'Crisis Group', 'Official ceasefire statement (Nov 2020)'],
+    tags: ['drone_warfare', 'frozen_conflict_resolved', 'ethnic_cleansing', 'turkish_involvement'],
+    keyFigures: [
+      { name: 'Ilham Aliyev', role: 'President of Azerbaijan', country: 'AZE' },
+      { name: 'Nikol Pashinyan', role: 'Prime Minister of Armenia', country: 'ARM' },
+    ],
+    relatedConflicts: ['nagorno-karabakh'],
+  },
+  {
+    id: 'ethiopia-tigray-aftermath',
+    name: 'Post-Tigray Conflicts',
+    alternateNames: [
+      { name: 'Amhara-Fano Insurgency', perspective: 'Current conflict framing' },
+    ],
+    type: 'civil_war',
+    startYear: 2023,
+    endYear: null,
+    parties: [
+      { countryId: 'ETH', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 2000, high: 5000 },
+      civilian: { low: 1000, high: 5000 },
+      total: { low: 3000, high: 10000 },
+      source: 'ACLED; Ethiopia Peace Observatory',
+    },
+    territorialChanges: null,
+    outcome: 'Ongoing. Fano militia controls rural Amhara areas. State of emergency declared multiple times.',
+    summary: 'After the Tigray War ceasefire, new armed conflict erupted in the Amhara and Oromia regions. Fano militia rejected federal government disarmament demands, while OLA continues operations in Oromia.',
+    perspectives: [
+      {
+        viewpoint: 'Ethiopian government perspective',
+        description: 'The Fano insurgency is an illegal armed challenge to constitutional order. Disarmament of regional forces is necessary for national stability.',
+        source: 'Ethiopian government statements; ENDF briefings.',
+      },
+      {
+        viewpoint: 'Amhara/Fano perspective',
+        description: 'The federal government betrayed Amhara forces who fought alongside them in Tigray. Amhara territorial interests are being sacrificed in peace deals.',
+        source: 'ACLED analysis; Amhara media.',
+      },
+    ],
+    sources: ['ACLED', 'Ethiopia Peace Observatory', 'Crisis Group'],
+    tags: ['ongoing', 'ethnic_federalism', 'disarmament', 'militia'],
+    relatedConflicts: ['tigray-war', 'ethiopian-civil-war'],
+  },
+  {
+    id: 'sahel-coups-2020s',
+    name: 'Sahel Military Coups Wave',
+    alternateNames: [
+      { name: 'Alliance of Sahel States', perspective: 'Junta framing' },
+    ],
+    type: 'revolution',
+    startYear: 2020,
+    endYear: null,
+    parties: [
+      { countryId: 'MLI', role: 'belligerent' },
+      { countryId: 'BFA', role: 'belligerent' },
+      { countryId: 'NER', role: 'belligerent' },
+      { countryId: 'FRA', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 100, high: 500 },
+      civilian: { low: 500, high: 2000 },
+      total: { low: 600, high: 2500 },
+      source: 'ACLED; Africa Center for Strategic Studies',
+    },
+    territorialChanges: 'French military expelled from Mali, Burkina Faso, and Niger. Russian Wagner Group/Africa Corps replaces Western security partnerships.',
+    outcome: 'Ongoing. Military juntas in Mali (2020/2021), Burkina Faso (2022), Niger (2023), and Guinea. Alliance of Sahel States formed. ECOWAS sanctions.',
+    summary: 'A wave of military coups across the Sahel driven by frustration with elected governments\' failure to address jihadist insurgency, anti-French sentiment, and Russian influence operations.',
+    perspectives: [
+      {
+        viewpoint: 'Junta / popular support perspective',
+        description: 'Elected leaders failed to protect citizens from jihadist violence. France\'s military presence was neo-colonial. Military leadership offers sovereignty and security.',
+        source: 'Africa Center for Strategic Studies. 2023 analysis.',
+      },
+      {
+        viewpoint: 'ECOWAS / democratic perspective',
+        description: 'Coups undermine democratic progress and create instability. Military governments have not improved security and are partnering with authoritarian Russia.',
+        source: 'ECOWAS communiqués; International Crisis Group.',
+      },
+    ],
+    sources: ['ACLED', 'Africa Center for Strategic Studies', 'Crisis Group'],
+    tags: ['coups', 'anti_french', 'wagner_group', 'ongoing', 'sahel', 'jihadism'],
+    relatedConflicts: ['aqim-sahel-insurgency'],
+  },
+
+  // ── ADDITIONAL CONFLICTS — BATCH 2 ──────────────────────────
+
+  // ── ASIA-PACIFIC ──────────────────────────────
+
+  {
+    id: 'nepalese-civil-war',
+    name: 'Nepalese Civil War',
+    alternateNames: [
+      { name: "People's War", perspective: 'Maoist framing' },
+      { name: 'Maoist Insurgency', perspective: 'Government/Western framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1996,
+    endYear: 2006,
+    parties: [
+      { countryId: 'NPL', role: 'belligerent' },
+      { countryId: 'IND', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 8000 },
+      civilian: { low: 8000, high: 12000 },
+      total: { low: 13000, high: 17000 },
+      source: 'OHCHR Nepal; Informal Sector Service Centre (INSEC)',
+    },
+    territorialChanges: 'Monarchy abolished (2008). Nepal became a federal democratic republic.',
+    outcome: 'Comprehensive Peace Accord (2006). Maoists entered politics and won elections. Nepal transitioned from monarchy to republic.',
+    summary: 'A Maoist insurgency against Nepal\'s Hindu monarchy driven by inequality, caste discrimination, and rural poverty. One of the few Maoist movements to achieve political power through a combination of armed struggle and negotiation.',
+    perspectives: [
+      {
+        viewpoint: 'Maoist perspective',
+        description: 'Armed revolution was the only means to dismantle feudal structures, caste oppression, and monarchical tyranny that kept the majority impoverished.',
+        source: 'Thapa, Deepak & Sijapati, Bandita. A Kingdom Under Siege. 2004.',
+      },
+      {
+        viewpoint: 'Royalist/government perspective',
+        description: 'The Maoists were terrorists who destroyed infrastructure, recruited child soldiers, and murdered civilians in pursuit of a failed ideology.',
+        source: 'Nepal Army records; ICG reports.',
+      },
+      {
+        viewpoint: 'Peace process perspective',
+        description: 'The 2006 agreement demonstrated that even deeply polarized conflicts can be resolved when both sides face military stalemates and popular demand for peace.',
+        source: 'Comprehensive Peace Accord text. 2006.',
+      },
+    ],
+    sources: ['OHCHR Nepal', 'Thapa & Sijapati (2004)', 'CPA (2006)'],
+    tags: ['maoist', 'monarchy', 'inequality', 'peace_process', 'republic'],
+    keyFigures: [
+      { name: 'Pushpa Kamal Dahal (Prachanda)', role: 'Maoist leader / PM', country: 'NPL' },
+      { name: 'King Gyanendra', role: 'Last King of Nepal', country: 'NPL' },
+    ],
+    treaties: [
+      { name: 'Comprehensive Peace Accord', year: 2006, description: 'Ended the civil war; integrated Maoist fighters; established transition to republic.' },
+    ],
+  },
+  {
+    id: 'secret-war-laos',
+    name: 'Secret War in Laos',
+    alternateNames: [
+      { name: 'Laotian Civil War', perspective: 'Academic framing' },
+      { name: 'CIA Secret War', perspective: 'Anti-war/Laotian framing' },
+    ],
+    type: 'proxy_war',
+    startYear: 1959,
+    endYear: 1975,
+    parties: [
+      { countryId: 'LAO', role: 'belligerent' },
+      { countryId: 'USA', role: 'belligerent' },
+      { countryId: 'VNM', role: 'belligerent' },
+      { countryId: 'THA', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 20000, high: 50000 },
+      civilian: { low: 50000, high: 200000 },
+      total: { low: 70000, high: 250000 },
+      source: 'Various estimates; Branfman (1972); COPE data',
+    },
+    territorialChanges: 'Pathet Lao took power. Laos became a communist state.',
+    outcome: 'Communist Pathet Lao victory. US dropped more bombs on Laos per capita than any country in history. UXO continues to kill civilians today.',
+    summary: 'A covert CIA-directed war fought alongside the Vietnam War. The US conducted a massive bombing campaign (over 2 million tons), making Laos the most heavily bombed country per capita in history.',
+    perspectives: [
+      {
+        viewpoint: 'US/CIA perspective',
+        description: 'The operations disrupted the Ho Chi Minh Trail and prevented communist expansion in Southeast Asia. Hmong allies were essential partners.',
+        source: 'Castle, Timothy. At War in the Shadow of Vietnam. 1993.',
+      },
+      {
+        viewpoint: 'Laotian/civilian perspective',
+        description: 'The bombing was indiscriminate and disproportionate. Millions of cluster munitions remain as unexploded ordnance (UXO) killing Laotians 50 years later.',
+        source: 'Branfman, Fred. Voices from the Plain of Jars. 1972.',
+      },
+      {
+        viewpoint: 'Hmong perspective',
+        description: 'Hmong fighters were recruited by the CIA and bore enormous casualties. After the war, those who survived faced persecution and became refugees.',
+        source: 'Hamilton-Merritt, Jane. Tragic Mountains. 1993.',
+      },
+    ],
+    sources: ['Castle (1993)', 'Branfman (1972)', 'COPE Visitor Centre data'],
+    tags: ['secret_war', 'cia', 'bombing', 'uxo', 'hmong', 'cold_war'],
+    keyFigures: [
+      { name: 'Vang Pao', role: 'Hmong military leader (CIA-allied)', country: 'LAO' },
+    ],
+    relatedConflicts: ['vietnam-war', 'first-indochina-war'],
+  },
+  {
+    id: 'east-pakistan-genocide',
+    name: 'Bangladesh Liberation War',
+    alternateNames: [
+      { name: 'Operation Searchlight', perspective: 'Pakistani military designation' },
+      { name: 'Mukti Bahini War', perspective: 'Bangladeshi perspective' },
+    ],
+    type: 'independence_war',
+    startYear: 1971,
+    endYear: 1971,
+    parties: [
+      { countryId: 'BGD', role: 'belligerent' },
+      { countryId: 'PAK', role: 'belligerent' },
+      { countryId: 'IND', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 30000, high: 60000 },
+      civilian: { low: 300000, high: 3000000 },
+      total: { low: 300000, high: 3000000 },
+      source: 'Estimates range widely; Sarmila Bose (2011); Bangladesh government claim of 3 million',
+    },
+    territorialChanges: 'East Pakistan became independent Bangladesh.',
+    outcome: 'Pakistan surrendered to joint India-Bangladesh forces. Bangladesh gained independence. One of the largest refugee crises in history (10 million fled to India).',
+    summary: 'The Pakistani military launched a brutal crackdown on Bengali nationalist movements in East Pakistan, committing mass atrocities. Indian intervention led to Pakistan\'s defeat and Bangladesh\'s independence.',
+    perspectives: [
+      {
+        viewpoint: 'Bangladeshi perspective',
+        description: 'The Pakistani military committed genocide against Bengali civilians and intellectuals. Liberation was achieved through heroic resistance by the Mukti Bahini.',
+        source: 'Bangladesh government; Hamoodur Rahman Commission (leaked).',
+      },
+      {
+        viewpoint: 'Pakistani perspective',
+        description: 'The military action was a response to an armed insurgency and Indian subversion. Casualty figures have been vastly inflated for political purposes.',
+        source: 'Bose, Sarmila. Dead Reckoning. 2011.',
+      },
+      {
+        viewpoint: 'Indian perspective',
+        description: 'India intervened to stop a humanitarian catastrophe as 10 million refugees crossed into India. The intervention was legally justified under humanitarian grounds.',
+        source: 'Sisson, Richard & Rose, Leo. War and Secession. 1990.',
+      },
+    ],
+    sources: ['Sisson & Rose (1990)', 'Bose (2011)', 'Bass (2013)'],
+    tags: ['genocide', 'independence', 'refugee_crisis', 'cold_war', 'sexual_violence'],
+    keyFigures: [
+      { name: 'Sheikh Mujibur Rahman', role: 'Bengali nationalist leader / First President', country: 'BGD' },
+      { name: 'Yahya Khan', role: 'Pakistani military ruler', country: 'PAK' },
+      { name: 'Indira Gandhi', role: 'Indian PM who ordered intervention', country: 'IND' },
+    ],
+    relatedConflicts: ['indo-pakistani-1971'],
+  },
+  {
+    id: 'indonesian-mass-killings',
+    name: 'Indonesian Mass Killings',
+    alternateNames: [
+      { name: 'Anti-Communist Purge', perspective: 'Historical framing' },
+      { name: 'Indonesian Genocide', perspective: 'Academic/human rights framing' },
+    ],
+    type: 'genocide',
+    startYear: 1965,
+    endYear: 1966,
+    parties: [
+      { countryId: 'IDN', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'Provided names lists and logistical support' },
+      { countryId: 'GBR', role: 'ally', perspectiveNote: 'Covert propaganda support' },
+    ],
+    casualties: {
+      military: null,
+      civilian: { low: 500000, high: 1200000 },
+      total: { low: 500000, high: 1200000 },
+      source: 'Various estimates; Cribb (1990); IPT judgment (2016)',
+    },
+    territorialChanges: null,
+    outcome: 'Suharto\'s New Order regime established. PKI banned. Mass detentions. Cold War strategic victory for the West.',
+    summary: 'Following a failed coup attempt, the Indonesian military and civilian militias systematically killed suspected communists, ethnic Chinese, and perceived leftists in one of the 20th century\'s worst mass atrocities.',
+    perspectives: [
+      {
+        viewpoint: 'Indonesian military/New Order perspective',
+        description: 'The purge saved Indonesia from a communist takeover. The September 30th Movement proved the PKI was plotting to seize power.',
+        source: 'Indonesian government official history (until reformasi).',
+      },
+      {
+        viewpoint: 'Human rights/academic perspective',
+        description: 'The killings constituted genocide. The US and UK provided material support, including lists of PKI members, and welcomed the outcome as a Cold War victory.',
+        source: 'Simpson, Bradley. Economists with Guns. 2008.',
+      },
+      {
+        viewpoint: 'Survivors/victims perspective',
+        description: 'Survivors and their descendants face ongoing stigma. There has been no official reckoning, no trials, and no truth commission in Indonesia.',
+        source: 'International People\'s Tribunal on 1965. Final Report. 2016.',
+      },
+    ],
+    sources: ['Cribb (1990)', 'Simpson (2008)', 'IPT 1965 (2016)'],
+    tags: ['genocide', 'cold_war', 'anti_communism', 'mass_killings', 'impunity'],
+    keyFigures: [
+      { name: 'Suharto', role: 'Military general who took power', country: 'IDN' },
+      { name: 'Sukarno', role: 'President displaced by Suharto', country: 'IDN' },
+    ],
+  },
+
+  // ── EUROPE ──────────────────────────────
+
+  {
+    id: 'bosnian-war',
+    name: 'Bosnian War',
+    alternateNames: [
+      { name: 'War in Bosnia and Herzegovina', perspective: 'Standard usage' },
+      { name: 'Aggression Against Bosnia', perspective: 'Bosnian government framing' },
+    ],
+    type: 'ethnic_conflict',
+    startYear: 1992,
+    endYear: 1995,
+    parties: [
+      { countryId: 'SRB', role: 'belligerent' },
+      { countryId: 'HRV', role: 'belligerent' },
+      { countryId: 'USA', role: 'coalition_member' },
+      { countryId: 'GBR', role: 'coalition_member' },
+      { countryId: 'FRA', role: 'coalition_member' },
+    ],
+    casualties: {
+      military: { low: 57000, high: 65000 },
+      civilian: { low: 38000, high: 42000 },
+      total: { low: 95000, high: 105000 },
+      source: 'Research and Documentation Center (RDC) Sarajevo; Tabeau & Bijak (2005)',
+    },
+    territorialChanges: 'Bosnia divided into two entities: Federation of Bosnia and Herzegovina and Republika Srpska.',
+    outcome: 'Dayton Agreement (1995) ended fighting. International peacekeeping force deployed. ICTY prosecuted war crimes including Srebrenica genocide.',
+    summary: 'The most destructive European conflict since WWII. Multi-ethnic Bosnia was devastated by ethnic cleansing, the Srebrenica genocide, and the siege of Sarajevo — the longest siege of a capital in modern warfare.',
+    perspectives: [
+      {
+        viewpoint: 'Bosniak/Bosnian government perspective',
+        description: 'Bosnia was the victim of Serbian (and partly Croatian) aggression aimed at ethnically pure territories. The international arms embargo left Bosniaks defenseless.',
+        source: 'Burg, Steven & Shoup, Paul. The War in Bosnia-Herzegovina. 1999.',
+      },
+      {
+        viewpoint: 'Serbian/Republika Srpska perspective',
+        description: 'Bosnian Serbs fought for self-determination and security against the threat of living in an Islamic-dominated state. The war was a three-sided civil conflict.',
+        source: 'Various Serbian sources; ICTY defense submissions.',
+      },
+      {
+        viewpoint: 'International/humanitarian perspective',
+        description: 'The international community failed catastrophically — particularly at Srebrenica where Dutch UN peacekeepers watched as 8,000 men and boys were massacred.',
+        source: 'UN Srebrenica Report (1999); NIOD (2002).',
+      },
+    ],
+    sources: ['RDC Sarajevo', 'ICTY records', 'UN Srebrenica Report (1999)'],
+    tags: ['ethnic_cleansing', 'genocide', 'siege', 'srebrenica', 'icty', 'dayton'],
+    keyFigures: [
+      { name: 'Alija Izetbegović', role: 'President of Bosnia', country: 'SRB' },
+      { name: 'Radovan Karadžić', role: 'Bosnian Serb leader (convicted war criminal)', country: 'SRB' },
+      { name: 'Ratko Mladić', role: 'Bosnian Serb military commander (convicted war criminal)', country: 'SRB' },
+      { name: 'Richard Holbrooke', role: 'US negotiator of Dayton Accords', country: 'USA' },
+    ],
+    treaties: [
+      { name: 'Dayton Agreement', year: 1995, description: 'Framework agreement ending the war and establishing Bosnia\'s dual-entity political structure.' },
+    ],
+    relatedConflicts: ['yugoslav-wars'],
+  },
+  {
+    id: 'kosovo-war',
+    name: 'Kosovo War',
+    alternateNames: [
+      { name: 'Kosovo Liberation War', perspective: 'Albanian/Kosovar framing' },
+      { name: 'NATO Aggression Against Yugoslavia', perspective: 'Serbian framing' },
+    ],
+    type: 'independence_war',
+    startYear: 1998,
+    endYear: 1999,
+    parties: [
+      { countryId: 'SRB', role: 'belligerent' },
+      { countryId: 'USA', role: 'coalition_member' },
+      { countryId: 'GBR', role: 'coalition_member' },
+      { countryId: 'FRA', role: 'coalition_member' },
+      { countryId: 'DEU', role: 'coalition_member' },
+    ],
+    casualties: {
+      military: { low: 3000, high: 5000 },
+      civilian: { low: 8000, high: 13000 },
+      total: { low: 11000, high: 18000 },
+      source: 'OSCE; Kosovo Memory Book',
+    },
+    territorialChanges: 'Kosovo placed under UN administration (UNMIK). Declared independence in 2008 (recognized by ~100 countries, not by Serbia, Russia, China).',
+    outcome: 'NATO bombing campaign forced Serbian withdrawal from Kosovo. UN Resolution 1244 established international administration. Kosovo declared independence in 2008.',
+    summary: 'Serbian security forces launched a counterinsurgency campaign against the Kosovo Liberation Army (KLA), involving mass displacement and atrocities against ethnic Albanians. NATO intervened with a 78-day bombing campaign.',
+    perspectives: [
+      {
+        viewpoint: 'Albanian/Kosovar perspective',
+        description: 'Kosovars faced decades of Serbian oppression culminating in ethnic cleansing. NATO intervention was a necessary humanitarian action that saved lives.',
+        source: 'Judah, Tim. Kosovo: War and Revenge. 2000.',
+      },
+      {
+        viewpoint: 'Serbian perspective',
+        description: 'Kosovo is the historical heartland of the Serbian nation. NATO bombing was an illegal act of aggression that violated Yugoslavia\'s sovereignty. The KLA was a terrorist organization.',
+        source: 'Serbian Academy of Sciences memorandum; various Serbian sources.',
+      },
+      {
+        viewpoint: 'International law perspective',
+        description: 'The NATO intervention lacked UN Security Council authorization and set a controversial precedent for "humanitarian intervention" without explicit legal basis.',
+        source: 'Independent International Commission on Kosovo. Kosovo Report. 2000.',
+      },
+    ],
+    sources: ['Judah (2000)', 'Kosovo Report (2000)', 'ICTY records'],
+    tags: ['nato_intervention', 'ethnic_cleansing', 'sovereignty', 'humanitarian_intervention', 'self_determination'],
+    keyFigures: [
+      { name: 'Slobodan Milošević', role: 'President of Yugoslavia (later tried at ICTY)', country: 'SRB' },
+      { name: 'Hashim Thaçi', role: 'KLA political leader / President of Kosovo', country: 'SRB' },
+      { name: 'Ibrahim Rugova', role: 'Kosovar nonviolent resistance leader', country: 'SRB' },
+    ],
+    relatedConflicts: ['yugoslav-wars', 'bosnian-war'],
+  },
+  {
+    id: 'transnistria-conflict',
+    name: 'Transnistria War',
+    alternateNames: [
+      { name: 'Pridnestrovian Conflict', perspective: 'Russian/separatist framing' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 1990,
+    endYear: 1992,
+    parties: [
+      { countryId: 'ROU', role: 'ally' },
+      { countryId: 'RUS', role: 'ally' },
+    ],
+    casualties: {
+      military: { low: 500, high: 1000 },
+      civilian: { low: 200, high: 500 },
+      total: { low: 700, high: 1500 },
+      source: 'OSCE; various estimates',
+    },
+    territorialChanges: 'Transnistria established de facto independence with Russian military presence.',
+    outcome: 'Ceasefire (1992). Russian peacekeeping force deployed. Transnistria remains an unrecognized breakaway state with Russian troops stationed.',
+    summary: 'As Moldova gained independence from the Soviet Union, the predominantly Russian-speaking Transnistria region fought to remain aligned with Russia, resulting in a frozen conflict that persists today.',
+    perspectives: [
+      {
+        viewpoint: 'Moldovan perspective',
+        description: 'Transnistria is Moldovan territory under Russian military occupation. The Russian presence prevents reintegration.',
+        source: 'OSCE Mission to Moldova reports.',
+      },
+      {
+        viewpoint: 'Transnistrian/Russian perspective',
+        description: 'Transnistria\'s population chose self-determination to preserve their Russian-speaking identity against Moldovan nationalism and potential Romanian unification.',
+        source: 'Kolsto, Pal. "The Sustainability and Future of Unrecognized Quasi-States." 2006.',
+      },
+    ],
+    sources: ['OSCE', 'Kolsto (2006)', 'Crisis Group'],
+    tags: ['frozen_conflict', 'russian_troops', 'post_soviet', 'separatism'],
+  },
+  {
+    id: 'ukrainian-crisis-2014',
+    name: 'War in Donbas',
+    alternateNames: [
+      { name: 'Anti-Terrorist Operation (ATO)', perspective: 'Ukrainian government framing' },
+      { name: 'Donbas Uprising', perspective: 'Separatist/Russian framing' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 2014,
+    endYear: 2022,
+    parties: [
+      { countryId: 'UKR', role: 'defender' },
+      { countryId: 'RUS', role: 'aggressor', perspectiveNote: 'Denied direct involvement until 2022' },
+      { countryId: 'FRA', role: 'mediator' },
+      { countryId: 'DEU', role: 'mediator' },
+    ],
+    casualties: {
+      military: { low: 6000, high: 10000 },
+      civilian: { low: 3400, high: 4400 },
+      total: { low: 14000, high: 14400 },
+      source: 'OHCHR; OSCE SMM',
+    },
+    territorialChanges: 'Russia annexed Crimea (2014). Separatist "people\'s republics" in Donetsk and Luhansk. Escalated into full-scale invasion (2022).',
+    outcome: 'Merged into the full-scale Russia-Ukraine War in February 2022. Minsk Agreements failed to hold.',
+    summary: 'Following Russia\'s annexation of Crimea, armed conflict erupted in eastern Ukraine between Russian-backed separatists and Ukrainian forces. Eight years of low-intensity warfare preceded Russia\'s full-scale invasion.',
+    perspectives: [
+      {
+        viewpoint: 'Ukrainian perspective',
+        description: 'Russia orchestrated the separatist movement, supplied weapons and fighters, and eventually invaded. Crimea\'s annexation violated international law.',
+        source: 'OHCHR reports; OSCE SMM records.',
+      },
+      {
+        viewpoint: 'Russian perspective',
+        description: 'The 2014 Maidan revolution was a Western-backed coup. Russian speakers in Donbas and Crimea chose self-determination. Crimean referendum was legitimate.',
+        source: 'Russian government statements; RT narratives.',
+      },
+    ],
+    sources: ['OHCHR', 'OSCE SMM', 'Minsk Agreements texts'],
+    tags: ['crimea', 'annexation', 'hybrid_warfare', 'minsk_agreements'],
+    keyFigures: [
+      { name: 'Petro Poroshenko', role: 'Ukrainian President (2014–2019)', country: 'UKR' },
+      { name: 'Vladimir Putin', role: 'Russian President', country: 'RUS' },
+    ],
+    treaties: [
+      { name: 'Minsk Protocol', year: 2014, description: 'Initial ceasefire agreement; largely violated.' },
+      { name: 'Minsk II', year: 2015, description: 'Framework for resolving the conflict; never fully implemented.' },
+    ],
+    relatedConflicts: ['russia-ukraine-war'],
+  },
+
+  // ── AMERICAS ──────────────────────────────
+
+  {
+    id: 'mexican-revolution',
+    name: 'Mexican Revolution',
+    alternateNames: [
+      { name: 'Revolución Mexicana', perspective: 'Spanish' },
+    ],
+    type: 'revolution',
+    startYear: 1910,
+    endYear: 1920,
+    parties: [
+      { countryId: 'MEX', role: 'belligerent' },
+      { countryId: 'USA', role: 'belligerent', perspectiveNote: 'Multiple interventions including Veracruz (1914) and Pershing Expedition (1916)' },
+    ],
+    casualties: {
+      military: { low: 250000, high: 500000 },
+      civilian: { low: 500000, high: 2000000 },
+      total: { low: 1000000, high: 2500000 },
+      source: 'McCaa (2003); Knight (1986)',
+    },
+    territorialChanges: null,
+    outcome: 'Constitution of 1917. Land reform. Institutional Revolutionary Party (PRI) dominated politics for 71 years.',
+    summary: 'A decade of civil war that overthrew the 34-year dictatorship of Porfirio Díaz and produced the world\'s first social revolution constitution, guaranteeing land reform, labor rights, and secular education.',
+    perspectives: [
+      {
+        viewpoint: 'Revolutionary/agrarian perspective',
+        description: 'The revolution was fought for "Tierra y Libertad" — land and liberty — against hacienda owners and foreign investors who had dispossessed Mexico\'s peasantry.',
+        source: 'Knight, Alan. The Mexican Revolution. 1986.',
+      },
+      {
+        viewpoint: 'Conservative/institutional perspective',
+        description: 'The revolution descended into chaos and warlordism. The real achievement was the eventual institutional stability created by the 1917 Constitution and the PRI.',
+        source: 'Womack, John. Zapata and the Mexican Revolution. 1969.',
+      },
+    ],
+    sources: ['Knight (1986)', 'Womack (1969)', 'McCaa (2003)'],
+    tags: ['revolution', 'land_reform', 'constitution', 'agrarian'],
+    keyFigures: [
+      { name: 'Emiliano Zapata', role: 'Agrarian revolutionary leader', country: 'MEX' },
+      { name: 'Pancho Villa', role: 'Northern revolutionary leader', country: 'MEX' },
+      { name: 'Porfirio Díaz', role: 'Dictator (overthrown)', country: 'MEX' },
+      { name: 'Venustiano Carranza', role: 'Constitutional president', country: 'MEX' },
+    ],
+  },
+  {
+    id: 'uruguayan-dirty-war',
+    name: 'Uruguayan Dictatorship',
+    alternateNames: [
+      { name: 'Civic-Military Dictatorship', perspective: 'Academic usage' },
+    ],
+    type: 'civil_war',
+    startYear: 1973,
+    endYear: 1985,
+    parties: [
+      { countryId: 'URY', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'Operation Condor coordination' },
+    ],
+    casualties: {
+      military: null,
+      civilian: { low: 200, high: 500 },
+      total: { low: 200, high: 500 },
+      source: 'Peace Commission (2003); various estimates',
+    },
+    territorialChanges: null,
+    outcome: 'Democracy restored (1985). Impunity law initially protected military. Later partially overturned.',
+    summary: 'Uruguay experienced a military dictatorship that imprisoned a higher percentage of its population as political prisoners than any other country in the world. Torture was systematic.',
+    perspectives: [
+      {
+        viewpoint: 'Human rights perspective',
+        description: 'Uruguay had the world\'s highest per capita rate of political prisoners. The Tupamaro threat did not justify the scale of repression that followed the coup.',
+        source: 'Amnesty International reports; Peace Commission (2003).',
+      },
+      {
+        viewpoint: 'Military perspective',
+        description: 'The Tupamaro guerrilla threat required decisive action. The military preserved order and prevented communist revolution.',
+        source: 'Military testimonies; Servicio Paz y Justicia archives.',
+      },
+    ],
+    sources: ['Peace Commission (2003)', 'Amnesty International', 'SERPAJ'],
+    tags: ['operation_condor', 'state_terror', 'political_prisoners', 'tupamaros'],
+    keyFigures: [
+      { name: 'José Mujica', role: 'Tupamaro leader / Later president (2010–2015)', country: 'URY' },
+    ],
+  },
+  {
+    id: 'us-invasion-panama',
+    name: 'US Invasion of Panama',
+    alternateNames: [
+      { name: 'Operation Just Cause', perspective: 'US military designation' },
+      { name: 'La Invasión', perspective: 'Panamanian framing' },
+    ],
+    type: 'interstate_war',
+    startYear: 1989,
+    endYear: 1990,
+    parties: [
+      { countryId: 'USA', role: 'aggressor' },
+    ],
+    casualties: {
+      military: { low: 300, high: 600 },
+      civilian: { low: 200, high: 4000 },
+      total: { low: 500, high: 4500 },
+      source: 'US DoD; Americas Watch; disputed',
+    },
+    territorialChanges: 'Panama Canal returned to Panama (1999) as previously agreed.',
+    outcome: 'Noriega captured and imprisoned. Democratic government installed. Canal zone transferred to Panama on schedule.',
+    summary: 'The US invaded Panama to depose military dictator Manuel Noriega, a former CIA asset turned drug trafficker. The largest US military operation since Vietnam at the time.',
+    perspectives: [
+      {
+        viewpoint: 'US government perspective',
+        description: 'The invasion protected American lives, defended democracy, combated drug trafficking, and protected the Panama Canal.',
+        source: 'Bush, George H.W. Address to the Nation. December 20, 1989.',
+      },
+      {
+        viewpoint: 'Panamanian/Latin American perspective',
+        description: 'The invasion was a violation of sovereignty and international law. Civilian casualties in El Chorrillo neighborhood were disproportionate and underreported.',
+        source: 'Organization of American States resolution; Americas Watch reports.',
+      },
+    ],
+    sources: ['US DoD After Action Report', 'Americas Watch (1991)', 'OAS records'],
+    tags: ['regime_change', 'drug_war', 'sovereignty', 'canal'],
+    keyFigures: [
+      { name: 'Manuel Noriega', role: 'Panamanian dictator (captured)', country: 'MEX' },
+      { name: 'George H.W. Bush', role: 'US President', country: 'USA' },
+    ],
+  },
+
+  // ── AFRICA (MORE) ──────────────────────────────
+
+  {
+    id: 'algerian-civil-war',
+    name: 'Algerian Civil War',
+    alternateNames: [
+      { name: 'Black Decade', perspective: 'Algerian common usage' },
+      { name: 'Décennie noire', perspective: 'French' },
+    ],
+    type: 'civil_war',
+    startYear: 1991,
+    endYear: 2002,
+    parties: [
+      { countryId: 'DZA', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 20000, high: 30000 },
+      civilian: { low: 100000, high: 200000 },
+      total: { low: 150000, high: 200000 },
+      source: 'Estimates vary widely; Martinez (2000); ICG',
+    },
+    territorialChanges: null,
+    outcome: 'Government victory. Charter for Peace and National Reconciliation (2005) provided amnesty. Violence declined but low-level insurgency continued.',
+    summary: 'After the military cancelled elections that Islamists were winning, a devastating civil war erupted between the government and Islamist insurgent groups including the GIA and AIS.',
+    perspectives: [
+      {
+        viewpoint: 'Algerian government perspective',
+        description: 'The military intervention was necessary to prevent an Islamist takeover that would have ended democracy. The GIA committed horrific massacres against civilians.',
+        source: 'Algerian government statements; Martinez (2000).',
+      },
+      {
+        viewpoint: 'Islamist/opposition perspective',
+        description: 'The military committed a coup against a democratic election. The FIS won fairly and was denied power. State security forces committed many of the attributed massacres.',
+        source: 'International Crisis Group reports; Souaidia (2001).',
+      },
+      {
+        viewpoint: 'Who killed whom? debate',
+        description: 'The question of responsibility for the worst massacres (Bentalha, Rais) remains contested. Some evidence suggests state involvement or complicity.',
+        source: 'Souaidia, Habib. La Sale Guerre. 2001.',
+      },
+    ],
+    sources: ['Martinez (2000)', 'Souaidia (2001)', 'ICG', 'Amnesty International'],
+    tags: ['islamism', 'military_coup', 'massacres', 'dirty_war', 'amnesty'],
+  },
+  {
+    id: 'eritrean-independence-war',
+    name: 'Eritrean War of Independence',
+    alternateNames: [
+      { name: 'Eritrean Struggle', perspective: 'Eritrean framing' },
+    ],
+    type: 'independence_war',
+    startYear: 1961,
+    endYear: 1991,
+    parties: [
+      { countryId: 'ERI', role: 'belligerent' },
+      { countryId: 'ETH', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 50000, high: 100000 },
+      civilian: { low: 40000, high: 60000 },
+      total: { low: 90000, high: 160000 },
+      source: 'Pool (2001); various estimates',
+    },
+    territorialChanges: 'Eritrea gained independence from Ethiopia (formal referendum 1993).',
+    outcome: 'EPLF victory (1991). Eritrea gained independence after 30-year struggle. Referendum (1993) confirmed independence with 99.83% vote.',
+    summary: 'One of Africa\'s longest wars of independence. Eritrean fighters waged a 30-year guerrilla war against successive Ethiopian regimes, ultimately achieving independence through military victory.',
+    perspectives: [
+      {
+        viewpoint: 'Eritrean perspective',
+        description: 'Eritrea\'s forced federation with Ethiopia (1952) and subsequent annexation (1962) violated UN resolutions. Independence was won through legitimate self-determination.',
+        source: 'Pool, David. From Guerrillas to Government. 2001.',
+      },
+      {
+        viewpoint: 'Ethiopian perspective',
+        description: 'Eritrea was historically part of the Ethiopian sphere. Secession was encouraged by foreign powers and set a dangerous precedent for African borders.',
+        source: 'Various Ethiopian academic perspectives; OAU debates.',
+      },
+    ],
+    sources: ['Pool (2001)', 'Connell (1997)', 'UN records'],
+    tags: ['independence', 'guerrilla_warfare', 'cold_war', 'self_determination'],
+    keyFigures: [
+      { name: 'Isaias Afwerki', role: 'EPLF leader / President of Eritrea', country: 'ERI' },
+      { name: 'Haile Selassie', role: 'Emperor of Ethiopia', country: 'ETH' },
+      { name: 'Mengistu Haile Mariam', role: 'Ethiopian Derg leader', country: 'ETH' },
+    ],
+    relatedConflicts: ['ethiopian-civil-war', 'ethiopian-eritrean-war'],
+  },
+  {
+    id: 'south-sudanese-independence',
+    name: 'Second Sudanese Civil War',
+    alternateNames: [
+      { name: 'South Sudanese Liberation War', perspective: 'South Sudanese framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1983,
+    endYear: 2005,
+    parties: [
+      { countryId: 'SDN', role: 'belligerent' },
+      { countryId: 'SSD', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 50000, high: 100000 },
+      civilian: { low: 1500000, high: 2000000 },
+      total: { low: 1500000, high: 2000000 },
+      source: 'USAID estimates; Johnson (2003)',
+    },
+    territorialChanges: 'South Sudan gained independence (2011) following the 2005 Comprehensive Peace Agreement.',
+    outcome: 'Comprehensive Peace Agreement (2005) led to South Sudan independence referendum (2011) with 98.83% in favor.',
+    summary: 'Africa\'s longest civil war, driven by ethnic, religious, and resource conflicts between the Arab-dominated north and African/Christian/animist south. Resulted in famine, displacement, and eventually independence.',
+    perspectives: [
+      {
+        viewpoint: 'South Sudanese/SPLM perspective',
+        description: 'The south suffered decades of marginalization, forced Islamization, and resource exploitation. Independence was the culmination of a just liberation struggle.',
+        source: 'Johnson, Douglas. The Root Causes of Sudan\'s Civil Wars. 2003.',
+      },
+      {
+        viewpoint: 'Khartoum government perspective',
+        description: 'The SPLA was a rebel movement supported by foreign powers seeking to divide Sudan. Sharia law and national unity were non-negotiable.',
+        source: 'Various Sudanese government positions.',
+      },
+    ],
+    sources: ['Johnson (2003)', 'CPA text (2005)', 'USAID'],
+    tags: ['civil_war', 'famine', 'independence', 'oil', 'religious_conflict'],
+    keyFigures: [
+      { name: 'John Garang', role: 'SPLA/M leader (died 2005)', country: 'SSD' },
+      { name: 'Omar al-Bashir', role: 'Sudanese President (ICC indictee)', country: 'SDN' },
+    ],
+    treaties: [
+      { name: 'Comprehensive Peace Agreement', year: 2005, description: 'Ended the civil war; granted autonomy and right to independence referendum for the south.' },
+    ],
+    relatedConflicts: ['sudanese-civil-wars', 'darfur-conflict', 'south-sudanese-civil-war'],
+  },
+
+  // ── MIDDLE EAST (MORE) ──────────────────────────────
+
+  {
+    id: 'gulf-war-tanker',
+    name: 'Invasion of Kuwait',
+    alternateNames: [
+      { name: 'First Gulf War', perspective: 'Common Western usage' },
+      { name: 'Liberation of Kuwait', perspective: 'Kuwaiti/coalition framing' },
+      { name: 'Mother of All Battles', perspective: 'Iraqi framing' },
+    ],
+    type: 'interstate_war',
+    startYear: 1990,
+    endYear: 1991,
+    parties: [
+      { countryId: 'IRQ', role: 'aggressor' },
+      { countryId: 'KWT', role: 'defender' },
+      { countryId: 'USA', role: 'coalition_member' },
+      { countryId: 'GBR', role: 'coalition_member' },
+      { countryId: 'SAU', role: 'coalition_member' },
+      { countryId: 'FRA', role: 'coalition_member' },
+      { countryId: 'EGY', role: 'coalition_member' },
+    ],
+    casualties: {
+      military: { low: 25000, high: 50000 },
+      civilian: { low: 2000, high: 5000 },
+      total: { low: 27000, high: 55000 },
+      source: 'Various estimates; GWAPS (1993)',
+    },
+    territorialChanges: 'Kuwait liberated. Iraqi no-fly zones established.',
+    outcome: 'Coalition victory. Kuwait restored. Iraq subjected to sanctions and inspections regime. US established permanent military presence in the Gulf.',
+    summary: 'Iraq invaded and annexed Kuwait, prompting the largest military coalition since WWII. Operation Desert Storm expelled Iraqi forces in a 100-hour ground campaign.',
+    perspectives: [
+      {
+        viewpoint: 'Coalition/Western perspective',
+        description: 'A textbook case of collective security working as intended. The UN authorized force to reverse naked aggression and restore sovereignty.',
+        source: 'Freedman, Lawrence & Karsh, Efraim. The Gulf Conflict 1990–1991. 1993.',
+      },
+      {
+        viewpoint: 'Iraqi perspective',
+        description: 'Kuwait was historically part of Iraq. Kuwait\'s overproduction of oil was economic warfare. The US ambassador gave a "green light" before the invasion.',
+        source: 'Hiro, Dilip. Desert Shield to Desert Storm. 1992.',
+      },
+      {
+        viewpoint: 'Anti-war / humanitarian perspective',
+        description: 'The "Highway of Death" bombing of retreating Iraqis and subsequent sanctions killed far more than the war itself. Sanctions killed an estimated 500,000 Iraqi children.',
+        source: 'Pilger, John. Various reporting; UNICEF surveys.',
+      },
+    ],
+    sources: ['Freedman & Karsh (1993)', 'GWAPS (1993)', 'Hiro (1992)'],
+    tags: ['collective_security', 'oil', 'sanctions', 'highway_of_death', 'un_authorization'],
+    keyFigures: [
+      { name: 'Saddam Hussein', role: 'President of Iraq', country: 'IRQ' },
+      { name: 'George H.W. Bush', role: 'US President', country: 'USA' },
+      { name: 'Norman Schwarzkopf', role: 'Coalition military commander', country: 'USA' },
+    ],
+    relatedConflicts: ['gulf-war-1991', 'iraq-war-2003'],
+  },
+  {
+    id: 'arab-spring',
+    name: 'Arab Spring',
+    alternateNames: [
+      { name: 'Arab Awakening', perspective: 'Optimistic framing' },
+      { name: 'Arab Winter', perspective: 'Post-2013 pessimistic framing' },
+    ],
+    type: 'revolution',
+    startYear: 2010,
+    endYear: 2012,
+    parties: [
+      { countryId: 'TUN', role: 'belligerent' },
+      { countryId: 'EGY', role: 'belligerent' },
+      { countryId: 'LBY', role: 'belligerent' },
+      { countryId: 'SYR', role: 'belligerent' },
+      { countryId: 'YEM', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 10000 },
+      civilian: { low: 50000, high: 100000 },
+      total: { low: 55000, high: 110000 },
+      source: 'Various country estimates combined; ACLED',
+    },
+    territorialChanges: 'Tunisia: democratic transition. Egypt: military restoration. Libya: state collapse. Syria: civil war. Yemen: civil war.',
+    outcome: 'Mixed outcomes. Tunisia achieved democracy (later reversed). Egypt saw military counter-revolution. Libya and Syria descended into civil wars. Yemen spiraled into humanitarian catastrophe.',
+    summary: 'A wave of pro-democracy uprisings swept across the Arab world, triggered by a Tunisian street vendor\'s self-immolation. The revolutions toppled long-standing dictators but mostly failed to establish stable democracies.',
+    perspectives: [
+      {
+        viewpoint: 'Pro-democracy perspective',
+        description: 'The uprisings represented genuine popular demands for dignity, freedom, and economic opportunity after decades of authoritarian stagnation.',
+        source: 'Lynch, Marc. The Arab Uprising. 2012.',
+      },
+      {
+        viewpoint: 'Stability/counter-revolution perspective',
+        description: 'The uprisings created power vacuums exploited by Islamist groups and foreign powers. Stability requires strong state institutions, not premature democratization.',
+        source: 'Various Gulf state perspectives; Sisi government framing.',
+      },
+      {
+        viewpoint: 'Structural analysis',
+        description: 'Youth unemployment, inequality, corruption, and social media enabled rapid mobilization, but the lack of organized political alternatives led to counter-revolution or chaos.',
+        source: 'Achcar, Gilbert. The People Want. 2013.',
+      },
+    ],
+    sources: ['Lynch (2012)', 'Achcar (2013)', 'ACLED'],
+    tags: ['revolution', 'democracy', 'social_media', 'counter_revolution', 'youth'],
+    keyFigures: [
+      { name: 'Mohamed Bouazizi', role: 'Tunisian vendor whose self-immolation sparked the movement', country: 'TUN' },
+      { name: 'Hosni Mubarak', role: 'Egyptian president (overthrown)', country: 'EGY' },
+      { name: 'Muammar Gaddafi', role: 'Libyan leader (killed)', country: 'LBY' },
+    ],
+  },
+
 ];
 
 export function getConflictsForCountry(countryId: string): Conflict[] {
