@@ -9,13 +9,13 @@ export interface ScrapedArticle {
   error?: string;
 }
 
-function isWikipediaUrl(url: string): string | null {
-  const match = url.match(/(?:en\.)?wikipedia\.org\/wiki\/([^#?]+)/);
-  return match ? decodeURIComponent(match[1]) : null;
+function parseWikipediaUrl(url: string): { lang: string; title: string } | null {
+  const match = url.match(/([a-z]{2,3})\.wikipedia\.org\/wiki\/([^#?]+)/);
+  return match ? { lang: match[1], title: decodeURIComponent(match[2]) } : null;
 }
 
-async function fetchWikipediaArticle(title: string, url: string): Promise<ScrapedArticle> {
-  const apiUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(title)}&prop=extracts&explaintext=1&format=json&origin=*`;
+async function fetchWikipediaArticle(title: string, url: string, lang = 'en'): Promise<ScrapedArticle> {
+  const apiUrl = `https://${lang}.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(title)}&prop=extracts&explaintext=1&format=json&origin=*`;
   const response = await fetch(apiUrl);
   if (!response.ok) throw new Error(`Wikipedia API error: ${response.status}`);
   const data = await response.json();
@@ -119,9 +119,9 @@ function htmlToReadableText(html: string): string {
 
 export async function scrapeArticle(url: string): Promise<ScrapedArticle> {
   try {
-    const wikiTitle = isWikipediaUrl(url);
-    if (wikiTitle) {
-      return await fetchWikipediaArticle(wikiTitle, url);
+    const wiki = parseWikipediaUrl(url);
+    if (wiki) {
+      return await fetchWikipediaArticle(wiki.title, url, wiki.lang);
     }
 
     const proxyUrl = PROXY_URL + encodeURIComponent(url);
