@@ -728,6 +728,7 @@ export const conflicts: Conflict[] = [
     endYear: 2000,
     parties: [
       { countryId: 'ETH', role: 'belligerent' },
+      { countryId: 'ERI', role: 'belligerent' },
     ],
     casualties: {
       military: { low: 70000, high: 100000 },
@@ -2123,6 +2124,7 @@ export const conflicts: Conflict[] = [
     startYear: 1919,
     endYear: 1921,
     parties: [
+      { countryId: 'IRL', role: 'belligerent', perspectiveNote: 'Irish republican forces (IRA)' },
       { countryId: 'GBR', role: 'belligerent' },
     ],
     casualties: {
