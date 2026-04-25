@@ -16,8 +16,10 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
   const [fontSize, setFontSize] = useState(16);
   const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const isOpenRef = useRef(isOpen);
 
   useEffect(() => {
+    isOpenRef.current = isOpen;
     if (isOpen && initialUrl) {
       setUrl(initialUrl);
       loadArticle(initialUrl);
@@ -30,6 +32,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
     if (!isOpen) {
       setArticle(null);
       setUrl('');
+      setLoading(false);
     }
   }, [isOpen]);
 
@@ -42,6 +45,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
     setLoading(true);
     setArticle(null);
     const result = await scrapeArticle(normalized);
+    if (!isOpenRef.current) return;
     setArticle(result);
     setUrl(normalized);
     if (!result.error) {
