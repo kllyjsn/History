@@ -62,6 +62,9 @@ export function getConflictTypeColor(type: string): string {
     rebellion: '#e879f9',
     insurgency: '#fb923c',
     ethnic_conflict: '#f472b6',
+    gang_war: '#b91c1c',
+    cartel_war: '#92400e',
+    separatist_conflict: '#7c3aed',
   };
   return map[type] ?? '#64748b';
 }
@@ -82,6 +85,9 @@ export function getConflictTypeBadge(type: string): string {
     rebellion: 'Rebellion',
     insurgency: 'Insurgency',
     ethnic_conflict: 'Ethnic Conflict',
+    gang_war: 'Gang War',
+    cartel_war: 'Cartel War',
+    separatist_conflict: 'Separatist Conflict',
   };
   return map[type] ?? type;
 }

@@ -12,7 +12,10 @@ export type ConflictType =
   | 'trade_war'
   | 'rebellion'
   | 'insurgency'
-  | 'ethnic_conflict';
+  | 'ethnic_conflict'
+  | 'gang_war'
+  | 'cartel_war'
+  | 'separatist_conflict';
 
 export type PartyRole =
   | 'aggressor'

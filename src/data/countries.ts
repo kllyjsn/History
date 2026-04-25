@@ -959,6 +959,77 @@ export const countries: Record<string, Country> = {
     flagEmoji: '🇸🇻',
     independence: 1821,
   },
+  BFA: {
+    id: 'BFA',
+    name: 'Burkina Faso',
+    historicalNames: [
+      { name: 'Upper Volta', startYear: 1919, endYear: 1984 },
+      { name: 'Republic of Burkina Faso', startYear: 1984, endYear: null },
+    ],
+    region: 'Africa',
+    subregion: 'Western Africa',
+    flagEmoji: '\u{1F1E7}\u{1F1EB}',
+    independence: 1960,
+  },
+  ECU: {
+    id: 'ECU',
+    name: 'Ecuador',
+    historicalNames: [
+      { name: 'Royal Audience of Quito', startYear: 1563, endYear: 1822 },
+      { name: 'Republic of Ecuador', startYear: 1830, endYear: null },
+    ],
+    region: 'Americas',
+    subregion: 'South America',
+    flagEmoji: '\u{1F1EA}\u{1F1E8}',
+    independence: 1830,
+  },
+  HND: {
+    id: 'HND',
+    name: 'Honduras',
+    historicalNames: [
+      { name: 'Republic of Honduras', startYear: 1838, endYear: null },
+    ],
+    region: 'Americas',
+    subregion: 'Central America',
+    flagEmoji: '\u{1F1ED}\u{1F1F3}',
+    independence: 1821,
+  },
+  MLI: {
+    id: 'MLI',
+    name: 'Mali',
+    historicalNames: [
+      { name: 'Mali Empire', startYear: 1235, endYear: 1600 },
+      { name: 'French Sudan', startYear: 1880, endYear: 1960 },
+      { name: 'Republic of Mali', startYear: 1960, endYear: null },
+    ],
+    region: 'Africa',
+    subregion: 'Western Africa',
+    flagEmoji: '\u{1F1F2}\u{1F1F1}',
+    independence: 1960,
+  },
+  THA: {
+    id: 'THA',
+    name: 'Thailand',
+    historicalNames: [
+      { name: 'Kingdom of Siam', startYear: 1351, endYear: 1939 },
+      { name: 'Kingdom of Thailand', startYear: 1939, endYear: null },
+    ],
+    region: 'Asia',
+    subregion: 'Southeast Asia',
+    flagEmoji: '\u{1F1F9}\u{1F1ED}',
+  },
+  UGA: {
+    id: 'UGA',
+    name: 'Uganda',
+    historicalNames: [
+      { name: 'Uganda Protectorate', startYear: 1894, endYear: 1962 },
+      { name: 'Republic of Uganda', startYear: 1962, endYear: null },
+    ],
+    region: 'Africa',
+    subregion: 'Eastern Africa',
+    flagEmoji: '\u{1F1FA}\u{1F1EC}',
+    independence: 1962,
+  },
 };
 
 export function getCountryName(id: string): string {

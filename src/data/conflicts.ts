@@ -4600,6 +4600,1250 @@ export const conflicts: Conflict[] = [
     tags: ['bolshevism', 'polish_independence', 'battle_of_warsaw', 'eastern_europe'],
     treaties: [{ name: 'Treaty of Riga', year: 1921, description: 'Divided disputed borderlands between Poland and Soviet Russia' }],
   },
+
+  // ═══════════════════════════════════════════════════════════════
+  // REBEL, GANG, CARTEL & INSURGENCY CONFLICTS
+  // ═══════════════════════════════════════════════════════════════
+
+  // ── LATIN AMERICA ──────────────────────────────────────────────
+
+  {
+    id: 'colombian-conflict',
+    name: 'Colombian Conflict',
+    alternateNames: [
+      { name: 'Colombian Armed Conflict', perspective: 'Academic usage' },
+      { name: 'La Violencia & Beyond', perspective: 'Historical continuity framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1964,
+    endYear: 2016,
+    parties: [
+      { countryId: 'COL', role: 'belligerent', perspectiveNote: 'Government forces, paramilitaries (AUC)' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'Plan Colombia military aid' },
+    ],
+    casualties: {
+      military: { low: 40000, high: 60000 },
+      civilian: { low: 200000, high: 260000 },
+      total: { low: 260000, high: 320000 },
+      source: 'Colombian National Center for Historical Memory; Truth Commission (2022)',
+    },
+    territorialChanges: 'FARC demobilized. ELN still active. FARC dissidents re-armed. AUC paramilitaries demobilized (2003-2006).',
+    outcome: '2016 peace deal between FARC and government. ELN negotiations ongoing. FARC dissidents continue operations.',
+    summary: 'Latin America\'s longest armed conflict involving leftist guerrillas (FARC, ELN, M-19), right-wing paramilitaries (AUC), drug cartels, and government forces. Over 7 million displaced — the world\'s largest internal displacement crisis until Syria. Fueled by land inequality, coca trade, and Cold War ideology.',
+    perspectives: [
+      {
+        viewpoint: 'Colombian government perspective',
+        description: 'A struggle against narco-terrorist organizations that threatened democratic governance. Military modernization and Plan Colombia were necessary to restore state authority.',
+        source: 'Pécaut, Daniel. Order and Violence: Colombia 1930–1953. 2001.',
+      },
+      {
+        viewpoint: 'FARC/guerrilla perspective',
+        description: 'Armed resistance was a response to state violence against peasant communities, extreme land inequality, and political exclusion after La Violencia.',
+        source: 'Brittain, James. Revolutionary Social Change in Colombia: The Origin and Direction of the FARC-EP. 2010.',
+      },
+      {
+        viewpoint: 'Victims\' perspective',
+        description: 'All armed actors committed atrocities. Civilians bore the brunt of massacres, forced displacement, kidnapping, and sexual violence from all sides.',
+        source: 'Colombian Truth Commission. Final Report. 2022.',
+      },
+      {
+        viewpoint: 'International perspective',
+        description: 'A complex conflict driven by narcotics trafficking, land disputes, and Cold War dynamics. The peace process became a model for conflict resolution.',
+        source: 'Bouvier, Virginia. Colombia: Building Peace in a Time of War. 2009.',
+      },
+    ],
+    sources: ['Colombian Truth Commission (2022)', 'CNMH', 'UCDP', 'Pécaut (2001)'],
+    tags: ['guerrilla', 'narcotics', 'paramilitaries', 'peace_process', 'displacement', 'cold_war'],
+    keyFigures: [
+      { name: 'Manuel Marulanda', role: 'FARC Founder', country: 'COL' },
+      { name: 'Álvaro Uribe', role: 'President (hardline)', country: 'COL' },
+      { name: 'Juan Manuel Santos', role: 'President (peace deal)', country: 'COL' },
+    ],
+    treaties: [
+      { name: 'Havana Peace Accords', year: 2016, description: 'Comprehensive peace agreement between Colombian government and FARC' },
+    ],
+    relatedConflicts: ['mexican-drug-war'],
+  },
+  {
+    id: 'mexican-drug-war',
+    name: 'Mexican Drug War',
+    alternateNames: [
+      { name: 'Guerra contra el narcotráfico', perspective: 'Mexican Spanish' },
+      { name: 'Narco War', perspective: 'Colloquial usage' },
+    ],
+    type: 'cartel_war',
+    startYear: 2006,
+    endYear: null,
+    parties: [
+      { countryId: 'MEX', role: 'belligerent', perspectiveNote: 'Government, military, police vs. cartels' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'Mérida Initiative aid' },
+    ],
+    casualties: {
+      military: { low: 15000, high: 25000 },
+      civilian: { low: 350000, high: 450000 },
+      total: { low: 400000, high: 500000 },
+      source: 'INEGI; ACLED; various Mexican government data (through 2025)',
+    },
+    territorialChanges: 'No territorial changes. Cartels control de facto zones across Mexico, especially Sinaloa, Jalisco, Michoacán, Tamaulipas, Guerrero.',
+    outcome: 'Ongoing. Fragmentation of cartels has created more violence. CJNG emerged as dominant force alongside Sinaloa Cartel factions.',
+    summary: 'President Calderón deployed the military against drug cartels in 2006, triggering an escalation of violence. Major cartels include Sinaloa (split into Los Chapitos and Mayo Zambada factions), CJNG, Los Zetas, Gulf Cartel, La Familia Michoacana, Templarios, and Beltrán Leyva Organization. The war has produced mass graves, forced disappearances (~100,000 missing), cartel governance of communities, and journalist assassinations.',
+    perspectives: [
+      {
+        viewpoint: 'Mexican government perspective',
+        description: 'Military intervention was necessary to confront organized crime that had infiltrated state institutions and threatened sovereignty.',
+        source: 'Grillo, Ioan. El Narco: Inside Mexico\'s Criminal Insurgency. 2011.',
+      },
+      {
+        viewpoint: 'Human rights perspective',
+        description: 'Militarization led to widespread human rights abuses by security forces, forced disappearances, and a culture of impunity. Innocent civilians routinely killed.',
+        source: 'Human Rights Watch. Mexico: Disappearances and Extrajudicial Killings. 2023.',
+      },
+      {
+        viewpoint: 'Structural analysis perspective',
+        description: 'The drug war is rooted in US demand for narcotics, prohibition economics, poverty, corruption, and weapons flowing south from the US.',
+        source: 'Watt, Peter & Zepeda, Roberto. Drug War Mexico. 2012.',
+      },
+      {
+        viewpoint: 'Community perspective',
+        description: 'Rural communities caught between cartels and military have formed autodefensa (self-defense) groups. Thousands of families search for their disappeared relatives.',
+        source: 'Asfura-Heim & Espach. The Rise of Mexico\'s Self-Defense Forces. 2013.',
+      },
+    ],
+    sources: ['Grillo (2011)', 'INEGI', 'ACLED', 'HRW', 'InSight Crime'],
+    tags: ['cartel', 'narcotics', 'disappearances', 'organized_crime', 'ongoing', 'fentanyl'],
+    keyFigures: [
+      { name: 'Joaquín "El Chapo" Guzmán', role: 'Sinaloa Cartel Leader', country: 'MEX' },
+      { name: 'Nemesio Oseguera (El Mencho)', role: 'CJNG Leader', country: 'MEX' },
+      { name: 'Felipe Calderón', role: 'President who launched war', country: 'MEX' },
+      { name: 'Ismael "El Mayo" Zambada', role: 'Sinaloa co-founder', country: 'MEX' },
+    ],
+    relatedConflicts: ['colombian-conflict', 'central-america-gang-crisis'],
+  },
+  {
+    id: 'central-america-gang-crisis',
+    name: 'Central American Gang Crisis',
+    alternateNames: [
+      { name: 'Northern Triangle Violence', perspective: 'US policy framing' },
+      { name: 'Maras Crisis', perspective: 'Central American usage' },
+    ],
+    type: 'gang_war',
+    startYear: 1996,
+    endYear: null,
+    parties: [
+      { countryId: 'SLV', role: 'belligerent', perspectiveNote: 'Government vs MS-13 and Barrio 18' },
+      { countryId: 'GTM', role: 'belligerent' },
+      { countryId: 'HND', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 10000 },
+      civilian: { low: 200000, high: 350000 },
+      total: { low: 250000, high: 400000 },
+      source: 'UNODC; InSight Crime; ACLED (cumulative 1996–2025)',
+    },
+    territorialChanges: 'No territorial changes. Gangs control urban neighborhoods and extortion territories across the Northern Triangle.',
+    outcome: 'Ongoing but declining in El Salvador after Bukele\'s gang crackdown (2022–). Guatemala and Honduras still severely affected.',
+    summary: 'MS-13 (Mara Salvatrucha) and Barrio 18 (18th Street Gang), originally formed by Central American immigrants in Los Angeles, were deported back en masse in the 1990s and established vast criminal empires. Honduras, El Salvador, and Guatemala became some of the most violent non-war countries on Earth. Gangs control territory, run extortion rackets, and carry out mass killings. El Salvador\'s emergency measures (2022–) imprisoned 80,000+ suspected gang members.',
+    perspectives: [
+      {
+        viewpoint: 'Government perspective',
+        description: 'Gangs are terrorist organizations that have destroyed civil society. Emergency measures and mass incarceration are necessary for public safety.',
+        source: 'Farah, Douglas. The Transformation of El Salvador\'s Gangs. 2012.',
+      },
+      {
+        viewpoint: 'Human rights perspective',
+        description: 'Mass incarceration campaigns violate due process. Many arrested are innocent. Root causes — poverty, inequality, US deportation policy — remain unaddressed.',
+        source: 'Amnesty International. "They Didn\'t Recognize My Son". 2023.',
+      },
+      {
+        viewpoint: 'Sociological perspective',
+        description: 'Gangs fill a vacuum of state services, providing belonging and economic opportunity in marginalized communities. US deportation policy exported gang culture.',
+        source: 'Cruz, José Miguel. Street Gangs in Central America. 2014.',
+      },
+    ],
+    sources: ['InSight Crime', 'UNODC', 'Farah (2012)', 'ACLED'],
+    tags: ['gangs', 'ms13', 'barrio_18', 'extortion', 'deportation', 'mass_incarceration', 'ongoing'],
+    keyFigures: [
+      { name: 'Nayib Bukele', role: 'El Salvador President (crackdown)', country: 'SLV' },
+    ],
+    relatedConflicts: ['mexican-drug-war', 'haiti-gang-crisis'],
+  },
+  {
+    id: 'haiti-gang-crisis',
+    name: 'Haiti Gang Violence Crisis',
+    alternateNames: [
+      { name: 'Haitian Security Crisis', perspective: 'Diplomatic usage' },
+      { name: 'Port-au-Prince Gang War', perspective: 'Media usage' },
+    ],
+    type: 'gang_war',
+    startYear: 2018,
+    endYear: null,
+    parties: [
+      { countryId: 'HTI', role: 'belligerent', perspectiveNote: 'Government remnants, gangs (G9, 400 Mawozo, Gran Grif, etc.)' },
+    ],
+    casualties: {
+      military: { low: 1000, high: 2000 },
+      civilian: { low: 15000, high: 25000 },
+      total: { low: 16000, high: 27000 },
+      source: 'UN BINUH; ACLED (cumulative 2018–2025)',
+    },
+    territorialChanges: 'Gangs control 85%+ of Port-au-Prince. Multiple armed groups control rural departments.',
+    outcome: 'Ongoing. Government effectively collapsed. UN-authorized Kenyan-led security mission deployed 2024. Gang coalitions control most of the capital.',
+    summary: 'Following President Moïse\'s assassination in 2021, armed gangs seized control of most of Port-au-Prince. Over 4,500 killed in 2025 alone (per BINUH). Gangs run kidnapping-for-ransom operations, control food distribution, and have expanded into Artibonite and Centre departments. Haiti has become the most deadly country in the Americas. Over 700,000 internally displaced.',
+    perspectives: [
+      {
+        viewpoint: 'Haitian civil society perspective',
+        description: 'Gangs are symptoms of decades of political corruption, elite manipulation, and foreign interference that hollowed out the state.',
+        source: 'International Crisis Group. Haiti\'s Criminal Merry-Go-Round. 2023.',
+      },
+      {
+        viewpoint: 'International perspective',
+        description: 'Haiti needs immediate security intervention and institution-building. The Kenyan-led multinational security support mission is a necessary first step.',
+        source: 'UN Security Council Resolution 2699 (2023)',
+      },
+      {
+        viewpoint: 'Gang leader framing',
+        description: 'Gang leaders like Jimmy Chérizier (Barbecue) frame themselves as revolutionaries fighting against corrupt elites and foreign exploitation.',
+        source: 'BBC News. Haiti\'s Most Powerful Gang Leader Speaks. 2024.',
+      },
+    ],
+    sources: ['BINUH Reports', 'ACLED', 'ICG', 'UN OCHA'],
+    tags: ['gangs', 'state_collapse', 'kidnapping', 'displacement', 'ongoing'],
+    keyFigures: [
+      { name: 'Jimmy Chérizier (Barbecue)', role: 'G9 Coalition Leader', country: 'HTI' },
+    ],
+    relatedConflicts: ['central-america-gang-crisis'],
+  },
+  {
+    id: 'brazilian-gang-wars',
+    name: 'Brazilian Organized Crime Wars',
+    alternateNames: [
+      { name: 'Guerra das Facções', perspective: 'Brazilian Portuguese' },
+      { name: 'PCC-Comando Vermelho War', perspective: 'Common framing' },
+    ],
+    type: 'gang_war',
+    startYear: 1993,
+    endYear: null,
+    parties: [
+      { countryId: 'BRA', role: 'belligerent', perspectiveNote: 'Government, police vs. PCC, Comando Vermelho, militias' },
+    ],
+    casualties: {
+      military: { low: 20000, high: 30000 },
+      civilian: { low: 400000, high: 600000 },
+      total: { low: 500000, high: 700000 },
+      source: 'IPEA; Fórum Brasileiro de Segurança Pública (cumulative 1993–2025)',
+    },
+    territorialChanges: 'No territorial changes. Criminal factions control favelas and prison systems across Brazil.',
+    outcome: 'Ongoing. PCC is the largest criminal organization in the Americas. Violence has shifted from Rio to northern states.',
+    summary: 'Brazil\'s criminal organizations — PCC (Primeiro Comando da Capital), Comando Vermelho, Família do Norte, and others — wage war for control of drug routes, prisons, and urban territory. PCC, founded in 1993 in Taubaté prison, grew into a transnational organization operating in all 27 Brazilian states and multiple South American countries. Rio\'s favela wars involve police militias, drug factions, and paramilitary groups. Brazil averages 40,000-50,000 homicides per year, one of the world\'s highest rates.',
+    perspectives: [
+      {
+        viewpoint: 'Law enforcement perspective',
+        description: 'Criminal factions are transnational threats requiring military-grade responses and intelligence operations.',
+        source: 'Lessing, Benjamin. Making Peace in Drug Wars. 2018.',
+      },
+      {
+        viewpoint: 'Sociological perspective',
+        description: 'Factions like PCC emerged from Brazil\'s brutal prison system and fill governance voids in marginalized communities, providing dispute resolution and economic opportunities.',
+        source: 'Feltran, Gabriel. The Entangled City: Crime as Urban Fabric in São Paulo. 2020.',
+      },
+      {
+        viewpoint: 'Human rights perspective',
+        description: 'Police operations in favelas cause mass civilian casualties. Racial profiling is endemic — Black Brazilians are disproportionately killed.',
+        source: 'Human Rights Watch. "Good Cops Are Afraid." 2016.',
+      },
+    ],
+    sources: ['FBSP', 'IPEA', 'Lessing (2018)', 'InSight Crime'],
+    tags: ['gangs', 'favelas', 'pcc', 'comando_vermelho', 'prisons', 'narcotics', 'ongoing'],
+    keyFigures: [
+      { name: 'Marcos Willians Herbas Camacho (Marcola)', role: 'PCC Leader', country: 'BRA' },
+    ],
+    relatedConflicts: ['mexican-drug-war', 'colombian-conflict'],
+  },
+  {
+    id: 'shining-path-insurgency',
+    name: 'Shining Path Insurgency',
+    alternateNames: [
+      { name: 'Sendero Luminoso Conflict', perspective: 'Spanish usage' },
+      { name: 'Internal Armed Conflict in Peru', perspective: 'Peruvian official' },
+    ],
+    type: 'insurgency',
+    startYear: 1980,
+    endYear: 2000,
+    parties: [
+      { countryId: 'PER', role: 'belligerent', perspectiveNote: 'Government forces and Shining Path/MRTA guerrillas' },
+    ],
+    casualties: {
+      military: { low: 10000, high: 15000 },
+      civilian: { low: 55000, high: 70000 },
+      total: { low: 69000, high: 80000 },
+      source: 'Peruvian Truth and Reconciliation Commission (2003)',
+    },
+    territorialChanges: 'No territorial changes. Shining Path remnants (Proseguir) still active in VRAEM coca region.',
+    outcome: 'Shining Path largely defeated after capture of Abimael Guzmán (1992). MRTA defeated after Japanese embassy siege (1997). Remnants involved in coca trade.',
+    summary: 'The Shining Path (Sendero Luminoso), a Maoist guerrilla group led by philosophy professor Abimael Guzmán, waged a brutal insurgency against the Peruvian state. Known for extreme violence against civilians, including peasant communities they claimed to represent. State counterinsurgency was also brutal — the Peruvian military committed widespread massacres and disappearances. 75% of victims spoke Quechua or other indigenous languages.',
+    perspectives: [
+      {
+        viewpoint: 'Peruvian government perspective',
+        description: 'A terrorist organization that murdered civilians and sought to destroy democratic institutions. Military response was necessary for national survival.',
+        source: 'Peruvian Truth and Reconciliation Commission. Hatun Willakuy. 2003.',
+      },
+      {
+        viewpoint: 'Critical academic perspective',
+        description: 'Both Shining Path and government forces committed atrocities. The conflict disproportionately affected indigenous Quechua-speaking communities in the highlands.',
+        source: 'Stern, Steve. Shining and Other Paths: War and Society in Peru, 1980–1995. 1998.',
+      },
+    ],
+    sources: ['Peruvian TRC (2003)', 'Stern (1998)', 'UCDP'],
+    tags: ['maoist', 'guerrilla', 'indigenous_victims', 'truth_commission'],
+    keyFigures: [
+      { name: 'Abimael Guzmán', role: 'Shining Path Founder', country: 'PER' },
+      { name: 'Alberto Fujimori', role: 'President (counterinsurgency)', country: 'PER' },
+    ],
+  },
+
+  // ── AFRICA ─────────────────────────────────────────────────────
+
+  {
+    id: 'lra-insurgency',
+    name: 'Lord\'s Resistance Army Insurgency',
+    alternateNames: [
+      { name: 'LRA Conflict', perspective: 'Abbreviated usage' },
+      { name: 'Northern Uganda War', perspective: 'Ugandan framing' },
+    ],
+    type: 'insurgency',
+    startYear: 1987,
+    endYear: null,
+    parties: [
+      { countryId: 'UGA', role: 'belligerent' },
+      { countryId: 'COD', role: 'belligerent', perspectiveNote: 'Affected territory' },
+    ],
+    casualties: {
+      military: { low: 10000, high: 15000 },
+      civilian: { low: 90000, high: 120000 },
+      total: { low: 100000, high: 135000 },
+      source: 'Various estimates; Resolve LRA Crisis Initiative',
+    },
+    territorialChanges: 'No territorial changes. LRA displaced across Uganda, DRC, CAR, and South Sudan.',
+    outcome: 'Ongoing at low level. LRA reduced to ~100 fighters but still active in DRC/CAR. Joseph Kony remains at large.',
+    summary: 'Joseph Kony founded the LRA in 1987, claiming to fight for Acholi rights against Museveni\'s government. The LRA became notorious for abducting children as soldiers and sex slaves — an estimated 30,000+ children abducted. Operated across Uganda, South Sudan, DRC, and Central African Republic. The "Kony 2012" viral campaign brought global attention.',
+    perspectives: [
+      {
+        viewpoint: 'Ugandan government perspective',
+        description: 'The LRA is a terrorist cult that has brutalized the Acholi people. Military operations including Operation Iron Fist were necessary to end the atrocities.',
+        source: 'Doom, Ruddy & Vlassenroot, Koen. "Kony\'s Message." African Affairs. 1999.',
+      },
+      {
+        viewpoint: 'Acholi community perspective',
+        description: 'Both the LRA and the Ugandan military caused immense suffering to Acholi communities. Forced displacement into camps was itself a human rights crisis.',
+        source: 'Branch, Adam. Displacing Human Rights: War and Intervention in Northern Uganda. 2011.',
+      },
+      {
+        viewpoint: 'International perspective',
+        description: 'The LRA crisis represents a failure of international protection. The ICC issued arrest warrants for Kony in 2005, but enforcement has been impossible.',
+        source: 'Allen, Tim. Trial Justice: The International Criminal Court and the Lord\'s Resistance Army. 2006.',
+      },
+    ],
+    sources: ['Resolve LRA', 'UCDP', 'Branch (2011)', 'Allen (2006)'],
+    tags: ['child_soldiers', 'abduction', 'icc_warrants', 'cult', 'ongoing'],
+    keyFigures: [
+      { name: 'Joseph Kony', role: 'LRA Leader', country: 'UGA' },
+    ],
+    relatedConflicts: ['congo-crisis', 'south-sudanese-civil-war'],
+  },
+  {
+    id: 'al-shabaab-insurgency',
+    name: 'Al-Shabaab Insurgency',
+    alternateNames: [
+      { name: 'Somali Islamist Insurgency', perspective: 'Western media' },
+      { name: 'Harakat al-Shabaab al-Mujahideen', perspective: 'Full Arabic name' },
+    ],
+    type: 'insurgency',
+    startYear: 2006,
+    endYear: null,
+    parties: [
+      { countryId: 'SOM', role: 'belligerent', perspectiveNote: 'Federal Government + AMISOM/ATMIS' },
+      { countryId: 'ETH', role: 'ally', perspectiveNote: 'Military intervention' },
+      { countryId: 'KEN', role: 'ally', perspectiveNote: 'Operation Linda Nchi' },
+    ],
+    casualties: {
+      military: { low: 20000, high: 40000 },
+      civilian: { low: 30000, high: 50000 },
+      total: { low: 50000, high: 90000 },
+      source: 'ACLED; various estimates (2006–2025)',
+    },
+    territorialChanges: 'Al-Shabaab controls ~20% of Somali territory, primarily in south-central Somalia.',
+    outcome: 'Ongoing. Al-Shabaab has been pushed from major cities but controls large rural areas and conducts urban bombings.',
+    summary: 'Al-Shabaab emerged from the Islamic Courts Union after Ethiopia\'s 2006 invasion of Somalia. An al-Qaeda affiliate since 2012, it has carried out massive bombings (2017 Mogadishu truck bombing killed 500+), cross-border attacks in Kenya (2013 Westgate, 2015 Garissa), and controls territory under strict Sharia governance. The African Union peacekeeping mission (AMISOM/ATMIS) has been fighting alongside Somali forces since 2007.',
+    perspectives: [
+      {
+        viewpoint: 'Somali government perspective',
+        description: 'Al-Shabaab is a terrorist organization that prevents Somalia from rebuilding after decades of civil war. International military support is essential.',
+        source: 'Menkhaus, Ken. "Al-Shabaab\'s Capabilities Post-Westgate." CTC Sentinel. 2014.',
+      },
+      {
+        viewpoint: 'Critical perspective',
+        description: 'Ethiopian invasion radicalized Somali nationalists. Al-Shabaab exploits clan grievances and government corruption. Military-only approaches have failed.',
+        source: 'Hansen, Stig Jarle. Al-Shabaab in Somalia. 2013.',
+      },
+    ],
+    sources: ['ACLED', 'Hansen (2013)', 'ICG', 'UCDP'],
+    tags: ['jihadist', 'al_qaeda', 'terrorism', 'peacekeeping', 'ongoing'],
+    keyFigures: [
+      { name: 'Ahmed Abdi Godane', role: 'Al-Shabaab Leader (killed 2014)', country: 'SOM' },
+    ],
+    relatedConflicts: ['somali-civil-war'],
+  },
+  {
+    id: 'somali-civil-war',
+    name: 'Somali Civil War',
+    alternateNames: [
+      { name: 'Collapse of Somalia', perspective: 'State failure framing' },
+    ],
+    type: 'civil_war',
+    startYear: 1991,
+    endYear: null,
+    parties: [
+      { countryId: 'SOM', role: 'belligerent', perspectiveNote: 'Various clan militias, warlords, Islamist groups, federal government' },
+    ],
+    casualties: {
+      military: { low: 100000, high: 150000 },
+      civilian: { low: 300000, high: 500000 },
+      total: { low: 400000, high: 650000 },
+      source: 'Various estimates; includes 1992 famine deaths',
+    },
+    territorialChanges: 'Somaliland declared independence (unrecognized). Puntland semi-autonomous. Al-Shabaab controls portions.',
+    outcome: 'Ongoing. Federal government controls limited territory. Somaliland functions as de facto independent state since 1991.',
+    summary: 'After dictator Siad Barre was overthrown in 1991, Somalia descended into clan warfare and state collapse. The 1992 famine killed an estimated 300,000. US intervention (1993 "Black Hawk Down") withdrew after the Battle of Mogadishu. Various Islamist movements emerged, leading to Ethiopian intervention (2006) and the al-Shabaab insurgency.',
+    perspectives: [
+      {
+        viewpoint: 'Somali perspective',
+        description: 'Clan competition, colonial legacy drawing arbitrary borders, and Cold War proxy dynamics created the conditions for state failure.',
+        source: 'Lewis, I.M. Understanding Somalia and Somaliland. 2008.',
+      },
+      {
+        viewpoint: 'International perspective',
+        description: 'Failed international interventions demonstrated the limits of humanitarian military operations. Somalia became synonymous with state failure.',
+        source: 'Menkhaus, Ken. "Governance without Government in Somalia." International Security. 2006.',
+      },
+    ],
+    sources: ['Lewis (2008)', 'Menkhaus (2006)', 'UCDP'],
+    tags: ['state_collapse', 'clan_warfare', 'famine', 'piracy', 'ongoing'],
+    relatedConflicts: ['al-shabaab-insurgency'],
+  },
+  {
+    id: 'aqim-sahel-insurgency',
+    name: 'Sahel Jihadist Insurgency',
+    alternateNames: [
+      { name: 'War on Terror in the Sahel', perspective: 'Western framing' },
+      { name: 'AQIM/JNIM Insurgency', perspective: 'Group-specific' },
+    ],
+    type: 'insurgency',
+    startYear: 2012,
+    endYear: null,
+    parties: [
+      { countryId: 'MLI', role: 'belligerent' },
+      { countryId: 'NER', role: 'belligerent' },
+      { countryId: 'BFA', role: 'belligerent' },
+      { countryId: 'FRA', role: 'ally', perspectiveNote: 'Operation Serval/Barkhane (2013–2022)' },
+    ],
+    casualties: {
+      military: { low: 15000, high: 25000 },
+      civilian: { low: 30000, high: 50000 },
+      total: { low: 50000, high: 80000 },
+      source: 'ACLED (2012–2025)',
+    },
+    territorialChanges: 'Jihadist groups control large rural areas of Mali, Burkina Faso, and Niger. Tuareg separatists control parts of northern Mali.',
+    outcome: 'Ongoing and escalating. France withdrew (2022). Mali, Burkina Faso, and Niger had military coups and expelled French forces. Russia/Wagner Group deployed.',
+    summary: 'Following Libya\'s collapse (2011), armed Tuareg fighters and jihadists flooded into northern Mali, briefly declaring an independent Azawad. France intervened in 2013. Multiple jihadist groups — AQIM, JNIM, ISGS (Islamic State in the Greater Sahara) — spread across Mali, Burkina Faso, and Niger. By 2025, Burkina Faso became the world\'s deadliest conflict zone after Myanmar. Military coups in all three countries expelled French forces; Wagner Group mercenaries deployed.',
+    perspectives: [
+      {
+        viewpoint: 'Sahelian government perspective',
+        description: 'Jihadism threatens national sovereignty. Military coups were necessary to replace governments that failed to secure the population, unlike Western-backed civilian regimes.',
+        source: 'International Crisis Group. Sahel reports (2020–2025).',
+      },
+      {
+        viewpoint: 'French/Western perspective',
+        description: 'Military intervention prevented jihadist takeover of Bamako. Governance failures and corruption undermined counterterrorism gains.',
+        source: 'Chivvis, Christopher. The French War on Al Qa\'ida in Africa. 2015.',
+      },
+      {
+        viewpoint: 'Local community perspective',
+        description: 'Violence stems from governance failures, ethnic marginalization, and resource competition. Both jihadists and military commit abuses against civilians.',
+        source: 'ICG. The Central Sahel: Scene of New Climate Wars? 2020.',
+      },
+    ],
+    sources: ['ACLED', 'ICG', 'UCDP', 'Chivvis (2015)'],
+    tags: ['jihadist', 'sahel', 'wagner_group', 'military_coups', 'ongoing'],
+    relatedConflicts: ['libyan-civil-war', 'boko-haram'],
+  },
+  {
+    id: 'mozambique-insurgency',
+    name: 'Mozambican Insurgency',
+    alternateNames: [
+      { name: 'Cabo Delgado Insurgency', perspective: 'Geographic reference' },
+      { name: 'ISIS-Mozambique Conflict', perspective: 'International media' },
+    ],
+    type: 'insurgency',
+    startYear: 2017,
+    endYear: null,
+    parties: [
+      { countryId: 'MOZ', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 3000, high: 5000 },
+      civilian: { low: 4000, high: 6000 },
+      total: { low: 7000, high: 11000 },
+      source: 'ACLED (2017–2025)',
+    },
+    territorialChanges: 'Insurgents control parts of Cabo Delgado province, northern Mozambique.',
+    outcome: 'Ongoing. SADC and Rwandan military intervention has pushed back insurgents but not defeated them.',
+    summary: 'An ISIS-affiliated insurgency (locally called "al-Shabaab" though unrelated to Somalia\'s group) erupted in Mozambique\'s gas-rich Cabo Delgado province. Rooted in local grievances — poverty, ethnic marginalization, and elite capture of natural gas revenues. Over 1 million displaced. International forces from Rwanda and SADC deployed.',
+    perspectives: [
+      {
+        viewpoint: 'Mozambican government perspective',
+        description: 'Foreign-inspired terrorism threatening national resources and stability. International military support is needed.',
+        source: 'ICG. Stemming the Insurrection in Mozambique\'s Cabo Delgado. 2021.',
+      },
+      {
+        viewpoint: 'Local perspective',
+        description: 'The insurgency grows from decades of marginalization of northern communities while southern elites capture gas wealth.',
+        source: 'Morier-Genoud, Eric. "The Jihadi Insurgency in Mozambique." Journal of Eastern African Studies. 2020.',
+      },
+    ],
+    sources: ['ACLED', 'ICG', 'UCDP'],
+    tags: ['isis_affiliate', 'natural_resources', 'sadc_intervention', 'ongoing'],
+  },
+  {
+    id: 'south-sudanese-civil-war',
+    name: 'South Sudanese Civil War',
+    alternateNames: [
+      { name: 'Kiir-Machar Conflict', perspective: 'Leader-based framing' },
+    ],
+    type: 'ethnic_conflict',
+    startYear: 2013,
+    endYear: 2020,
+    parties: [
+      { countryId: 'SSD', role: 'belligerent', perspectiveNote: 'Government (SPLM) vs. opposition (SPLM-IO)' },
+    ],
+    casualties: {
+      military: { low: 50000, high: 100000 },
+      civilian: { low: 300000, high: 400000 },
+      total: { low: 350000, high: 500000 },
+      source: 'London School of Hygiene & Tropical Medicine study (2018); UCDP',
+    },
+    territorialChanges: 'No changes. Unity government formed 2020.',
+    outcome: 'Revitalized peace agreement (2018) formed unity government. Fragile peace. Multiple armed groups remain.',
+    summary: 'Just two years after independence, South Sudan plunged into civil war when President Kiir accused VP Machar of a coup attempt. The war followed Dinka-Nuer ethnic lines and involved mass atrocities, famine, and sexual violence on a massive scale. Over 4 million displaced — the largest refugee crisis in Africa at the time.',
+    perspectives: [
+      {
+        viewpoint: 'Government perspective',
+        description: 'Machar launched a coup attempt. Military response was necessary to preserve the young nation\'s sovereignty.',
+        source: 'De Waal, Alex. The Real Politics of the Horn of Africa. 2015.',
+      },
+      {
+        viewpoint: 'Opposition perspective',
+        description: 'Kiir\'s authoritarian consolidation and ethnic targeting of Nuer people provoked legitimate resistance.',
+        source: 'Johnson, Douglas. South Sudan: A New History for a New Nation. 2016.',
+      },
+      {
+        viewpoint: 'Humanitarian perspective',
+        description: 'Both sides committed atrocities including ethnic massacres, mass rape, and deliberate starvation. Civilian protection was abandoned by all parties.',
+        source: 'UN Commission on Human Rights in South Sudan. 2018.',
+      },
+    ],
+    sources: ['De Waal (2015)', 'UCDP', 'UN OHCHR'],
+    tags: ['ethnic_violence', 'famine', 'displacement', 'sexual_violence', 'newest_nation'],
+    keyFigures: [
+      { name: 'Salva Kiir', role: 'President', country: 'SSD' },
+      { name: 'Riek Machar', role: 'Opposition Leader', country: 'SSD' },
+    ],
+  },
+  {
+    id: 'm23-drc-conflict',
+    name: 'M23 Rebellion in DRC',
+    alternateNames: [
+      { name: 'Kivu Conflict', perspective: 'Regional reference' },
+      { name: 'March 23 Movement', perspective: 'Full name' },
+    ],
+    type: 'rebellion',
+    startYear: 2012,
+    endYear: null,
+    parties: [
+      { countryId: 'COD', role: 'belligerent' },
+      { countryId: 'RWA', role: 'belligerent', perspectiveNote: 'Accused of backing M23 (denied by Rwanda)' },
+    ],
+    casualties: {
+      military: { low: 10000, high: 20000 },
+      civilian: { low: 30000, high: 60000 },
+      total: { low: 40000, high: 80000 },
+      source: 'Kivu Security Tracker; ACLED (2012–2025)',
+    },
+    territorialChanges: 'M23 captured Goma (2012, again 2025). Controls portions of North Kivu.',
+    outcome: 'Ongoing. M23 briefly defeated in 2013 but resurged in 2022. Captured Goma in early 2025. Ceasefire and peace talks ongoing.',
+    summary: 'M23, a Tutsi-led rebel group in eastern DRC, is widely reported to be backed by Rwanda (confirmed by multiple UN expert panels). The conflict is rooted in the aftermath of the Rwandan genocide, when Hutu militias fled into DRC. Eastern DRC hosts 100+ armed groups fighting over minerals, land, and ethnic grievances. The area contains cobalt, coltan, gold, and other conflict minerals.',
+    perspectives: [
+      {
+        viewpoint: 'DRC government perspective',
+        description: 'M23 is a Rwandan proxy army conducting aggression against Congolese sovereignty. Rwanda is stealing DRC\'s mineral wealth.',
+        source: 'UN Group of Experts on DRC. Reports 2012–2025.',
+      },
+      {
+        viewpoint: 'Rwandan/M23 perspective',
+        description: 'Congolese Tutsis face persecution and genocide threats from FDLR (Hutu militia). Rwanda acts in self-defense against groups that committed the 1994 genocide.',
+        source: 'Stearns, Jason. Dancing in the Glory of Monsters. 2011.',
+      },
+      {
+        viewpoint: 'Regional analysis perspective',
+        description: 'The conflict is driven by mineral wealth, regional power competition, ethnic manipulation by elites, and the unresolved legacy of the Rwandan genocide.',
+        source: 'Autesserre, Séverine. The Trouble with the Congo. 2010.',
+      },
+    ],
+    sources: ['KST', 'UN GoE', 'Stearns (2011)', 'ACLED'],
+    tags: ['proxy_war', 'conflict_minerals', 'rwandan_genocide_legacy', 'ongoing'],
+    keyFigures: [
+      { name: 'Sultani Makenga', role: 'M23 Military Commander', country: 'COD' },
+      { name: 'Paul Kagame', role: 'Rwandan President', country: 'RWA' },
+    ],
+    relatedConflicts: ['rwandan-genocide', 'congo-crisis'],
+  },
+  {
+    id: 'sudanese-civil-war-2023',
+    name: 'Sudanese Civil War (2023)',
+    alternateNames: [
+      { name: 'SAF-RSF War', perspective: 'Military group framing' },
+      { name: 'Battle for Khartoum', perspective: 'Early media framing' },
+    ],
+    type: 'civil_war',
+    startYear: 2023,
+    endYear: null,
+    parties: [
+      { countryId: 'SDN', role: 'belligerent', perspectiveNote: 'SAF (army) vs RSF (paramilitary)' },
+    ],
+    casualties: {
+      military: { low: 20000, high: 40000 },
+      civilian: { low: 100000, high: 200000 },
+      total: { low: 150000, high: 250000 },
+      source: 'ACLED; OCHA; various estimates (through early 2026)',
+    },
+    territorialChanges: 'RSF controls much of Darfur and Khartoum. SAF controls Port Sudan and eastern regions.',
+    outcome: 'Ongoing. World\'s worst humanitarian crisis — 25+ million in need. Ethnic cleansing in Darfur.',
+    summary: 'War erupted in April 2023 between the Sudanese Armed Forces (SAF) led by Gen. al-Burhan and the Rapid Support Forces (RSF) led by Gen. Hemedti. The RSF, successor to the Janjaweed militia, has committed ethnic cleansing in Darfur. Over 12 million displaced — the world\'s largest displacement crisis. International community widely criticized for inadequate response.',
+    perspectives: [
+      {
+        viewpoint: 'SAF perspective',
+        description: 'The RSF launched a rebellion against the legitimate military institution. The SAF defends national unity against militia rule.',
+        source: 'De Waal, Alex. Sudan: A Political Marketplace Framework Analysis. 2023.',
+      },
+      {
+        viewpoint: 'RSF perspective',
+        description: 'The SAF has been captured by Islamist hardliners who want to restore the al-Bashir era. The RSF fights for democratic transition.',
+        source: 'International Crisis Group. Sudan\'s Cataclysmic Civil War. 2024.',
+      },
+      {
+        viewpoint: 'Civilian perspective',
+        description: 'Both sides loot, rape, and kill civilians. The war destroyed Sudan\'s brief democratic hopes. Ethnic targeting in Darfur echoes the 2003 genocide.',
+        source: 'Amnesty International. Death Came to Our Home. 2024.',
+      },
+    ],
+    sources: ['ACLED', 'OCHA', 'ICG', 'De Waal (2023)'],
+    tags: ['ethnic_cleansing', 'displacement', 'famine', 'janjaweed_legacy', 'ongoing'],
+    keyFigures: [
+      { name: 'Abdel Fattah al-Burhan', role: 'SAF Commander', country: 'SDN' },
+      { name: 'Mohamed Hamdan Dagalo (Hemedti)', role: 'RSF Commander', country: 'SDN' },
+    ],
+    relatedConflicts: ['darfur-conflict'],
+  },
+  {
+    id: 'darfur-conflict',
+    name: 'Darfur Conflict',
+    alternateNames: [
+      { name: 'Darfur Genocide', perspective: 'US and activist framing' },
+      { name: 'War in Darfur', perspective: 'Academic usage' },
+    ],
+    type: 'genocide',
+    startYear: 2003,
+    endYear: 2020,
+    parties: [
+      { countryId: 'SDN', role: 'belligerent', perspectiveNote: 'Government + Janjaweed vs. rebel groups (SLA, JEM)' },
+    ],
+    casualties: {
+      military: { low: 10000, high: 20000 },
+      civilian: { low: 200000, high: 400000 },
+      total: { low: 200000, high: 400000 },
+      source: 'UN estimates; Eric Reeves analysis; widely disputed figures',
+    },
+    territorialChanges: 'No changes. Darfur remains part of Sudan.',
+    outcome: 'ICC issued arrest warrant for President al-Bashir (2009). UNAMID peacekeeping mission deployed (2007–2020). Violence continued at lower levels until 2023 war reignited it.',
+    summary: 'Darfuri rebel groups attacked government installations in 2003, citing marginalization. The Sudanese government responded by arming Janjaweed Arab militias to conduct a scorched-earth campaign against Darfuri communities — Fur, Zaghawa, and Masalit peoples. Systematic destruction of villages, mass rape, and forced displacement. The US declared it genocide in 2004.',
+    perspectives: [
+      {
+        viewpoint: 'International/activist perspective',
+        description: 'State-sponsored genocide targeting ethnic African communities in Darfur. The Janjaweed carried out systematic ethnic cleansing.',
+        source: 'Flint, Julie & De Waal, Alex. Darfur: A New History of a Long War. 2008.',
+      },
+      {
+        viewpoint: 'Sudanese government perspective',
+        description: 'A counterinsurgency against armed rebel groups, not genocide. Casualty figures are exaggerated by Western media.',
+        source: 'De Waal, Alex. The Real Politics of the Horn of Africa. 2015.',
+      },
+    ],
+    sources: ['Flint & De Waal (2008)', 'UN', 'ICC', 'UCDP'],
+    tags: ['genocide', 'icc_warrants', 'janjaweed', 'ethnic_cleansing', 'peacekeeping'],
+    keyFigures: [
+      { name: 'Omar al-Bashir', role: 'Sudanese President (ICC warrant)', country: 'SDN' },
+    ],
+    relatedConflicts: ['sudanese-civil-war-2023'],
+  },
+
+  // ── ASIA ───────────────────────────────────────────────────────
+
+  {
+    id: 'naxalite-maoist-insurgency',
+    name: 'Naxalite–Maoist Insurgency',
+    alternateNames: [
+      { name: 'Red Corridor Conflict', perspective: 'Indian media' },
+      { name: 'People\'s War', perspective: 'CPI-Maoist self-description' },
+    ],
+    type: 'insurgency',
+    startYear: 1967,
+    endYear: null,
+    parties: [
+      { countryId: 'IND', role: 'belligerent', perspectiveNote: 'Government forces vs. CPI(Maoist) and allied groups' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 8000 },
+      civilian: { low: 10000, high: 20000 },
+      total: { low: 15000, high: 28000 },
+      source: 'South Asia Terrorism Portal (SATP); Ministry of Home Affairs data',
+    },
+    territorialChanges: 'No territorial changes. Maoist influence area ("Red Corridor") reduced from 180 districts to ~25 by 2025.',
+    outcome: 'Ongoing but significantly weakened. Major leaders killed or captured. Government combines military operations with development programs.',
+    summary: 'India\'s longest-running internal conflict. CPI(Maoist) and predecessor groups wage a "people\'s war" in central and eastern India, primarily among tribal (Adivasi) communities displaced by mining and development projects. The "Red Corridor" once spanned from Nepal to southern India. Former PM Manmohan Singh called it "the single biggest internal security challenge." Violence has declined sharply since 2010 due to security operations and infrastructure development.',
+    perspectives: [
+      {
+        viewpoint: 'Indian government perspective',
+        description: 'Maoists are terrorists who exploit tribal communities. Military operations combined with development programs are eliminating the threat.',
+        source: 'Ministry of Home Affairs. Annual Reports on Left Wing Extremism.',
+      },
+      {
+        viewpoint: 'Maoist/sympathizer perspective',
+        description: 'Armed resistance is the only response to systematic displacement of tribal communities by mining corporations and state violence.',
+        source: 'Roy, Arundhati. Walking with the Comrades. 2011.',
+      },
+      {
+        viewpoint: 'Academic perspective',
+        description: 'The insurgency persists because of genuine tribal grievances — land alienation, displacement, and exploitation — which neither the state nor Maoists have adequately addressed.',
+        source: 'Shah, Alpa. In the Shadows of the State: Indigenous Politics, Environmentalism, and Insurgency in Jharkhand. 2010.',
+      },
+    ],
+    sources: ['SATP', 'Roy (2011)', 'Shah (2010)', 'UCDP'],
+    tags: ['maoist', 'tribal_rights', 'mining', 'displacement', 'ongoing'],
+  },
+  {
+    id: 'myanmar-civil-war',
+    name: 'Myanmar Civil War',
+    alternateNames: [
+      { name: 'Myanmar Spring Revolution', perspective: 'Pro-democracy framing' },
+      { name: 'Post-Coup Resistance', perspective: 'International media' },
+    ],
+    type: 'civil_war',
+    startYear: 2021,
+    endYear: null,
+    parties: [
+      { countryId: 'MMR', role: 'belligerent', perspectiveNote: 'Military junta (SAC/Tatmadaw) vs. NUG/PDF + ethnic armed organizations' },
+    ],
+    casualties: {
+      military: { low: 30000, high: 50000 },
+      civilian: { low: 40000, high: 60000 },
+      total: { low: 70000, high: 110000 },
+      source: 'ACLED; AAPP (through early 2026)',
+    },
+    territorialChanges: 'Resistance forces control ~60% of territory. Arakan Army controls most of Rakhine. Multiple ethnic armies hold border regions.',
+    outcome: 'Ongoing. Junta losing territorial control. Over 1,200 armed groups active — the most fragmented conflict in the world per ACLED.',
+    summary: 'Following the February 2021 coup against Aung San Suu Kyi\'s elected government, a massive civil resistance movement formed. The National Unity Government (NUG) organized People\'s Defence Forces (PDF) that allied with long-standing ethnic armed organizations (Karen, Kachin, Chin, Arakan, Shan, etc.). By 2025, the junta had lost control of most of the country\'s territory. ACLED ranks Myanmar as the world\'s most fragmented conflict with 1,200+ armed groups.',
+    perspectives: [
+      {
+        viewpoint: 'Junta perspective',
+        description: 'Military intervention was necessary to prevent election fraud and preserve national unity. Armed resistance groups are terrorists.',
+        source: 'International Crisis Group. Myanmar reports (2021–2025).',
+      },
+      {
+        viewpoint: 'Pro-democracy/NUG perspective',
+        description: 'The coup was illegal. Armed resistance is a legitimate response to military tyranny. The revolution will restore democracy.',
+        source: 'AAPP (Assistance Association for Political Prisoners). Documentation.',
+      },
+      {
+        viewpoint: 'Ethnic minority perspective',
+        description: 'Decades of Bamar-dominated military rule and ethnic persecution preceded the coup. The revolution is an opportunity for genuine federal democracy.',
+        source: 'Thant Myint-U. The Hidden History of Burma. 2019.',
+      },
+    ],
+    sources: ['ACLED', 'AAPP', 'ICG', 'Thant Myint-U (2019)'],
+    tags: ['coup', 'revolution', 'ethnic_armed_groups', 'democracy', 'most_fragmented', 'ongoing'],
+    keyFigures: [
+      { name: 'Min Aung Hlaing', role: 'Junta Leader', country: 'MMR' },
+      { name: 'Aung San Suu Kyi', role: 'Deposed Leader', country: 'MMR' },
+    ],
+  },
+  {
+    id: 'mindanao-insurgency',
+    name: 'Moro Insurgency',
+    alternateNames: [
+      { name: 'Mindanao Conflict', perspective: 'Geographic reference' },
+      { name: 'Bangsamoro Struggle', perspective: 'Moro nationalist framing' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 1969,
+    endYear: null,
+    parties: [
+      { countryId: 'PHL', role: 'belligerent', perspectiveNote: 'Government vs. MILF, MNLF, Abu Sayyaf, ISIS-linked groups' },
+    ],
+    casualties: {
+      military: { low: 30000, high: 50000 },
+      civilian: { low: 100000, high: 150000 },
+      total: { low: 120000, high: 200000 },
+      source: 'Various estimates; Philippine government data',
+    },
+    territorialChanges: 'Bangsamoro Autonomous Region in Muslim Mindanao (BARMM) established 2019.',
+    outcome: 'MILF peace deal (2014) led to BARMM autonomy. Abu Sayyaf and ISIS-linked groups remain active. 2017 Battle of Marawi destroyed a major city.',
+    summary: 'The Moro people of Mindanao have fought for self-determination since the late 1960s. The MNLF and MILF are the main separatist groups. Abu Sayyaf Group and ISIS-linked Maute Group are extremist offshoots. The 2017 Battle of Marawi — a 5-month urban siege against ISIS-linked fighters — was the Philippines\' worst urban battle since WWII. The 2019 Bangsamoro autonomy deal addressed some grievances.',
+    perspectives: [
+      {
+        viewpoint: 'Philippine government perspective',
+        description: 'The Bangsamoro peace process shows the government\'s commitment to addressing historical injustice through autonomy, not secession.',
+        source: 'McKenna, Thomas. Muslim Rulers and Rebels. 1998.',
+      },
+      {
+        viewpoint: 'Moro nationalist perspective',
+        description: 'Centuries of colonization (Spanish, American, Philippine Christian settler) dispossessed the Moro homeland. Autonomy is a compromise short of the right to self-determination.',
+        source: 'Abinales, Patricio. Making Mindanao. 2000.',
+      },
+    ],
+    sources: ['McKenna (1998)', 'UCDP', 'ICG'],
+    tags: ['separatism', 'islamist', 'autonomy', 'urban_warfare', 'ongoing'],
+    keyFigures: [
+      { name: 'Nur Misuari', role: 'MNLF Founder', country: 'PHL' },
+    ],
+  },
+  {
+    id: 'thai-south-insurgency',
+    name: 'South Thailand Insurgency',
+    alternateNames: [
+      { name: 'Patani Conflict', perspective: 'Malay-Muslim framing' },
+      { name: 'Southern Border Provinces Unrest', perspective: 'Thai government' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 2004,
+    endYear: null,
+    parties: [
+      { countryId: 'THA', role: 'belligerent', perspectiveNote: 'Government vs BRN (Barisan Revolusi Nasional) and other groups' },
+    ],
+    casualties: {
+      military: { low: 3000, high: 4000 },
+      civilian: { low: 4000, high: 7000 },
+      total: { low: 7000, high: 11000 },
+      source: 'Deep South Watch; UCDP (2004–2025)',
+    },
+    territorialChanges: 'No changes. Three southern border provinces (Pattani, Yala, Narathiwat) under special security laws.',
+    outcome: 'Ongoing at reduced intensity. Peace talks with BRN began 2020 under Malaysian mediation.',
+    summary: 'A low-intensity separatist insurgency by Malay-Muslim groups in Thailand\'s deep south — the former Patani Sultanate, annexed by Siam in 1909. Daily bombings, shootings, and arson targeting Buddhist civilians, teachers, and security forces. The BRN is the main group. Over 7,000 killed since 2004.',
+    perspectives: [
+      {
+        viewpoint: 'Thai government perspective',
+        description: 'Criminal separatist violence threatening national territorial integrity. Development and dialogue are the path forward.',
+        source: 'ICG. Southern Thailand: The Problem with Paramilitaries. 2007.',
+      },
+      {
+        viewpoint: 'Patani Malay perspective',
+        description: 'The Malay-Muslim population faces cultural assimilation, military occupation, and denial of self-determination in their ancestral homeland.',
+        source: 'McCargo, Duncan. Tearing Apart the Land: Islam and Legitimacy in Southern Thailand. 2008.',
+      },
+    ],
+    sources: ['Deep South Watch', 'UCDP', 'McCargo (2008)'],
+    tags: ['separatism', 'ethnic_conflict', 'buddhist_muslim', 'ongoing'],
+  },
+
+  // ── MIDDLE EAST ────────────────────────────────────────────────
+
+  {
+    id: 'pkk-kurdish-insurgency',
+    name: 'Kurdish–Turkish Conflict',
+    alternateNames: [
+      { name: 'PKK Insurgency', perspective: 'Turkish government framing' },
+      { name: 'Kurdish Freedom Struggle', perspective: 'Kurdish nationalist framing' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 1984,
+    endYear: null,
+    parties: [
+      { countryId: 'TUR', role: 'belligerent' },
+      { countryId: 'IRQ', role: 'belligerent', perspectiveNote: 'PKK bases in northern Iraq' },
+    ],
+    casualties: {
+      military: { low: 15000, high: 20000 },
+      civilian: { low: 20000, high: 40000 },
+      total: { low: 40000, high: 60000 },
+      source: 'ICG; Turkish government data; UCDP',
+    },
+    territorialChanges: 'No territorial changes in Turkey. Kurdish Regional Government in Iraq gained autonomy. Rojava (Syrian Kurdistan) gained de facto autonomy during Syrian Civil War.',
+    outcome: 'Ongoing. Peace process (2013–2015) collapsed. Öcalan imprisoned since 1999. Cross-border Turkish operations in Iraq and Syria continue.',
+    summary: 'The PKK (Kurdistan Workers\' Party), founded by Abdullah Öcalan in 1978, launched an armed insurgency in 1984 for Kurdish self-determination. The Kurds (~20 million in Turkey) face cultural and linguistic restrictions. Turkey designates the PKK as a terrorist organization. The conflict has included village destructions, forced displacement of millions of Kurds, and cross-border operations into Iraq and Syria.',
+    perspectives: [
+      {
+        viewpoint: 'Turkish government perspective',
+        description: 'The PKK is a terrorist organization that threatens Turkey\'s territorial integrity. Military operations are necessary to protect national security.',
+        source: 'Marcus, Aliza. Blood and Belief: The PKK and the Kurdish Fight for Independence. 2007.',
+      },
+      {
+        viewpoint: 'Kurdish perspective',
+        description: 'Decades of cultural suppression, language bans, and military operations against Kurdish communities drove armed resistance. Kurds seek recognition and autonomy.',
+        source: 'McDowall, David. A Modern History of the Kurds. 2004.',
+      },
+      {
+        viewpoint: 'International perspective',
+        description: 'The Kurdish question is one of the Middle East\'s most enduring unresolved national questions. Both military and political solutions have failed.',
+        source: 'Gunter, Michael. The Kurds: A Modern History. 2016.',
+      },
+    ],
+    sources: ['Marcus (2007)', 'McDowall (2004)', 'UCDP', 'ICG'],
+    tags: ['separatism', 'guerrilla', 'cross_border', 'cultural_rights', 'ongoing'],
+    keyFigures: [
+      { name: 'Abdullah Öcalan', role: 'PKK Founder (imprisoned)', country: 'TUR' },
+    ],
+  },
+  {
+    id: 'houthi-conflict',
+    name: 'Houthi Insurgency & Yemen War',
+    alternateNames: [
+      { name: 'Yemeni Civil War', perspective: 'Broad framing' },
+      { name: 'Operation Decisive Storm', perspective: 'Saudi-led coalition name' },
+      { name: 'Ansar Allah Resistance', perspective: 'Houthi self-description' },
+    ],
+    type: 'civil_war',
+    startYear: 2004,
+    endYear: null,
+    parties: [
+      { countryId: 'YEM', role: 'belligerent', perspectiveNote: 'Government vs. Houthi/Ansar Allah' },
+      { countryId: 'SAU', role: 'belligerent', perspectiveNote: 'Led coalition intervention 2015–' },
+      { countryId: 'IRN', role: 'ally', perspectiveNote: 'Supports Houthis (denied by Iran)' },
+    ],
+    casualties: {
+      military: { low: 50000, high: 80000 },
+      civilian: { low: 150000, high: 250000 },
+      total: { low: 250000, high: 377000 },
+      source: 'UN OCHA; ACLED (direct violence + famine/disease)',
+    },
+    territorialChanges: 'Houthis control most of northern Yemen including Sanaa. Government controls south/east.',
+    outcome: 'Ongoing. Saudi-Houthi ceasefire (2022) partially held. Houthi Red Sea attacks (2023–) escalated conflict internationally.',
+    summary: 'What began as a localized Houthi rebellion in 2004 escalated into a full civil war and regional proxy conflict. The Saudi-led coalition intervention (2015) included a naval blockade that contributed to the world\'s worst humanitarian crisis — 377,000 dead (per UN), mostly from famine and disease. Houthi Red Sea shipping attacks (2023–) in solidarity with Gaza drew US/UK military strikes.',
+    perspectives: [
+      {
+        viewpoint: 'Houthi perspective',
+        description: 'Ansar Allah fights against government corruption, Saudi aggression, and American imperialism. The movement protects Yemeni sovereignty.',
+        source: 'Juneau, Thomas. "Iran\'s Policy Towards the Houthis in Yemen." International Affairs. 2016.',
+      },
+      {
+        viewpoint: 'Saudi/coalition perspective',
+        description: 'The Houthis are an Iranian proxy threatening regional stability. Military intervention was requested by Yemen\'s legitimate government.',
+        source: 'Freeman, Jack. "The al-Houthi Insurgency in Northern Yemen." Studies in Conflict & Terrorism. 2009.',
+      },
+      {
+        viewpoint: 'Humanitarian perspective',
+        description: 'The coalition blockade created the world\'s worst humanitarian crisis. All parties have committed potential war crimes including bombing of hospitals, schools, and weddings.',
+        source: 'UN Panel of Experts on Yemen. Reports 2015–2025.',
+      },
+    ],
+    sources: ['UN OCHA', 'ACLED', 'ICG', 'UCDP'],
+    tags: ['proxy_war', 'famine', 'blockade', 'red_sea', 'ongoing'],
+    keyFigures: [
+      { name: 'Abdul-Malik al-Houthi', role: 'Houthi Leader', country: 'YEM' },
+    ],
+  },
+  {
+    id: 'isis-insurgency',
+    name: 'Islamic State Insurgency',
+    alternateNames: [
+      { name: 'ISIS/ISIL/Daesh', perspective: 'Various international labels' },
+      { name: 'Caliphate of the Islamic State', perspective: 'Self-description' },
+    ],
+    type: 'insurgency',
+    startYear: 2013,
+    endYear: 2019,
+    parties: [
+      { countryId: 'IRQ', role: 'belligerent' },
+      { countryId: 'SYR', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally', perspectiveNote: 'Led anti-ISIS coalition' },
+      { countryId: 'IRN', role: 'ally', perspectiveNote: 'Supported Iraqi Shia militias' },
+      { countryId: 'RUS', role: 'ally', perspectiveNote: 'Bombing campaign in Syria' },
+    ],
+    casualties: {
+      military: { low: 60000, high: 100000 },
+      civilian: { low: 100000, high: 200000 },
+      total: { low: 200000, high: 350000 },
+      source: 'Airwaves; UCDP; various estimates (includes coalition airstrikes)',
+    },
+    territorialChanges: 'ISIS declared caliphate across Iraq/Syria (2014–2019). Territory fully recaptured by 2019. Sleeper cells remain.',
+    outcome: 'Territorial caliphate destroyed by 2019. ISIS persists as insurgency in Iraq/Syria and through affiliates in Africa, Afghanistan, and Southeast Asia.',
+    summary: 'ISIS emerged from al-Qaeda in Iraq, rapidly capturing Mosul and declaring a "caliphate" across Iraq and Syria in 2014. Conducted genocide against Yazidis, mass executions of Shia, and inspired global terrorism. A US-led coalition of 80+ countries, Kurdish forces (SDF/YPG), Iraqi military, and Iranian-backed militias fought to destroy the caliphate. The Battle of Mosul (2016–17) was the world\'s largest urban battle since WWII.',
+    perspectives: [
+      {
+        viewpoint: 'Western coalition perspective',
+        description: 'ISIS was a unique terrorist threat requiring an unprecedented military coalition to defeat. The caliphate was destroyed but the ideology persists.',
+        source: 'McCants, William. The ISIS Apocalypse. 2015.',
+      },
+      {
+        viewpoint: 'Regional perspective',
+        description: 'ISIS emerged from the chaos of the Iraq War, Syrian civil war, and Sunni marginalization by Shia-dominated governments.',
+        source: 'Cockburn, Patrick. The Rise of Islamic State. 2015.',
+      },
+      {
+        viewpoint: 'Victim perspective',
+        description: 'The Yazidi genocide, mass execution of Iraqi soldiers at Camp Speicher, and systematic sexual slavery constitute some of the worst atrocities of the 21st century.',
+        source: 'Murad, Nadia. The Last Girl. 2017.',
+      },
+    ],
+    sources: ['McCants (2015)', 'Cockburn (2015)', 'UCDP', 'CJTF-OIR'],
+    tags: ['jihadist', 'caliphate', 'genocide', 'yazidi', 'urban_warfare', 'global_terrorism'],
+    keyFigures: [
+      { name: 'Abu Bakr al-Baghdadi', role: 'ISIS Leader (killed 2019)', country: 'IRQ' },
+    ],
+    relatedConflicts: ['iraq-war', 'syrian-civil-war'],
+  },
+
+  // ── EUROPE ─────────────────────────────────────────────────────
+
+  {
+    id: 'northern-ireland-troubles',
+    name: 'The Troubles',
+    alternateNames: [
+      { name: 'Northern Ireland Conflict', perspective: 'Neutral framing' },
+      { name: 'The Long War', perspective: 'IRA framing' },
+      { name: 'The Emergency', perspective: 'Irish government' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 1968,
+    endYear: 1998,
+    parties: [
+      { countryId: 'GBR', role: 'belligerent', perspectiveNote: 'British Army, RUC, loyalist paramilitaries' },
+      { countryId: 'IRL', role: 'belligerent', perspectiveNote: 'IRA and republican paramilitaries operated from border areas' },
+    ],
+    casualties: {
+      military: { low: 1100, high: 1100 },
+      civilian: { low: 2100, high: 2100 },
+      total: { low: 3532, high: 3532 },
+      source: 'CAIN (Conflict Archive on the Internet); Sutton database',
+    },
+    territorialChanges: 'No territorial changes. Northern Ireland remained part of UK. Power-sharing government established.',
+    outcome: 'Good Friday Agreement (1998). Power-sharing government. Paramilitary ceasefires and decommissioning. Peace largely held.',
+    summary: 'A 30-year ethno-nationalist conflict between unionists/loyalists (mostly Protestant, wanting to remain British) and nationalists/republicans (mostly Catholic, wanting Irish reunification). The Provisional IRA waged an armed campaign against British rule. Loyalist paramilitaries (UVF, UDA) targeted Catholic communities. The British Army deployed from 1969. Bloody Sunday (1972), hunger strikes (1981), and countless bombings defined the conflict.',
+    perspectives: [
+      {
+        viewpoint: 'Republican/nationalist perspective',
+        description: 'Armed struggle was a legitimate response to British colonialism, sectarian discrimination, and state violence against the Catholic community.',
+        source: 'English, Richard. Armed Struggle: The History of the IRA. 2003.',
+      },
+      {
+        viewpoint: 'Unionist/loyalist perspective',
+        description: 'The IRA waged a terrorist campaign against the democratic wishes of Northern Ireland\'s majority. Loyalist violence was a defensive response to republican aggression.',
+        source: 'Cochrane, Feargal. Northern Ireland: The Reluctant Peace. 2013.',
+      },
+      {
+        viewpoint: 'British government perspective',
+        description: 'The military deployment was necessary to prevent civil war. The Good Friday Agreement was a triumph of diplomacy over violence.',
+        source: 'McKittrick, David. Making Sense of the Troubles. 2002.',
+      },
+      {
+        viewpoint: 'Victims\' perspective',
+        description: 'All sides committed atrocities against civilians. Many families on both sides still await truth and justice for their loved ones.',
+        source: 'CAIN (Conflict Archive on the Internet). Victims database.',
+      },
+    ],
+    sources: ['English (2003)', 'CAIN', 'McKittrick (2002)'],
+    tags: ['sectarian', 'paramilitaries', 'peace_process', 'good_friday_agreement'],
+    keyFigures: [
+      { name: 'Gerry Adams', role: 'Sinn Féin President', country: 'IRL' },
+      { name: 'Ian Paisley', role: 'DUP Leader', country: 'GBR' },
+      { name: 'Bobby Sands', role: 'IRA Hunger Striker', country: 'GBR' },
+    ],
+    treaties: [
+      { name: 'Good Friday Agreement', year: 1998, description: 'Power-sharing, decommissioning, cross-border bodies, human rights provisions' },
+    ],
+    relatedConflicts: ['irish-war-of-independence'],
+  },
+  {
+    id: 'eta-basque-conflict',
+    name: 'Basque Conflict',
+    alternateNames: [
+      { name: 'ETA Campaign', perspective: 'Security framing' },
+      { name: 'Basque National Liberation Struggle', perspective: 'ETA self-description' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 1959,
+    endYear: 2018,
+    parties: [
+      { countryId: 'ESP', role: 'belligerent' },
+      { countryId: 'FRA', role: 'ally', perspectiveNote: 'ETA operated from French Basque Country' },
+    ],
+    casualties: {
+      military: { low: 200, high: 200 },
+      civilian: { low: 629, high: 629 },
+      total: { low: 829, high: 850 },
+      source: 'Spanish Ministry of Interior; Basque Government data',
+    },
+    territorialChanges: 'No territorial changes. Basque Country gained significant autonomy within Spain.',
+    outcome: 'ETA declared permanent ceasefire (2011) and dissolved (2018). Basque Country has extensive autonomy including own police, taxation, and education.',
+    summary: 'ETA (Euskadi Ta Askatasuna — Basque Homeland and Liberty) fought for an independent Basque state from 1959 to 2018. Founded during Franco\'s dictatorship, ETA carried out assassinations, car bombings, and kidnappings, killing 829 people. Spain\'s response included GAL death squads (1983–87) that targeted suspected ETA members. ETA\'s dissolution came through a combination of police pressure, social rejection, and political channels.',
+    perspectives: [
+      {
+        viewpoint: 'Spanish government perspective',
+        description: 'ETA was a terrorist organization that killed innocents. Democracy and constitutional autonomy made violence unnecessary.',
+        source: 'Muro, Diego. Ethnicity and Violence: The Case of Radical Basque Nationalism. 2008.',
+      },
+      {
+        viewpoint: 'Basque nationalist perspective',
+        description: 'ETA emerged during Franco\'s cultural genocide of Basque identity. Armed struggle was a response to state repression of Basque language and culture.',
+        source: 'Clark, Robert. The Basque Insurgents: ETA, 1952–1980. 1984.',
+      },
+      {
+        viewpoint: 'Victims\' perspective',
+        description: 'Both ETA violence and state-sponsored GAL death squads created thousands of victims. Full truth and reconciliation remains incomplete.',
+        source: 'Ferrándiz, Francisco. "Exhuming the Defeated." American Ethnologist. 2013.',
+      },
+    ],
+    sources: ['Muro (2008)', 'Clark (1984)', 'Spanish Ministry of Interior'],
+    tags: ['separatism', 'terrorism', 'autonomy', 'death_squads', 'peace_process'],
+    keyFigures: [
+      { name: 'Arnaldo Otegi', role: 'Political wing leader', country: 'ESP' },
+    ],
+  },
+  {
+    id: 'chechen-wars',
+    name: 'Chechen Wars',
+    alternateNames: [
+      { name: 'First and Second Chechen Wars', perspective: 'Standard academic' },
+      { name: 'Chechen War of Independence', perspective: 'Chechen separatist' },
+      { name: 'Counter-Terrorist Operation', perspective: 'Russian official (Second War)' },
+    ],
+    type: 'separatist_conflict',
+    startYear: 1994,
+    endYear: 2009,
+    parties: [
+      { countryId: 'RUS', role: 'belligerent' },
+    ],
+    casualties: {
+      military: { low: 15000, high: 25000 },
+      civilian: { low: 100000, high: 200000 },
+      total: { low: 120000, high: 250000 },
+      source: 'Various estimates; widely disputed. Memorial, Amnesty International',
+    },
+    territorialChanges: 'Chechnya remained part of Russia. De facto independence 1996–1999. Grozny largely destroyed.',
+    outcome: 'Russia regained control. Installed Kadyrov regime. Grozny rebuilt. Insurgency continued at low level through 2017. Massive human rights abuses documented.',
+    summary: 'Two devastating wars between Russia and Chechen separatists. The First War (1994–96) ended with de facto Chechen independence after Russia\'s humiliating defeat. The Second War (1999–2009), launched by Putin after apartment bombings, destroyed Grozny and ended Chechen independence. Russia committed widespread atrocities including filtration camps, disappearances, and indiscriminate bombardment. Chechen insurgency included the Beslan school siege (2004) and Moscow theater hostage crisis (2002).',
+    perspectives: [
+      {
+        viewpoint: 'Russian government perspective',
+        description: 'Counter-terrorist operations were necessary to prevent Islamist extremism and preserve Russia\'s territorial integrity.',
+        source: 'Politkovskaya, Anna. A Small Corner of Hell: Dispatches from Chechnya. 2003.',
+      },
+      {
+        viewpoint: 'Chechen separatist perspective',
+        description: 'The Chechen people have a right to self-determination. Russia committed genocide-level destruction against Chechen civilians.',
+        source: 'German, Tracey. Russia\'s Chechen War. 2003.',
+      },
+      {
+        viewpoint: 'Human rights perspective',
+        description: 'Both wars featured massive human rights violations — Russia\'s indiscriminate bombing and filtration camps, and rebel hostage-taking of civilians.',
+        source: 'Human Rights Watch. Welcome to Hell: Arbitrary Detention, Torture, and Extortion in Chechnya. 2000.',
+      },
+    ],
+    sources: ['Politkovskaya (2003)', 'German (2003)', 'HRW', 'Memorial'],
+    tags: ['separatism', 'urban_destruction', 'terrorism', 'human_rights', 'filtration_camps'],
+    keyFigures: [
+      { name: 'Dzhokhar Dudayev', role: 'Chechen President (killed 1996)', country: 'RUS' },
+      { name: 'Shamil Basayev', role: 'Rebel Commander (killed 2006)', country: 'RUS' },
+      { name: 'Ramzan Kadyrov', role: 'Russian-installed Leader', country: 'RUS' },
+    ],
+  },
+
+  // ── GLOBAL ONGOING ─────────────────────────────────────────────
+
+  {
+    id: 'ecuadorian-gang-crisis',
+    name: 'Ecuadorian Security Crisis',
+    alternateNames: [
+      { name: 'Ecuador Gang War', perspective: 'Media shorthand' },
+      { name: 'Internal Armed Conflict', perspective: 'Ecuadorian government (2024)' },
+    ],
+    type: 'gang_war',
+    startYear: 2018,
+    endYear: null,
+    parties: [
+      { countryId: 'ECU', role: 'belligerent', perspectiveNote: 'Government vs Los Choneros, Los Lobos, Latin Kings, R7, Tiguerones' },
+    ],
+    casualties: {
+      military: { low: 500, high: 1000 },
+      civilian: { low: 10000, high: 15000 },
+      total: { low: 10500, high: 16000 },
+      source: 'ACLED; Ecuadorian government data (2018–2025)',
+    },
+    territorialChanges: 'No territorial changes. Gangs control portions of Guayaquil, Esmeraldas, and prison systems.',
+    outcome: 'Ongoing. Ecuador declared internal armed conflict (Jan 2024). Military deployed. Homicide rate went from 6 to 45 per 100K in 5 years.',
+    summary: 'Once one of Latin America\'s safest countries, Ecuador became a major drug transit hub between Colombian and Mexican cartels. Prison gangs linked to international cartels (Sinaloa, CJNG, Albanians, Balkan mafia) waged war for control. A televised gang takeover of a TV station in January 2024 shocked the world and prompted President Noboa to declare an internal armed conflict.',
+    perspectives: [
+      {
+        viewpoint: 'Ecuadorian government perspective',
+        description: 'Ecuador faces a national security emergency from transnational organized crime that has infiltrated the state. Military force is necessary.',
+        source: 'InSight Crime. Ecuador Organized Crime Profile. 2024.',
+      },
+      {
+        viewpoint: 'Structural analysis perspective',
+        description: 'Ecuador\'s crisis stems from its geographic position between Colombia and transoceanic drug routes, corruption, and a collapsed prison system.',
+        source: 'ACLED. Ecuador Conflict Index Assessment. 2025.',
+      },
+    ],
+    sources: ['ACLED', 'InSight Crime', 'OCHA'],
+    tags: ['gangs', 'narcotics', 'prison_violence', 'transnational_crime', 'ongoing'],
+    relatedConflicts: ['colombian-conflict', 'mexican-drug-war'],
+  },
+  {
+    id: 'venezuelan-crisis',
+    name: 'Venezuelan Crisis & Armed Conflict',
+    alternateNames: [
+      { name: 'Venezuelan Humanitarian Emergency', perspective: 'International framing' },
+      { name: 'Bolivarian Revolution Defense', perspective: 'Maduro government' },
+    ],
+    type: 'civil_war',
+    startYear: 2017,
+    endYear: null,
+    parties: [
+      { countryId: 'VEN', role: 'belligerent', perspectiveNote: 'Government vs. opposition, Colombian guerrillas, and criminal gangs' },
+      { countryId: 'COL', role: 'belligerent', perspectiveNote: 'ELN and FARC dissidents operate in Venezuelan territory' },
+    ],
+    casualties: {
+      military: { low: 5000, high: 10000 },
+      civilian: { low: 20000, high: 40000 },
+      total: { low: 25000, high: 50000 },
+      source: 'ACLED; OVCS; various NGOs (2017–2025)',
+    },
+    territorialChanges: 'No formal changes. ELN, FARC dissidents, and criminal gangs control mining regions (Arco Minero del Orinoco).',
+    outcome: 'Ongoing. 7.7 million Venezuelans fled the country — the largest displacement crisis in the Americas. Political crisis continues.',
+    summary: 'Venezuela\'s political and economic collapse under Maduro created a complex armed conflict involving state security forces, Colombian guerrillas (ELN, FARC dissidents), criminal gangs (megabandas), and colectivos (pro-government armed groups). Extrajudicial killings by security forces exceed 19,000 (per OHCHR). The Arco Minero mining region is controlled by armed groups who exploit gold miners.',
+    perspectives: [
+      {
+        viewpoint: 'Maduro government perspective',
+        description: 'Venezuela faces an economic war by the United States. Security forces protect the Bolivarian revolution from foreign-backed opposition and Colombian armed groups.',
+        source: 'Smilde, David & Hellinger, Daniel. Venezuela\'s Bolivarian Democracy. 2011.',
+      },
+      {
+        viewpoint: 'Opposition/human rights perspective',
+        description: 'Maduro\'s authoritarian regime commits systematic extrajudicial killings, torture, and political repression. Venezuela is a humanitarian catastrophe.',
+        source: 'UN OHCHR. Report on Venezuela. 2020.',
+      },
+    ],
+    sources: ['ACLED', 'UN OHCHR', 'InSight Crime'],
+    tags: ['political_crisis', 'displacement', 'extrajudicial_killings', 'mining', 'ongoing'],
+    relatedConflicts: ['colombian-conflict'],
+  },
 ];
 
 export function getConflictsForCountry(countryId: string): Conflict[] {
