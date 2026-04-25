@@ -639,46 +639,6 @@ export const conflicts: Conflict[] = [
     tags: ['genocide', 'colonial_legacy', 'international_failure', 'ethnic_violence'],
   },
   {
-    id: 'congo-wars',
-    name: 'Congo Wars',
-    alternateNames: [
-      { name: "Africa's World War", perspective: 'Academic usage' },
-      { name: 'Great War of Africa', perspective: 'Media description' },
-    ],
-    type: 'civil_war',
-    startYear: 1996,
-    endYear: 2003,
-    parties: [
-      { countryId: 'COD', role: 'belligerent' },
-      { countryId: 'RWA', role: 'belligerent' },
-      { countryId: 'AGO', role: 'belligerent' },
-      { countryId: 'ZAF', role: 'mediator' },
-    ],
-    casualties: {
-      military: null,
-      civilian: null,
-      total: { low: 3000000, high: 5400000 },
-      source: 'International Rescue Committee surveys; contested methodology',
-    },
-    territorialChanges: 'No permanent changes, but eastern Congo remains contested by armed groups.',
-    outcome: 'Transitional government established. Eastern Congo remains unstable with active armed groups. Deadliest conflict since WWII by some estimates.',
-    summary: 'Two interconnected wars (1996-1997 and 1998-2003) involving nine African nations and dozens of armed groups, driven by ethnic tensions, resource extraction, and spillover from the Rwandan genocide. The deadliest conflict since World War II.',
-    perspectives: [
-      {
-        viewpoint: 'Humanitarian perspective',
-        description: 'A catastrophic conflict driven by predatory governance, resource exploitation (coltan, diamonds, gold), and the failure of the international community to protect civilians.',
-        source: 'Prunier, Gérard. Africa\'s World War. 2009.',
-      },
-      {
-        viewpoint: 'Regional security perspective',
-        description: 'Rwanda and Uganda intervened to pursue génocidaires who had fled to Congo, but their presence fueled further conflict and resource extraction.',
-        source: 'Stearns, Jason. Dancing in the Glory of Monsters. 2011.',
-      },
-    ],
-    sources: ['Prunier (2009)', 'Stearns (2011)', 'IRC surveys', 'UCDP'],
-    tags: ['deadliest_since_ww2', 'resource_war', 'multi_state', 'ongoing_instability'],
-  },
-  {
     id: 'nigerian-civil-war',
     name: 'Nigerian Civil War',
     alternateNames: [
@@ -4008,45 +3968,6 @@ export const conflicts: Conflict[] = [
       { name: 'Mobutu Sese Seko', role: 'Military dictator', country: 'COD' },
     ],
     relatedConflicts: ['congo-wars'],
-  },
-  {
-    id: 'biafra-famine',
-    name: 'Biafran War',
-    alternateNames: [
-      { name: 'Nigerian-Biafran War', perspective: 'International usage' },
-    ],
-    type: 'civil_war',
-    startYear: 1967,
-    endYear: 1970,
-    parties: [
-      { countryId: 'NGA', role: 'belligerent' },
-      { countryId: 'GBR', role: 'ally', perspectiveNote: 'Supported Nigerian government' },
-      { countryId: 'RUS', role: 'ally', perspectiveNote: 'Soviet arms supplies to Nigeria' },
-    ],
-    casualties: {
-      military: { low: 100000, high: 200000 },
-      civilian: { low: 500000, high: 2000000 },
-      total: { low: 600000, high: 2200000 },
-      source: 'Various estimates; most deaths from starvation',
-    },
-    territorialChanges: 'Biafra reabsorbed into Nigeria.',
-    outcome: 'Nigerian government victory. Biafra reintegrated. Mass starvation during blockade became a global humanitarian crisis.',
-    summary: 'The Igbo-dominated Eastern Region seceded as Biafra after anti-Igbo pogroms. A Nigerian naval blockade led to mass starvation, producing some of the first widely televised images of famine, revolutionizing humanitarian aid.',
-    perspectives: [
-      {
-        viewpoint: 'Biafran perspective',
-        description: 'A struggle for survival after genocide against the Igbo people, with the international community complicit in blockade-induced famine.',
-        source: 'Achebe, Chinua. There Was a Country. 2012.',
-      },
-      {
-        viewpoint: 'Nigerian federal perspective',
-        description: 'A necessary military operation to preserve national unity against a secessionist movement that would have balkanized Africa\'s most populous nation.',
-        source: 'Stremlau, John. The International Politics of the Nigerian Civil War. 1977.',
-      },
-    ],
-    sources: ['Achebe (2012)', 'Stremlau (1977)'],
-    tags: ['famine', 'secession', 'igbo', 'humanitarian_crisis'],
-    relatedConflicts: ['nigerian-civil-war'],
   },
   {
     id: 'liberian-civil-wars',
@@ -7428,61 +7349,6 @@ export const conflicts: Conflict[] = [
 
   // ── MIDDLE EAST (MORE) ──────────────────────────────
 
-  {
-    id: 'gulf-war-tanker',
-    name: 'Invasion of Kuwait',
-    alternateNames: [
-      { name: 'First Gulf War', perspective: 'Common Western usage' },
-      { name: 'Liberation of Kuwait', perspective: 'Kuwaiti/coalition framing' },
-      { name: 'Mother of All Battles', perspective: 'Iraqi framing' },
-    ],
-    type: 'interstate_war',
-    startYear: 1990,
-    endYear: 1991,
-    parties: [
-      { countryId: 'IRQ', role: 'aggressor' },
-      { countryId: 'KWT', role: 'defender' },
-      { countryId: 'USA', role: 'coalition_member' },
-      { countryId: 'GBR', role: 'coalition_member' },
-      { countryId: 'SAU', role: 'coalition_member' },
-      { countryId: 'FRA', role: 'coalition_member' },
-      { countryId: 'EGY', role: 'coalition_member' },
-    ],
-    casualties: {
-      military: { low: 25000, high: 50000 },
-      civilian: { low: 2000, high: 5000 },
-      total: { low: 27000, high: 55000 },
-      source: 'Various estimates; GWAPS (1993)',
-    },
-    territorialChanges: 'Kuwait liberated. Iraqi no-fly zones established.',
-    outcome: 'Coalition victory. Kuwait restored. Iraq subjected to sanctions and inspections regime. US established permanent military presence in the Gulf.',
-    summary: 'Iraq invaded and annexed Kuwait, prompting the largest military coalition since WWII. Operation Desert Storm expelled Iraqi forces in a 100-hour ground campaign.',
-    perspectives: [
-      {
-        viewpoint: 'Coalition/Western perspective',
-        description: 'A textbook case of collective security working as intended. The UN authorized force to reverse naked aggression and restore sovereignty.',
-        source: 'Freedman, Lawrence & Karsh, Efraim. The Gulf Conflict 1990–1991. 1993.',
-      },
-      {
-        viewpoint: 'Iraqi perspective',
-        description: 'Kuwait was historically part of Iraq. Kuwait\'s overproduction of oil was economic warfare. The US ambassador gave a "green light" before the invasion.',
-        source: 'Hiro, Dilip. Desert Shield to Desert Storm. 1992.',
-      },
-      {
-        viewpoint: 'Anti-war / humanitarian perspective',
-        description: 'The "Highway of Death" bombing of retreating Iraqis and subsequent sanctions killed far more than the war itself. Sanctions killed an estimated 500,000 Iraqi children.',
-        source: 'Pilger, John. Various reporting; UNICEF surveys.',
-      },
-    ],
-    sources: ['Freedman & Karsh (1993)', 'GWAPS (1993)', 'Hiro (1992)'],
-    tags: ['collective_security', 'oil', 'sanctions', 'highway_of_death', 'un_authorization'],
-    keyFigures: [
-      { name: 'Saddam Hussein', role: 'President of Iraq', country: 'IRQ' },
-      { name: 'George H.W. Bush', role: 'US President', country: 'USA' },
-      { name: 'Norman Schwarzkopf', role: 'Coalition military commander', country: 'USA' },
-    ],
-    relatedConflicts: ['gulf-war-1991', 'iraq-war-2003'],
-  },
   {
     id: 'arab-spring',
     name: 'Arab Spring',
