@@ -34,13 +34,14 @@ interface CountryProperties {
 type WorldTopology = Topology<{ countries: GeometryCollection<CountryProperties> }>;
 
 const ISO_NUMERIC_TO_ALPHA3: Record<string, string> = {
-  '004': 'AFG', '008': 'ALB', '012': 'DZA', '024': 'AGO', '032': 'ARG',
-  '036': 'AUS', '040': 'AUT', '050': 'BGD', '056': 'BEL', '068': 'BOL',
+  '004': 'AFG', '008': 'ALB', '012': 'DZA', '024': 'AGO', '031': 'AZE',
+  '032': 'ARG', '036': 'AUS', '040': 'AUT', '050': 'BGD', '051': 'ARM',
+  '056': 'BEL', '068': 'BOL',
   '076': 'BRA', '100': 'BGR', '104': 'MMR', '116': 'KHM', '120': 'CMR',
   '124': 'CAN', '144': 'LKA', '152': 'CHL', '156': 'CHN', '170': 'COL',
   '180': 'COD', '188': 'CRI', '191': 'HRV', '192': 'CUB', '196': 'CYP',
   '203': 'CZE', '208': 'DNK', '214': 'DOM', '218': 'ECU', '818': 'EGY',
-  '222': 'SLV', '231': 'ETH', '233': 'EST', '246': 'FIN', '250': 'FRA',
+  '222': 'SLV', '231': 'ETH', '232': 'ERI', '233': 'EST', '246': 'FIN', '250': 'FRA',
   '266': 'GAB', '268': 'GEO', '276': 'DEU', '288': 'GHA', '300': 'GRC',
   '320': 'GTM', '332': 'HTI', '340': 'HND', '348': 'HUN', '352': 'ISL',
   '356': 'IND', '360': 'IDN', '364': 'IRN', '368': 'IRQ', '372': 'IRL',
