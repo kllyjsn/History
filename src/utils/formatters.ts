@@ -21,12 +21,14 @@ export function formatDateRange(start: number, end: number | null): string {
 
 export function getYearsAtWar(
   conflicts: { startYear: number; endYear: number | null }[],
+  earliestYear = 1500,
 ): number {
   const years = new Set<number>();
   const currentYear = new Date().getFullYear();
   for (const c of conflicts) {
+    const start = Math.max(c.startYear, earliestYear);
     const end = c.endYear ?? currentYear;
-    for (let y = c.startYear; y <= end; y++) {
+    for (let y = start; y <= end; y++) {
       years.add(y);
     }
   }
