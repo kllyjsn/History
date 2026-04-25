@@ -18,6 +18,7 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const playRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  const yearRef = useRef(selectedYear);
 
   const activeConflicts = getConflictsByDateRange(selectedYear, selectedYear);
   const totalRange = maxYear - minYear;
@@ -54,22 +55,25 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
     };
   }, [isDragging, updateYear]);
 
+  useEffect(() => {
+    yearRef.current = selectedYear;
+  }, [selectedYear]);
+
   const togglePlay = useCallback(() => {
     if (isPlaying) {
       clearInterval(playRef.current);
       setIsPlaying(false);
     } else {
       setIsPlaying(true);
-      let y = selectedYear;
       playRef.current = setInterval(() => {
-        y += 5;
-        if (y > maxYear) {
-          y = minYear;
+        yearRef.current += 5;
+        if (yearRef.current > maxYear) {
+          yearRef.current = minYear;
         }
-        onYearChange(y);
+        onYearChange(yearRef.current);
       }, 200);
     }
-  }, [isPlaying, selectedYear, maxYear, minYear, onYearChange]);
+  }, [isPlaying, maxYear, minYear, onYearChange]);
 
   useEffect(() => {
     return () => clearInterval(playRef.current);

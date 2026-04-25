@@ -1,6 +1,10 @@
 export function formatNumber(n: number): string {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(0)}K`;
+  if (n >= 1_000) {
+    const k = n / 1_000;
+    if (k >= 999.5) return `${(n / 1_000_000).toFixed(1)}M`;
+    return `${k.toFixed(0)}K`;
+  }
   return n.toLocaleString();
 }
 
