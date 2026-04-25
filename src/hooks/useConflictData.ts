@@ -1,8 +1,17 @@
 import { useMemo } from 'react';
 import { conflicts, getConflictsForCountry, getActiveConflicts } from '../data/conflicts';
 import { countries } from '../data/countries';
-import type { CountryStats } from '../types';
+import type { Country, CountryStats } from '../types';
 import { getYearsAtWar, getLongestPeacePeriod } from '../utils/formatters';
+
+function getEffectiveStartYear(country: Country): number {
+  const candidates: number[] = [];
+  if (country.independence) candidates.push(country.independence);
+  for (const hn of country.historicalNames) {
+    candidates.push(hn.startYear);
+  }
+  return candidates.length > 0 ? Math.min(...candidates) : 1500;
+}
 
 export function useConflictData() {
   const countryConflictCounts = useMemo(() => {
@@ -28,7 +37,8 @@ export function useConflictData() {
     const result: Record<string, number> = {};
     for (const id of Object.keys(countries)) {
       const countryConflicts = getConflictsForCountry(id);
-      result[id] = getLongestPeacePeriod(countryConflicts);
+      const startYear = getEffectiveStartYear(countries[id]);
+      result[id] = getLongestPeacePeriod(countryConflicts, startYear);
     }
     return result;
   }, []);
@@ -36,8 +46,10 @@ export function useConflictData() {
   const getCountryStats = useMemo(() => {
     return (countryId: string): CountryStats => {
       const countryConflicts = getConflictsForCountry(countryId);
-      const yearsAtWar = getYearsAtWar(countryConflicts);
-      const longestPeace = getLongestPeacePeriod(countryConflicts);
+      const country = countries[countryId];
+      const startYear = country ? getEffectiveStartYear(country) : 1500;
+      const yearsAtWar = getYearsAtWar(countryConflicts, startYear);
+      const longestPeace = getLongestPeacePeriod(countryConflicts, startYear);
       const active = countryConflicts.filter((c) => c.endYear === null);
 
       let deadliest = null;
@@ -50,7 +62,7 @@ export function useConflictData() {
         }
       }
 
-      const yearsAtPeace = Math.max(0, new Date().getFullYear() - 1500 - yearsAtWar);
+      const yearsAtPeace = Math.max(0, new Date().getFullYear() - startYear - yearsAtWar);
       const totalYears = yearsAtWar + yearsAtPeace;
       const peacePct = totalYears > 0 ? yearsAtPeace / totalYears : 1;
       const activeWeight = active.length > 0 ? 0.7 : 1;
