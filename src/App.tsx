@@ -69,14 +69,15 @@ function App() {
         setShowSearch(true);
       }
       if (e.key === 'Escape') {
-        if (showSearch) setShowSearch(false);
+        if (showReader) handleCloseReader();
+        else if (showSearch) setShowSearch(false);
         else if (page !== 'map') setPage('map');
         else if (selectedCountry) selectCountry(null);
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [showSearch, page, selectedCountry, selectCountry]);
+  }, [showSearch, showReader, handleCloseReader, page, selectedCountry, selectCountry]);
 
   const activeCount = getActiveConflicts().length;
   const countryCount = Object.keys(countries).length;

@@ -17,6 +17,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
   const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const isOpenRef = useRef(isOpen);
+  const requestIdRef = useRef(0);
 
   useEffect(() => {
     isOpenRef.current = isOpen;
@@ -42,10 +43,11 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
     if (!/^https?:\/\//i.test(normalized)) {
       normalized = 'https://' + normalized;
     }
+    const thisRequest = ++requestIdRef.current;
     setLoading(true);
     setArticle(null);
     const result = await scrapeArticle(normalized);
-    if (!isOpenRef.current) return;
+    if (!isOpenRef.current || thisRequest !== requestIdRef.current) return;
     setArticle(result);
     setUrl(normalized);
     if (!result.error) {
