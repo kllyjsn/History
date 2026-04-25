@@ -7,6 +7,7 @@ import SearchPanel from './components/search/SearchPanel';
 import TimelineScrubber from './components/timeline/TimelineScrubber';
 import AboutPage from './components/about/AboutPage';
 import ComparePanel from './components/compare/ComparePanel';
+import ArticleReader from './components/reader/ArticleReader';
 import { useMapInteraction } from './hooks/useMapInteraction';
 import { useConflictData } from './hooks/useConflictData';
 import { getActiveConflicts } from './data/conflicts';
@@ -36,6 +37,18 @@ function App() {
   const [page, setPage] = useState<Page>('map');
   const [showSearch, setShowSearch] = useState(false);
   const [timelineYear, setTimelineYear] = useState(2025);
+  const [showReader, setShowReader] = useState(false);
+  const [readerUrl, setReaderUrl] = useState<string | undefined>(undefined);
+
+  const handleOpenReader = useCallback((url?: string) => {
+    setReaderUrl(url);
+    setShowReader(true);
+  }, []);
+
+  const handleCloseReader = useCallback(() => {
+    setShowReader(false);
+    setReaderUrl(undefined);
+  }, []);
 
   const handleSelectCountry = useCallback(
     (id: string) => {
@@ -75,6 +88,7 @@ function App() {
         onToggleTrends={() => setPage(page === 'trends' ? 'map' : 'trends')}
         onToggleAbout={() => setPage(page === 'about' ? 'map' : 'about')}
         onToggleCompare={() => setPage(page === 'compare' ? 'map' : 'compare')}
+        onOpenReader={() => handleOpenReader()}
         showTrends={page === 'trends'}
         showAbout={page === 'about'}
         showCompare={page === 'compare'}
@@ -95,6 +109,7 @@ function App() {
           countryId={selectedCountry}
           onClose={handleCloseCountry}
           getCountryStats={getCountryStats}
+          onOpenArticle={handleOpenReader}
         />
 
         {page === 'trends' && (
@@ -132,6 +147,12 @@ function App() {
       <TimelineScrubber
         selectedYear={timelineYear}
         onYearChange={setTimelineYear}
+      />
+
+      <ArticleReader
+        isOpen={showReader}
+        initialUrl={readerUrl}
+        onClose={handleCloseReader}
       />
     </div>
   );

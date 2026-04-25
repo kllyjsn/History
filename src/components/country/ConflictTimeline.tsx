@@ -4,13 +4,15 @@ import type { Conflict } from '../../types';
 import { getConflictTypeColor, getConflictTypeBadge } from '../../utils/colorScales';
 import { formatDateRange, formatCasualtyRange } from '../../utils/formatters';
 import { countries } from '../../data/countries';
+import { guessArticleUrls } from '../../utils/articleScraper';
 
 interface ConflictTimelineProps {
   conflicts: Conflict[];
   countryId: string;
+  onOpenArticle: (url?: string) => void;
 }
 
-const ConflictTimeline: FC<ConflictTimelineProps> = ({ conflicts, countryId }) => {
+const ConflictTimeline: FC<ConflictTimelineProps> = ({ conflicts, countryId, onOpenArticle }) => {
   const sorted = [...conflicts].sort((a, b) => b.startYear - a.startYear);
 
   return (
@@ -25,6 +27,7 @@ const ConflictTimeline: FC<ConflictTimelineProps> = ({ conflicts, countryId }) =
             key={conflict.id}
             conflict={conflict}
             countryId={countryId}
+            onOpenArticle={onOpenArticle}
           />
         ))}
       </div>
@@ -32,7 +35,7 @@ const ConflictTimeline: FC<ConflictTimelineProps> = ({ conflicts, countryId }) =
   );
 };
 
-function ConflictCard({ conflict, countryId }: { conflict: Conflict; countryId: string }) {
+function ConflictCard({ conflict, countryId, onOpenArticle }: { conflict: Conflict; countryId: string; onOpenArticle: (url?: string) => void }) {
   const [expanded, setExpanded] = useState(false);
   const typeColor = getConflictTypeColor(conflict.type);
   const isOngoing = conflict.endYear === null;
@@ -262,6 +265,33 @@ function ConflictCard({ conflict, countryId }: { conflict: Conflict; countryId: 
                   </p>
                 </div>
               )}
+
+              {/* Read Articles */}
+              <div>
+                <p className="text-[10px] font-medium text-emerald-500 uppercase tracking-wider mb-1.5">
+                  Read Articles
+                </p>
+                <div className="space-y-1">
+                  {guessArticleUrls(conflict.name, conflict.sources[0] || conflict.name).map((link) => (
+                    <button
+                      key={link.url}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenArticle(link.url);
+                      }}
+                      className="w-full flex items-center gap-2 rounded-md bg-emerald-950/20 border border-emerald-900/30 px-2.5 py-1.5 text-left hover:bg-emerald-950/40 transition-colors group"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-600 group-hover:text-emerald-400 shrink-0">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                      </svg>
+                      <span className="text-[10px] text-emerald-400/80 group-hover:text-emerald-300 truncate">
+                        {link.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
               {conflict.tags.length > 0 && (
                 <div className="flex flex-wrap gap-1">

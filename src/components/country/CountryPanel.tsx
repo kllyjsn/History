@@ -10,9 +10,10 @@ interface CountryPanelProps {
   countryId: string | null;
   onClose: () => void;
   getCountryStats: (id: string) => CountryStats;
+  onOpenArticle: (url?: string) => void;
 }
 
-const CountryPanel: FC<CountryPanelProps> = ({ countryId, onClose, getCountryStats }) => {
+const CountryPanel: FC<CountryPanelProps> = ({ countryId, onClose, getCountryStats, onOpenArticle }) => {
   const country = countryId ? countries[countryId] : null;
   const countryConflicts = useMemo(
     () => (countryId ? getConflictsForCountry(countryId) : []),
@@ -48,7 +49,7 @@ const CountryPanel: FC<CountryPanelProps> = ({ countryId, onClose, getCountrySta
 
           <div className="p-4 space-y-6">
             <CountryHeader country={country} stats={stats} />
-            <ConflictTimeline conflicts={countryConflicts} countryId={country.id} />
+            <ConflictTimeline conflicts={countryConflicts} countryId={country.id} onOpenArticle={onOpenArticle} />
           </div>
         </motion.div>
       )}
