@@ -7,18 +7,56 @@ interface CountryHeaderProps {
   stats: CountryStats;
 }
 
+function getPeaceColor(index: number): string {
+  if (index >= 75) return '#22c55e';
+  if (index >= 50) return '#f59e0b';
+  if (index >= 25) return '#f97316';
+  return '#ef4444';
+}
+
+function getPeaceLabel(index: number): string {
+  if (index >= 75) return 'High Peace';
+  if (index >= 50) return 'Moderate';
+  if (index >= 25) return 'Elevated Risk';
+  return 'High Conflict';
+}
+
 const CountryHeader: FC<CountryHeaderProps> = ({ country, stats }) => {
   const warPct = stats.totalConflicts > 0
     ? Math.round((stats.yearsAtWar / (stats.yearsAtWar + stats.yearsAtPeace)) * 100)
     : 0;
 
+  const peaceColor = getPeaceColor(stats.peaceIndex);
+
   return (
     <div>
       <div className="flex items-center gap-3">
         <span className="text-4xl">{country.flagEmoji}</span>
-        <div>
+        <div className="flex-1">
           <h3 className="text-xl font-bold text-white">{country.name}</h3>
           <p className="text-sm text-slate-400">{country.region} · {country.subregion}</p>
+        </div>
+        <div className="text-right">
+          <div className="text-xs text-slate-500 uppercase tracking-wider">Peace Index</div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-2xl font-bold" style={{ color: peaceColor }}>
+              {stats.peaceIndex}
+            </span>
+            <div className="flex flex-col items-end">
+              <span className="text-[10px] font-medium" style={{ color: peaceColor }}>
+                /100
+              </span>
+              <span className="text-[10px] text-slate-500">
+                {getPeaceLabel(stats.peaceIndex)}
+              </span>
+            </div>
+          </div>
+          <div className="mt-1 h-1.5 w-20 rounded-full bg-slate-700 overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-500"
+              style={{ width: `${stats.peaceIndex}%`, backgroundColor: peaceColor }}
+            />
+          </div>
         </div>
       </div>
 

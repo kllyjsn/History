@@ -10,7 +10,9 @@ export type ConflictType =
   | 'world_war'
   | 'religious_war'
   | 'trade_war'
-  | 'rebellion';
+  | 'rebellion'
+  | 'insurgency'
+  | 'ethnic_conflict';
 
 export type PartyRole =
   | 'aggressor'
@@ -37,6 +39,18 @@ export interface ConflictPerspective {
   source: string;
 }
 
+export interface KeyFigure {
+  name: string;
+  role: string;
+  country: string;
+}
+
+export interface Treaty {
+  name: string;
+  year: number;
+  description: string;
+}
+
 export interface Conflict {
   id: string;
   name: string;
@@ -57,6 +71,9 @@ export interface Conflict {
   perspectives: ConflictPerspective[];
   sources: string[];
   tags: string[];
+  keyFigures?: KeyFigure[];
+  treaties?: Treaty[];
+  relatedConflicts?: string[];
 }
 
 export interface Country {
@@ -66,6 +83,8 @@ export interface Country {
   region: string;
   subregion: string;
   flagEmoji: string;
+  independence?: number;
+  governmentType?: string;
 }
 
 export type ColorMode = 'conflict_frequency' | 'active_conflicts' | 'peace_duration' | 'region';
@@ -85,6 +104,7 @@ export interface CountryStats {
   deadliestConflict: Conflict | null;
   longestPeacePeriod: number;
   activeConflicts: Conflict[];
+  peaceIndex: number;
 }
 
 export interface MapFeatureProperties {

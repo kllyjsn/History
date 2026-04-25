@@ -5,9 +5,13 @@ import CountryPanel from './components/country/CountryPanel';
 import TrendsDashboard from './components/trends/TrendsDashboard';
 import SearchPanel from './components/search/SearchPanel';
 import TimelineScrubber from './components/timeline/TimelineScrubber';
+import AboutPage from './components/about/AboutPage';
+import ComparePanel from './components/compare/ComparePanel';
 import { useMapInteraction } from './hooks/useMapInteraction';
 import { useConflictData } from './hooks/useConflictData';
 import { getActiveConflicts } from './data/conflicts';
+
+type Page = 'map' | 'trends' | 'about' | 'compare';
 
 function App() {
   const {
@@ -19,6 +23,7 @@ function App() {
 
   const {
     conflicts,
+    countries,
     countryConflictCounts,
     activeConflictCountries,
     peaceYears,
@@ -28,14 +33,14 @@ function App() {
     deadliestConflicts,
   } = useConflictData();
 
-  const [showTrends, setShowTrends] = useState(false);
+  const [page, setPage] = useState<Page>('map');
   const [showSearch, setShowSearch] = useState(false);
   const [timelineYear, setTimelineYear] = useState(2025);
 
   const handleSelectCountry = useCallback(
     (id: string) => {
       selectCountry(id);
-      setShowTrends(false);
+      setPage('map');
     },
     [selectCountry],
   );
@@ -44,7 +49,6 @@ function App() {
     selectCountry(null);
   }, [selectCountry]);
 
-  // Keyboard shortcut for search
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === '/' && !showSearch) {
@@ -53,22 +57,27 @@ function App() {
       }
       if (e.key === 'Escape') {
         if (showSearch) setShowSearch(false);
-        else if (showTrends) setShowTrends(false);
+        else if (page !== 'map') setPage('map');
         else if (selectedCountry) selectCountry(null);
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [showSearch, showTrends, selectedCountry, selectCountry]);
+  }, [showSearch, page, selectedCountry, selectCountry]);
 
   const activeCount = getActiveConflicts().length;
+  const countryCount = Object.keys(countries).length;
 
   return (
     <div className="flex h-screen flex-col">
       <Header
         onOpenSearch={() => setShowSearch(true)}
-        onOpenTrends={() => setShowTrends(!showTrends)}
-        showTrends={showTrends}
+        onToggleTrends={() => setPage(page === 'trends' ? 'map' : 'trends')}
+        onToggleAbout={() => setPage(page === 'about' ? 'map' : 'about')}
+        onToggleCompare={() => setPage(page === 'compare' ? 'map' : 'compare')}
+        showTrends={page === 'trends'}
+        showAbout={page === 'about'}
+        showCompare={page === 'compare'}
       />
 
       <div className="relative flex-1 overflow-hidden">
@@ -88,16 +97,30 @@ function App() {
           getCountryStats={getCountryStats}
         />
 
-        {showTrends && (
+        {page === 'trends' && (
           <TrendsDashboard
             conflictsByDecade={conflictsByDecade}
             conflictsByType={conflictsByType}
             deadliestConflicts={deadliestConflicts}
             totalConflicts={conflicts.length}
             activeConflicts={activeCount}
-            onClose={() => setShowTrends(false)}
+            onClose={() => setPage('map')}
           />
         )}
+
+        {page === 'about' && (
+          <AboutPage
+            onClose={() => setPage('map')}
+            totalConflicts={conflicts.length}
+            totalCountries={countryCount}
+          />
+        )}
+
+        <ComparePanel
+          isOpen={page === 'compare'}
+          onClose={() => setPage('map')}
+          getCountryStats={getCountryStats}
+        />
 
         <SearchPanel
           isOpen={showSearch}

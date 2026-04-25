@@ -210,6 +210,48 @@ function ConflictCard({ conflict, countryId }: { conflict: Conflict; countryId: 
                 </div>
               )}
 
+              {conflict.keyFigures && conflict.keyFigures.length > 0 && (
+                <div>
+                  <p className="text-[10px] font-medium text-slate-500 uppercase tracking-wider mb-1">
+                    Key Figures
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {conflict.keyFigures.map((kf, i) => {
+                      const kfCountry = countries[kf.country];
+                      return (
+                        <span
+                          key={i}
+                          className="inline-flex items-center gap-1 rounded-full bg-blue-950/30 border border-blue-900/30 px-2 py-0.5 text-[10px]"
+                        >
+                          {kfCountry && <span>{kfCountry.flagEmoji}</span>}
+                          <span className="text-blue-300 font-medium">{kf.name}</span>
+                          <span className="text-blue-400/60">{kf.role}</span>
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {conflict.treaties && conflict.treaties.length > 0 && (
+                <div>
+                  <p className="text-[10px] font-medium text-emerald-500 uppercase tracking-wider mb-1">
+                    Treaties & Agreements
+                  </p>
+                  <div className="space-y-1">
+                    {conflict.treaties.map((t, i) => (
+                      <div key={i} className="rounded-md bg-emerald-950/20 border border-emerald-900/30 px-2.5 py-1.5">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-medium text-emerald-400">{t.name}</span>
+                          <span className="text-[10px] text-emerald-600">({t.year})</span>
+                        </div>
+                        <p className="text-[10px] text-slate-400 mt-0.5">{t.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {conflict.sources.length > 0 && (
                 <div>
                   <p className="text-[10px] font-medium text-slate-500 uppercase tracking-wider mb-1">

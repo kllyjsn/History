@@ -60,6 +60,8 @@ export function getConflictTypeColor(type: string): string {
     religious_war: '#8b5cf6',
     trade_war: '#06b6d4',
     rebellion: '#e879f9',
+    insurgency: '#fb923c',
+    ethnic_conflict: '#f472b6',
   };
   return map[type] ?? '#64748b';
 }
@@ -78,6 +80,8 @@ export function getConflictTypeBadge(type: string): string {
     religious_war: 'Religious War',
     trade_war: 'Trade War',
     rebellion: 'Rebellion',
+    insurgency: 'Insurgency',
+    ethnic_conflict: 'Ethnic Conflict',
   };
   return map[type] ?? type;
 }

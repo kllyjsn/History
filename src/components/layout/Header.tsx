@@ -2,11 +2,23 @@ import type { FC } from 'react';
 
 interface HeaderProps {
   onOpenSearch: () => void;
-  onOpenTrends: () => void;
+  onToggleTrends: () => void;
+  onToggleAbout: () => void;
+  onToggleCompare: () => void;
   showTrends: boolean;
+  showAbout: boolean;
+  showCompare: boolean;
 }
 
-const Header: FC<HeaderProps> = ({ onOpenSearch, onOpenTrends, showTrends }) => {
+const Header: FC<HeaderProps> = ({
+  onOpenSearch,
+  onToggleTrends,
+  onToggleAbout,
+  onToggleCompare,
+  showTrends,
+  showAbout,
+  showCompare,
+}) => {
   return (
     <header className="flex items-center justify-between border-b border-slate-800 bg-slate-900/80 px-4 py-2.5 backdrop-blur-sm z-20">
       <div className="flex items-center gap-3">
@@ -20,16 +32,9 @@ const Header: FC<HeaderProps> = ({ onOpenSearch, onOpenTrends, showTrends }) => 
       </div>
 
       <nav className="flex items-center gap-2">
-        <button
-          onClick={onOpenTrends}
-          className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-            showTrends
-              ? 'bg-amber-500/20 text-amber-400'
-              : 'text-slate-400 hover:bg-slate-800 hover:text-white'
-          }`}
-        >
-          Trends
-        </button>
+        <NavButton label="Trends" active={showTrends} onClick={onToggleTrends} activeColor="amber" />
+        <NavButton label="Compare" active={showCompare} onClick={onToggleCompare} activeColor="purple" />
+        <NavButton label="About" active={showAbout} onClick={onToggleAbout} activeColor="blue" />
         <button
           onClick={onOpenSearch}
           className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-3 py-1.5 text-xs text-slate-400 hover:border-slate-600 hover:text-white transition-colors"
@@ -45,5 +50,33 @@ const Header: FC<HeaderProps> = ({ onOpenSearch, onOpenTrends, showTrends }) => 
     </header>
   );
 };
+
+function NavButton({
+  label,
+  active,
+  onClick,
+  activeColor,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+  activeColor: 'amber' | 'blue' | 'purple';
+}) {
+  const colorMap = {
+    amber: 'bg-amber-500/20 text-amber-400',
+    blue: 'bg-blue-500/20 text-blue-400',
+    purple: 'bg-purple-500/20 text-purple-400',
+  };
+  return (
+    <button
+      onClick={onClick}
+      className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+        active ? colorMap[activeColor] : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
 
 export default Header;

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback, type FC } from 'react';
 import {
   geoNaturalEarth1,
   geoPath,
+  geoGraticule10,
   select,
   zoom as d3zoom,
   type GeoPermissibleObjects,
@@ -170,16 +171,29 @@ const WorldMap: FC<WorldMapProps> = ({
     .fitSize([dimensions.width, dimensions.height], topoData ?? { type: 'FeatureCollection', features: [] });
   const pathGen = geoPath().projection(projection);
 
+  const graticule = geoGraticule10();
+  const graticulePath = pathGen(graticule as GeoPermissibleObjects) ?? '';
+  const sphere = { type: 'Sphere' as const };
+  const spherePath = pathGen(sphere as GeoPermissibleObjects) ?? '';
+
   return (
-    <div className="relative w-full h-full overflow-hidden" style={{ background: '#1a2332' }}>
+    <div className="relative w-full h-full overflow-hidden" style={{ background: '#0a0f1a' }}>
       <svg
         ref={svgRef}
         width={dimensions.width}
         height={dimensions.height}
         className="cursor-grab active:cursor-grabbing"
       >
-        <rect width={dimensions.width} height={dimensions.height} fill="#1a2332" />
+        <defs>
+          <radialGradient id="ocean-gradient" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stopColor="#1a2332" />
+            <stop offset="100%" stopColor="#0a0f1a" />
+          </radialGradient>
+        </defs>
+        <rect width={dimensions.width} height={dimensions.height} fill="url(#ocean-gradient)" />
         <g ref={gRef}>
+          <path d={spherePath} fill="none" stroke="#1e293b" strokeWidth={0.5} />
+          <path d={graticulePath} fill="none" stroke="#1e293b" strokeWidth={0.15} strokeOpacity={0.4} />
           {topoData?.features.map((feature) => {
             const f = feature as Feature<Geometry, CountryProperties>;
             const iso = getIso3(f);

@@ -50,13 +50,21 @@ export function useConflictData() {
         }
       }
 
+      const yearsAtPeace = Math.max(0, new Date().getFullYear() - 1500 - yearsAtWar);
+      const totalYears = yearsAtWar + yearsAtPeace;
+      const peacePct = totalYears > 0 ? yearsAtPeace / totalYears : 1;
+      const activeWeight = active.length > 0 ? 0.7 : 1;
+      const conflictDensity = Math.max(0, 1 - countryConflicts.length / 50);
+      const peaceIndex = Math.round((peacePct * 0.4 + activeWeight * 0.3 + conflictDensity * 0.3) * 100);
+
       return {
         totalConflicts: countryConflicts.length,
         yearsAtWar,
-        yearsAtPeace: Math.max(0, new Date().getFullYear() - 1500 - yearsAtWar),
+        yearsAtPeace,
         deadliestConflict: deadliest,
         longestPeacePeriod: longestPeace,
         activeConflicts: active,
+        peaceIndex,
       };
     };
   }, []);
