@@ -9,15 +9,15 @@ interface AboutPageProps {
 const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries }) => {
   return (
     <div className="absolute inset-0 z-40 overflow-y-auto bg-slate-900/98 backdrop-blur-sm">
-      <div className="mx-auto max-w-3xl px-6 py-8">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="text-2xl font-bold text-white">About School of History</h2>
-            <p className="text-sm text-slate-400 mt-1">Methodology, philosophy, and sources</p>
+      <div className="mx-auto max-w-3xl px-3 py-4 sm:px-6 sm:py-8">
+        <div className="flex items-center justify-between mb-4 sm:mb-8 gap-3">
+          <div className="min-w-0">
+            <h2 className="text-lg sm:text-2xl font-bold text-white">About School of History</h2>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1">Methodology, philosophy, and sources</p>
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-slate-300 hover:bg-slate-800 transition-colors"
+            className="rounded-lg border border-slate-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-slate-300 hover:bg-slate-800 transition-colors shrink-0"
           >
             Back to Map
           </button>
@@ -98,7 +98,7 @@ const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries
           </Section>
 
           <Section title="Coverage">
-            <div className="grid grid-cols-3 gap-4 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-2">
               <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
                 <p className="text-2xl font-bold text-amber-400">{totalConflicts}</p>
                 <p className="text-xs text-slate-400 mt-1">Conflicts documented</p>

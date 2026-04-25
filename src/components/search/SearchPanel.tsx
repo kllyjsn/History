@@ -43,7 +43,7 @@ const SearchPanel: FC<SearchPanelProps> = ({ isOpen, onClose, onSelectCountry })
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="absolute inset-x-0 top-0 z-50 mx-auto max-w-2xl p-4"
+          className="absolute inset-x-0 top-0 z-50 mx-auto max-w-2xl p-2 sm:p-4"
         >
           <div className="rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-md">
             <div className="flex items-center gap-3 border-b border-slate-700 px-4 py-3">

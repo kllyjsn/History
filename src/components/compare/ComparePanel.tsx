@@ -46,18 +46,18 @@ const ComparePanel: FC<ComparePanelProps> = ({ isOpen, onClose, getCountryStats 
           exit={{ opacity: 0 }}
           className="absolute inset-0 z-40 overflow-y-auto bg-slate-900/98 backdrop-blur-sm"
         >
-          <div className="mx-auto max-w-4xl px-6 py-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-white">Country Comparison</h2>
+          <div className="mx-auto max-w-4xl px-3 py-4 sm:px-6 sm:py-8">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <h2 className="text-lg sm:text-xl font-bold text-white">Country Comparison</h2>
               <button
                 onClick={onClose}
-                className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-slate-300 hover:bg-slate-800 transition-colors"
+                className="rounded-lg border border-slate-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-slate-300 hover:bg-slate-800 transition-colors"
               >
                 Close
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mb-4 sm:mb-8">
               <CountrySelector
                 value={countryA}
                 onChange={setCountryA}
@@ -72,12 +72,12 @@ const ComparePanel: FC<ComparePanelProps> = ({ isOpen, onClose, getCountryStats 
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
               <CompareCard stats={statsA} country={cA} conflicts={conflictsA} />
               <CompareCard stats={statsB} country={cB} conflicts={conflictsB} />
             </div>
 
-            <div className="mt-6 grid grid-cols-5 gap-3">
+            <div className="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
               <MetricBar
                 label="Peace Index"
                 valueA={statsA.peaceIndex}
@@ -114,7 +114,7 @@ const ComparePanel: FC<ComparePanelProps> = ({ isOpen, onClose, getCountryStats 
             </div>
 
             {sharedConflicts.length > 0 && (
-              <div className="mt-8 rounded-xl border border-amber-900/30 bg-amber-950/20 p-5">
+              <div className="mt-4 sm:mt-8 rounded-xl border border-amber-900/30 bg-amber-950/20 p-3 sm:p-5">
                 <h3 className="text-sm font-medium text-amber-400 mb-3">
                   Shared Conflicts ({sharedConflicts.length})
                 </h3>

@@ -18,9 +18,15 @@
 
 html, body, #root {
   height: 100%;
+  height: 100dvh;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@supports (height: 100dvh) {
+  html, body, #root { height: 100dvh; }
 }
 
 body {

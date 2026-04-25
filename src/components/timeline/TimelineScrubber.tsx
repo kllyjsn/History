@@ -60,15 +60,34 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
     [updateYear],
   );
 
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      setIsDragging(true);
+      const touch = e.touches[0];
+      if (touch) updateYear(touch.clientX);
+    },
+    [updateYear],
+  );
+
   useEffect(() => {
     if (!isDragging) return;
-    const handleMove = (e: MouseEvent) => updateYear(e.clientX);
-    const handleUp = () => setIsDragging(false);
-    window.addEventListener('mousemove', handleMove);
-    window.addEventListener('mouseup', handleUp);
+    const handleMouseMove = (e: MouseEvent) => updateYear(e.clientX);
+    const handleMouseUp = () => setIsDragging(false);
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (touch) updateYear(touch.clientX);
+    };
+    const handleTouchEnd = () => setIsDragging(false);
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd);
     return () => {
-      window.removeEventListener('mousemove', handleMove);
-      window.removeEventListener('mouseup', handleUp);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, [isDragging, updateYear]);
 
@@ -102,45 +121,46 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
   }
 
   return (
-    <div className="border-t border-slate-800 bg-slate-900/90 px-4 py-2 backdrop-blur-sm">
-      <div className="flex items-center gap-3">
+    <div className="border-t border-slate-800 bg-slate-900/90 px-2 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm">
+      <div className="flex items-center gap-2 sm:gap-3">
         <button
           onClick={togglePlay}
-          className={`flex h-8 w-8 items-center justify-center rounded-full transition-all ${
+          className={`flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full transition-all shrink-0 ${
             isPlaying
               ? 'bg-amber-500/20 text-amber-400 ring-1 ring-amber-500/40'
               : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
           }`}
         >
           {isPlaying ? (
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="sm:w-3 sm:h-3">
               <rect x="6" y="4" width="4" height="16" />
               <rect x="14" y="4" width="4" height="16" />
             </svg>
           ) : (
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="sm:w-3 sm:h-3">
               <polygon points="5,3 19,12 5,21" />
             </svg>
           )}
         </button>
 
-        <div className="text-center min-w-[4.5rem]">
-          <span className="text-sm font-bold text-amber-400 tabular-nums">
+        <div className="text-center min-w-[3.5rem] sm:min-w-[4.5rem] shrink-0">
+          <span className="text-xs sm:text-sm font-bold text-amber-400 tabular-nums">
             {selectedYear}
           </span>
-          <div className="text-[9px] text-slate-500 -mt-0.5">
+          <div className="text-[8px] sm:text-[9px] text-slate-500 -mt-0.5">
             {activeConflicts.length} active
           </div>
         </div>
 
-        <div className="flex-1 relative">
+        <div className="flex-1 relative touch-none">
           <div
             ref={trackRef}
-            className="relative h-10 cursor-pointer"
+            className="relative h-8 sm:h-10 cursor-pointer"
             onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
           >
             {/* Conflict density heatmap */}
-            <div className="absolute bottom-4 left-0 right-0 h-3 flex">
+            <div className="absolute bottom-3.5 sm:bottom-4 left-0 right-0 h-2 sm:h-3 flex">
               {conflictDensity.map((d) => {
                 const x = ((d.year - minYear) / totalRange) * 100;
                 const w = (10 / totalRange) * 100;
@@ -161,34 +181,35 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
             </div>
 
             {/* Track line */}
-            <div className="absolute bottom-3 h-1 w-full rounded-full bg-slate-700/50">
+            <div className="absolute bottom-2.5 sm:bottom-3 h-1 w-full rounded-full bg-slate-700/50">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-amber-500/60 to-amber-400/80 transition-[width] duration-75"
                 style={{ width: `${pct}%` }}
               />
             </div>
 
-            {/* Tick marks */}
+            {/* Tick marks - fewer on mobile */}
             {ticks.map((y) => {
               const tickPct = ((y - minYear) / totalRange) * 100;
+              const isEvenCentury = y % 200 === 0;
               return (
                 <div
                   key={y}
-                  className="absolute bottom-0 flex flex-col items-center"
+                  className={`absolute bottom-0 flex flex-col items-center ${!isEvenCentury ? 'hidden sm:flex' : ''}`}
                   style={{ left: `${tickPct}%` }}
                 >
-                  <div className="h-2 w-px bg-slate-600" />
-                  <span className="text-[9px] text-slate-600 select-none">{y}</span>
+                  <div className="h-1.5 sm:h-2 w-px bg-slate-600" />
+                  <span className="text-[7px] sm:text-[9px] text-slate-600 select-none">{y}</span>
                 </div>
               );
             })}
 
             {/* Thumb */}
             <div
-              className="absolute bottom-2 -translate-x-1/2 h-5 w-5 rounded-full border-2 border-amber-400 bg-slate-900 shadow-lg shadow-amber-500/20 transition-[left] duration-75"
+              className="absolute bottom-1.5 sm:bottom-2 -translate-x-1/2 h-4 w-4 sm:h-5 sm:w-5 rounded-full border-2 border-amber-400 bg-slate-900 shadow-lg shadow-amber-500/20 transition-[left] duration-75"
               style={{ left: `${pct}%` }}
             >
-              <div className="absolute inset-1 rounded-full bg-amber-400/30" />
+              <div className="absolute inset-0.5 sm:inset-1 rounded-full bg-amber-400/30" />
             </div>
           </div>
         </div>

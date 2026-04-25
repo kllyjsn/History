@@ -28,24 +28,24 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
 
   return (
     <div className="absolute inset-0 z-40 overflow-y-auto bg-slate-900/98 backdrop-blur-sm">
-      <div className="mx-auto max-w-5xl px-6 py-8">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="text-2xl font-bold text-white">Global Trends</h2>
-            <p className="text-sm text-slate-400 mt-1">
+      <div className="mx-auto max-w-5xl px-3 py-4 sm:px-6 sm:py-8">
+        <div className="flex items-center justify-between mb-4 sm:mb-8 gap-3">
+          <div className="min-w-0">
+            <h2 className="text-lg sm:text-2xl font-bold text-white">Global Trends</h2>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1">
               Patterns across {totalConflicts} recorded conflicts · {activeConflicts} ongoing
             </p>
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-slate-300 hover:bg-slate-800 transition-colors"
+            className="rounded-lg border border-slate-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-slate-300 hover:bg-slate-800 transition-colors shrink-0"
           >
             Back to Map
           </button>
         </div>
 
         {/* Key insight */}
-        <div className="mb-8 rounded-xl border border-amber-800/30 bg-amber-950/20 p-5">
+        <div className="mb-4 sm:mb-8 rounded-xl border border-amber-800/30 bg-amber-950/20 p-3 sm:p-5">
           <h3 className="text-sm font-medium text-amber-400 mb-2">Key Insight: The Paradox of Modern Peace</h3>
           <p className="text-sm text-slate-300 leading-relaxed">
             While interstate wars between major powers have declined dramatically since 1945 (the "Long Peace"),
@@ -55,12 +55,12 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {/* Conflicts by Decade */}
-          <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-5">
+          <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-3 sm:p-5">
             <h3 className="text-sm font-medium text-white mb-1">Conflicts by Decade</h3>
-            <p className="text-xs text-slate-500 mb-4">New conflicts starting per decade (1800–present)</p>
-            <ResponsiveContainer width="100%" height={220}>
+            <p className="text-xs text-slate-500 mb-3 sm:mb-4">New conflicts starting per decade (1800–present)</p>
+            <ResponsiveContainer width="100%" height={180}>
               <BarChart data={recentDecades} margin={{ top: 0, right: 0, bottom: 0, left: -20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                 <XAxis
@@ -82,11 +82,11 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
           </div>
 
           {/* Conflict Types */}
-          <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-5">
+          <div className="rounded-xl border border-slate-700 bg-slate-800/30 p-3 sm:p-5">
             <h3 className="text-sm font-medium text-white mb-1">Conflict Types</h3>
-            <p className="text-xs text-slate-500 mb-4">Distribution across all recorded conflicts</p>
-            <div className="flex items-center gap-4">
-              <ResponsiveContainer width="50%" height={200}>
+            <p className="text-xs text-slate-500 mb-3 sm:mb-4">Distribution across all recorded conflicts</p>
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+              <ResponsiveContainer width="100%" height={180} className="sm:!w-1/2">
                 <PieChart>
                   <Pie
                     data={conflictsByType}
@@ -105,7 +105,7 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>
-              <div className="space-y-1.5">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-1 sm:gap-x-0 sm:space-y-1.5">
                 {conflictsByType.map((entry) => (
                   <div key={entry.type} className="flex items-center gap-2 text-xs">
                     <div
@@ -122,9 +122,9 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
         </div>
 
         {/* Deadliest Conflicts */}
-        <div className="mt-6 rounded-xl border border-slate-700 bg-slate-800/30 p-5">
+        <div className="mt-4 sm:mt-6 rounded-xl border border-slate-700 bg-slate-800/30 p-3 sm:p-5">
           <h3 className="text-sm font-medium text-white mb-1">Deadliest Conflicts</h3>
-          <p className="text-xs text-slate-500 mb-4">Ranked by highest estimated total casualties</p>
+          <p className="text-xs text-slate-500 mb-3 sm:mb-4">Ranked by highest estimated total casualties</p>
           <div className="space-y-2">
             {deadliestConflicts.map((c, i) => {
               const maxCasualties = deadliestConflicts[0]?.casualties.total?.high ?? 1;
@@ -132,16 +132,16 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
               const pct = (thisHigh / maxCasualties) * 100;
 
               return (
-                <div key={c.id} className="flex items-center gap-3">
-                  <span className="w-6 text-right text-xs text-slate-500 font-mono">
+                <div key={c.id} className="flex items-center gap-2 sm:gap-3">
+                  <span className="w-5 sm:w-6 text-right text-[10px] sm:text-xs text-slate-500 font-mono shrink-0">
                     {i + 1}.
                   </span>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-white font-medium truncate">
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <span className="text-xs sm:text-sm text-white font-medium truncate">
                         {c.name}
                       </span>
-                      <span className="text-[10px] text-slate-500">
+                      <span className="text-[9px] sm:text-[10px] text-slate-500 shrink-0 hidden sm:inline">
                         {formatDateRange(c.startYear, c.endYear)}
                       </span>
                     </div>
@@ -155,7 +155,7 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
                       />
                     </div>
                   </div>
-                  <span className="text-xs text-slate-400 tabular-nums shrink-0">
+                  <span className="text-[10px] sm:text-xs text-slate-400 tabular-nums shrink-0">
                     {c.casualties.total
                       ? formatCasualtyRange(c.casualties.total.low, c.casualties.total.high)
                       : '—'}
@@ -167,9 +167,9 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
         </div>
 
         {/* Peace Patterns insight */}
-        <div className="mt-6 rounded-xl border border-slate-700 bg-slate-800/30 p-5">
+        <div className="mt-4 sm:mt-6 rounded-xl border border-slate-700 bg-slate-800/30 p-3 sm:p-5">
           <h3 className="text-sm font-medium text-white mb-3">Conditions That Produce Peace</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <InsightCard
               title="Economic Interdependence"
               description="Nations with strong bilateral trade relationships are significantly less likely to go to war with each other. The EU project is the most successful example."
@@ -188,7 +188,7 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
           </div>
         </div>
 
-        <div className="mt-8 text-center text-xs text-slate-600 pb-8">
+        <div className="mt-6 sm:mt-8 text-center text-xs text-slate-600 pb-6 sm:pb-8">
           <p>
             Data curated from the Correlates of War Project, Uppsala Conflict Data Program (UCDP),
             Global Peace Index, and peer-reviewed academic sources. All conflict data is presented
