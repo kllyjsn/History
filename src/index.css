@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ocean: #1a2332;
+  --color-navy: #0a0f1a;
+  --color-navy-light: #111827;
+  --color-slate-dark: #1e293b;
+  --color-slate-mid: #334155;
+  --color-accent: #f59e0b;
+  --color-accent-dim: #b45309;
+  --color-conflict-high: #ef4444;
+  --color-conflict-mid: #f97316;
+  --color-conflict-low: #eab308;
+  --color-peace: #22c55e;
+  --color-peace-dark: #14532d;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@supports (height: 100dvh) {
+  html, body, #root { height: 100dvh; }
+}
+
+body {
+  background-color: var(--color-navy);
+  color: #e2e8f0;
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-mid);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Tooltip animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tooltip-enter {
+  animation: fadeIn 0.15s ease-out;
+}
+
+/* Subtle glow on active conflict countries */
+@keyframes pulse-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+/* Selection ring */
+.selection-ring {
+  animation: ring-pulse 2s ease-in-out infinite;
+}
+@keyframes ring-pulse {
+  0%, 100% { stroke-opacity: 1; }
+  50% { stroke-opacity: 0.5; }
+}
