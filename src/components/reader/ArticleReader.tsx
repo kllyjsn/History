@@ -1,4 +1,4 @@
-import { type FC, useState, useEffect, useRef } from 'react';
+import { type FC, useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scrapeArticle, type ScrapedArticle } from '../../utils/articleScraper';
 
@@ -26,16 +26,27 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
     isOpenRef.current = isOpen;
   });
 
+  // Clean up stale state when closed externally (e.g. Escape key sets isOpen=false)
+  const resetState = useCallback(() => {
+    setArticle(null);
+    setUrl('');
+    setLoading(false);
+  }, []);
+
   useEffect(() => {
     const justOpened = isOpen && !prevOpenRef.current;
+    const justClosed = !isOpen && prevOpenRef.current;
     const urlChanged = initialUrl !== prevUrlRef.current;
     prevOpenRef.current = isOpen;
     prevUrlRef.current = initialUrl;
 
-    if (!isOpen) {
+    if (justClosed) {
       requestIdRef.current++;
+      resetState();
       return;
     }
+
+    if (!isOpen) return;
 
     if (justOpened && initialUrl) {
       setUrl(initialUrl);
@@ -46,14 +57,12 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
       setUrl(initialUrl);
       loadArticle(initialUrl);
     }
-  }, [isOpen, initialUrl]);
+  }, [isOpen, initialUrl, resetState]);
 
-  const handleClose = () => {
-    setArticle(null);
-    setUrl('');
-    setLoading(false);
+  const handleClose = useCallback(() => {
+    resetState();
     onClose();
-  };
+  }, [onClose, resetState]);
 
   async function loadArticle(targetUrl: string) {
     if (!targetUrl.trim()) return;
