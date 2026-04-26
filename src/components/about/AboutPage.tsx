@@ -73,6 +73,25 @@ const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries
             </p>
           </Section>
 
+          <Section title="Nuclear Deterrence Data">
+            <p>
+              The nuclear overlay displays arsenals and deterrence postures for all 9 nuclear-armed states,
+              plus former nuclear states, NATO nuclear-sharing countries, and nuclear umbrella coverage.
+              Data includes warhead counts (deployed/reserve/retired), delivery systems, doctrine, treaty
+              status, and program timelines.
+            </p>
+            <ul className="list-disc list-inside space-y-1 mt-2">
+              <li><strong>Warhead counts</strong>: From the Federation of American Scientists (FAS) Nuclear Notebook, the most widely cited open-source estimate</li>
+              <li><strong>Delivery systems</strong>: Based on open-source intelligence, IISS Military Balance, and government publications</li>
+              <li><strong>Doctrine</strong>: Summarized from official nuclear posture documents and academic analysis</li>
+              <li><strong>Treaty status</strong>: Tracks NPT, New START, INF, CTBT, and other arms control agreements</li>
+            </ul>
+            <p className="mt-2 text-slate-500 text-sm">
+              Nuclear weapons data is inherently opaque — exact figures are classified. All numbers
+              represent best available estimates from authoritative open sources as of 2024.
+            </p>
+          </Section>
+
           <Section title="Data Sources">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
               <SourceCard
@@ -89,6 +108,16 @@ const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries
                 name="Global Peace Index"
                 description="Institute for Economics & Peace"
                 url="https://www.visionofhumanity.org"
+              />
+              <SourceCard
+                name="FAS Nuclear Notebook"
+                description="Federation of American Scientists — nuclear arsenal estimates"
+                url="https://fas.org/issues/nuclear-weapons/nuclear-notebook"
+              />
+              <SourceCard
+                name="SIPRI"
+                description="Stockholm International Peace Research Institute"
+                url="https://www.sipri.org"
               />
               <SourceCard
                 name="Peer-reviewed literature"

@@ -16,6 +16,20 @@ import { getCountryColor } from '../../utils/colorScales';
 import { countries } from '../../data/countries';
 import MapTooltip from './MapTooltip';
 import MapControls from './MapControls';
+import NuclearLegend from '../nuclear/NuclearLegend';
+import { nuclearPrograms } from '../../data/nuclear';
+
+const NUCLEAR_CENTROIDS: Record<string, [number, number]> = {
+  USA: [-98, 38],
+  RUS: [55, 60],
+  CHN: [104, 35],
+  FRA: [2, 46],
+  GBR: [-2, 54],
+  IND: [78, 22],
+  PAK: [69, 30],
+  ISR: [35, 31],
+  PRK: [127, 40],
+};
 
 interface WorldMapProps {
   colorMode: ColorMode;
@@ -206,6 +220,7 @@ const WorldMap: FC<WorldMapProps> = ({
               peaceYears[iso] ?? 0,
               region,
               activeCountries.has(iso),
+              iso,
             );
             const isSelected = selectedCountry === iso;
             const d = pathGen(f as GeoPermissibleObjects) ?? '';
@@ -226,10 +241,39 @@ const WorldMap: FC<WorldMapProps> = ({
               />
             );
           })}
+          {colorMode === 'nuclear' && Object.entries(NUCLEAR_CENTROIDS).map(([iso, coords]) => {
+            const program = nuclearPrograms[iso];
+            if (!program) return null;
+            const projected = projection(coords);
+            if (!projected) return null;
+            const r = Math.max(2, Math.sqrt(program.totalWarheads / 50));
+            return (
+              <g key={`nuke-${iso}`}>
+                <circle cx={projected[0]} cy={projected[1]} r={r + 3} fill="#ef4444" opacity={0.15}>
+                  <animate attributeName="r" values={`${r + 1};${r + 6};${r + 1}`} dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.05;0.15" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <circle cx={projected[0]} cy={projected[1]} r={r} fill="#ef4444" opacity={0.6} stroke="#fca5a5" strokeWidth={0.5} />
+                <text
+                  x={projected[0]}
+                  y={projected[1] - r - 2}
+                  textAnchor="middle"
+                  fontSize={Math.max(5, r * 0.7)}
+                  fill="#fca5a5"
+                  fontWeight="bold"
+                  fontFamily="monospace"
+                >
+                  {program.totalWarheads.toLocaleString()}
+                </text>
+              </g>
+            );
+          })}
         </g>
       </svg>
 
       <MapControls colorMode={colorMode} onColorModeChange={onColorModeChange} />
+
+      {colorMode === 'nuclear' && <NuclearLegend />}
 
       {tooltip && (
         <MapTooltip
@@ -239,6 +283,7 @@ const WorldMap: FC<WorldMapProps> = ({
           iso={tooltip.iso}
           conflicts={tooltip.conflicts}
           isActive={activeCountries.has(tooltip.iso)}
+          colorMode={colorMode}
         />
       )}
     </div>

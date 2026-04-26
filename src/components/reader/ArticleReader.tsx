@@ -19,23 +19,41 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
   const isOpenRef = useRef(isOpen);
   const requestIdRef = useRef(0);
 
+  const prevOpenRef = useRef(false);
+  const prevUrlRef = useRef<string | undefined>(undefined);
+
   useEffect(() => {
     isOpenRef.current = isOpen;
-    if (isOpen && initialUrl) {
+  });
+
+  useEffect(() => {
+    const justOpened = isOpen && !prevOpenRef.current;
+    const urlChanged = initialUrl !== prevUrlRef.current;
+    prevOpenRef.current = isOpen;
+    prevUrlRef.current = initialUrl;
+
+    if (!isOpen) {
+      requestIdRef.current++;
+      return;
+    }
+
+    if (justOpened && initialUrl) {
       setUrl(initialUrl);
       loadArticle(initialUrl);
-    } else if (isOpen) {
+    } else if (justOpened) {
       setTimeout(() => inputRef.current?.focus(), 100);
+    } else if (urlChanged && initialUrl) {
+      setUrl(initialUrl);
+      loadArticle(initialUrl);
     }
   }, [isOpen, initialUrl]);
 
-  useEffect(() => {
-    if (!isOpen) {
-      setArticle(null);
-      setUrl('');
-      setLoading(false);
-    }
-  }, [isOpen]);
+  const handleClose = () => {
+    setArticle(null);
+    setUrl('');
+    setLoading(false);
+    onClose();
+  };
 
   async function loadArticle(targetUrl: string) {
     if (!targetUrl.trim()) return;
@@ -73,7 +91,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-stretch justify-center bg-black/70 backdrop-blur-sm"
-          onClick={(e) => e.target === e.currentTarget && onClose()}
+          onClick={(e) => e.target === e.currentTarget && handleClose()}
         >
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -114,7 +132,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
                 </div>
 
                 <button
-                  onClick={onClose}
+                  onClick={handleClose}
                   className="flex h-7 w-7 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
                   aria-label="Close reader"
                 >

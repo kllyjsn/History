@@ -1,5 +1,6 @@
 import { scaleLinear, scaleOrdinal } from 'd3';
 import type { ColorMode } from '../types';
+import { getNuclearStatus, getNuclearWarheadCount } from '../data/nuclear';
 
 const CONFLICT_COLORS = ['#1e293b', '#854d0e', '#c2410c', '#dc2626', '#7f1d1d'];
 const PEACE_COLORS = ['#7f1d1d', '#854d0e', '#365314', '#166534', '#14532d'];
@@ -25,12 +26,27 @@ const regionScale = scaleOrdinal<string>()
   .domain(Object.keys(REGION_COLORS))
   .range(Object.values(REGION_COLORS));
 
+const NUCLEAR_COLORS: Record<string, string> = {
+  declared: '#ef4444',
+  undeclared: '#f97316',
+  nato_sharing: '#3b82f6',
+  former: '#8b5cf6',
+  abandoned: '#22c55e',
+  none: '#1e293b',
+};
+
+const nuclearWarheadScale = scaleLinear<string>()
+  .domain([0, 50, 200, 500, 2000, 6000])
+  .range(['#1e293b', '#92400e', '#dc2626', '#ef4444', '#f87171', '#fca5a5'])
+  .clamp(true);
+
 export function getCountryColor(
   mode: ColorMode,
   conflictCount: number,
   peaceYears: number,
   region: string,
   isActive: boolean,
+  countryId?: string,
 ): string {
   switch (mode) {
     case 'conflict_frequency':
@@ -41,6 +57,12 @@ export function getCountryColor(
       return peaceScale(peaceYears);
     case 'region':
       return regionScale(region) ?? '#334155';
+    case 'nuclear': {
+      if (!countryId) return '#1e293b';
+      const status = getNuclearStatus(countryId);
+      if (status === 'declared') return nuclearWarheadScale(getNuclearWarheadCount(countryId));
+      return NUCLEAR_COLORS[status] ?? '#1e293b';
+    }
     default:
       return '#334155';
   }
