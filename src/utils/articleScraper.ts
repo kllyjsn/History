@@ -69,7 +69,7 @@ function stripNonContent(html: string): string {
 }
 
 function htmlToReadableText(html: string): string {
-  let cleaned = stripNonContent(html);
+  const cleaned = stripNonContent(html);
 
   const articleMatch = cleaned.match(/<article[\s\S]*?<\/article>/i);
   const mainMatch = cleaned.match(/<main[\s\S]*?<\/main>/i);
@@ -77,7 +77,7 @@ function htmlToReadableText(html: string): string {
 
   const contentHtml = articleMatch?.[0] ?? mainMatch?.[0] ?? bodyContentMatch?.[0] ?? cleaned;
 
-  let text = contentHtml
+  const text = contentHtml
     .replace(/<br\s*\/?>/gi, '\n')
     .replace(/<\/p>/gi, '\n\n')
     .replace(/<\/div>/gi, '\n')

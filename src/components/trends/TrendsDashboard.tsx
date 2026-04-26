@@ -6,6 +6,7 @@ import {
 import type { Conflict } from '../../types';
 import { getConflictTypeColor, getConflictTypeBadge } from '../../utils/colorScales';
 import { formatDateRange, formatCasualtyRange } from '../../utils/formatters';
+import { nuclearPrograms, nuclearTimelineEvents } from '../../data/nuclear';
 
 interface TrendsDashboardProps {
   conflictsByDecade: { decade: number; count: number }[];
@@ -188,10 +189,61 @@ const TrendsDashboard: FC<TrendsDashboardProps> = ({
           </div>
         </div>
 
+        {/* Nuclear Deterrence Overview */}
+        <div className="mt-4 sm:mt-6 rounded-xl border border-red-900/30 bg-red-950/10 p-3 sm:p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">☢</span>
+            <h3 className="text-sm font-medium text-red-400">Nuclear Deterrence & Arsenals</h3>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 mb-4">
+            {Object.values(nuclearPrograms)
+              .sort((a, b) => b.totalWarheads - a.totalWarheads)
+              .map((p) => {
+                const maxWh = 5580;
+                const pct = Math.min((p.totalWarheads / maxWh) * 100, 100);
+                return (
+                  <div key={p.countryId} className="rounded-lg border border-slate-700/50 bg-slate-800/40 p-2 sm:p-3">
+                    <div className="text-xs font-medium text-white mb-1">{p.countryId}</div>
+                    <div className="text-lg sm:text-xl font-bold text-red-400">{p.totalWarheads.toLocaleString()}</div>
+                    <div className="h-1 w-full bg-slate-700 rounded-full mt-1 overflow-hidden">
+                      <div className="h-full bg-red-500 rounded-full" style={{ width: `${pct}%` }} />
+                    </div>
+                    <div className="text-[9px] text-slate-500 mt-1">{p.doctrine}</div>
+                  </div>
+                );
+              })}
+          </div>
+
+          <div className="rounded-lg border border-slate-700/50 bg-slate-800/20 p-3">
+            <h4 className="text-xs font-semibold text-white mb-2">Nuclear Proliferation Timeline</h4>
+            <div className="space-y-1.5 max-h-64 overflow-y-auto custom-scrollbar">
+              {nuclearTimelineEvents
+                .filter((e) => e.significance !== 'notable')
+                .map((event, i) => (
+                <div key={`${event.year}-${i}`} className="flex items-start gap-2">
+                  <span className={`text-[10px] font-mono w-8 shrink-0 ${event.significance === 'critical' ? 'text-red-400 font-bold' : 'text-amber-400'}`}>
+                    {event.year}
+                  </span>
+                  <div className={`h-1.5 w-1.5 rounded-full mt-1.5 shrink-0 ${event.significance === 'critical' ? 'bg-red-500' : 'bg-amber-500'}`} />
+                  <span className="text-[10px] sm:text-xs text-slate-300">{event.event}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <InsightCard
+            title="Nuclear Deterrence Theory"
+            description="The concept of Mutually Assured Destruction (MAD) suggests that when two nuclear powers can each guarantee the other's destruction, neither will initiate a first strike. Critics argue this creates a fragile peace dependent on rational actors, while proponents credit it for preventing great-power war since 1945."
+            source="Schelling (1960); Waltz (1981); Sagan (1993)"
+          />
+        </div>
+
         <div className="mt-6 sm:mt-8 text-center text-xs text-slate-600 pb-6 sm:pb-8">
           <p>
             Data curated from the Correlates of War Project, Uppsala Conflict Data Program (UCDP),
-            Global Peace Index, and peer-reviewed academic sources. All conflict data is presented
+            Global Peace Index, Federation of American Scientists (FAS), SIPRI, and peer-reviewed academic sources.
+            Nuclear arsenal data from FAS Nuclear Notebook (2024). All data is presented
             with multiple perspectives and source attribution.
           </p>
         </div>

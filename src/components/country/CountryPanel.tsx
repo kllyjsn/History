@@ -5,6 +5,7 @@ import { getConflictsForCountry } from '../../data/conflicts';
 import type { CountryStats } from '../../types';
 import CountryHeader from './CountryHeader';
 import ConflictTimeline from './ConflictTimeline';
+import NuclearPanel from '../nuclear/NuclearPanel';
 
 interface CountryPanelProps {
   countryId: string | null;
@@ -49,6 +50,7 @@ const CountryPanel: FC<CountryPanelProps> = ({ countryId, onClose, getCountrySta
 
           <div className="p-4 space-y-6">
             <CountryHeader country={country} stats={stats} />
+            <NuclearPanel countryId={country.id} />
             <ConflictTimeline conflicts={countryConflicts} countryId={country.id} onOpenArticle={onOpenArticle} />
           </div>
         </motion.div>

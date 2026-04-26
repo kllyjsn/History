@@ -10,6 +10,7 @@ const modes: { value: ColorMode; label: string; shortLabel: string; icon: string
   { value: 'conflict_frequency', label: 'Conflict Frequency', shortLabel: 'Frequency', icon: '🔥' },
   { value: 'active_conflicts', label: 'Active Conflicts', shortLabel: 'Active', icon: '⚠' },
   { value: 'peace_duration', label: 'Peace Duration', shortLabel: 'Peace', icon: '🕊' },
+  { value: 'nuclear', label: 'Nuclear Arsenal', shortLabel: 'Nuclear', icon: '☢' },
   { value: 'region', label: 'By Region', shortLabel: 'Region', icon: '🌍' },
 ];
 

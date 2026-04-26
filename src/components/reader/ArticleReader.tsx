@@ -1,4 +1,4 @@
-import { type FC, useState, useEffect, useRef } from 'react';
+import { type FC, useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scrapeArticle, type ScrapedArticle } from '../../utils/articleScraper';
 
@@ -19,23 +19,50 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
   const isOpenRef = useRef(isOpen);
   const requestIdRef = useRef(0);
 
-  useEffect(() => {
-    isOpenRef.current = isOpen;
-    if (isOpen && initialUrl) {
-      setUrl(initialUrl);
-      loadArticle(initialUrl);
-    } else if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
-  }, [isOpen, initialUrl]);
+  const prevOpenRef = useRef(false);
+  const prevUrlRef = useRef<string | undefined>(undefined);
 
   useEffect(() => {
-    if (!isOpen) {
-      setArticle(null);
-      setUrl('');
-      setLoading(false);
+    isOpenRef.current = isOpen;
+  });
+
+  // Clean up stale state when closed externally (e.g. Escape key sets isOpen=false)
+  const resetState = useCallback(() => {
+    setArticle(null);
+    setUrl('');
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    const justOpened = isOpen && !prevOpenRef.current;
+    const justClosed = !isOpen && prevOpenRef.current;
+    const urlChanged = initialUrl !== prevUrlRef.current;
+    prevOpenRef.current = isOpen;
+    prevUrlRef.current = initialUrl;
+
+    if (justClosed) {
+      requestIdRef.current++;
+      resetState();
+      return;
     }
-  }, [isOpen]);
+
+    if (!isOpen) return;
+
+    if (justOpened && initialUrl) {
+      setUrl(initialUrl);
+      loadArticle(initialUrl);
+    } else if (justOpened) {
+      setTimeout(() => inputRef.current?.focus(), 100);
+    } else if (urlChanged && initialUrl) {
+      setUrl(initialUrl);
+      loadArticle(initialUrl);
+    }
+  }, [isOpen, initialUrl, resetState]);
+
+  const handleClose = useCallback(() => {
+    resetState();
+    onClose();
+  }, [onClose, resetState]);
 
   async function loadArticle(targetUrl: string) {
     if (!targetUrl.trim()) return;
@@ -73,7 +100,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-stretch justify-center bg-black/70 backdrop-blur-sm"
-          onClick={(e) => e.target === e.currentTarget && onClose()}
+          onClick={(e) => e.target === e.currentTarget && handleClose()}
         >
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -114,7 +141,7 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
                 </div>
 
                 <button
-                  onClick={onClose}
+                  onClick={handleClose}
                   className="flex h-7 w-7 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
                   aria-label="Close reader"
                 >

@@ -90,7 +90,7 @@ export interface Country {
   governmentType?: string;
 }
 
-export type ColorMode = 'conflict_frequency' | 'active_conflicts' | 'peace_duration' | 'region';
+export type ColorMode = 'conflict_frequency' | 'active_conflicts' | 'peace_duration' | 'region' | 'nuclear';
 
 export interface TimelineEvent {
   year: number;
