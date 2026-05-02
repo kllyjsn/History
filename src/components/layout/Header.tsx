@@ -31,7 +31,7 @@ const Header: FC<HeaderProps> = ({
             <span className="text-base sm:text-lg">🌍</span>
           </div>
           <div className="min-w-0">
-            <h1 className="text-xs sm:text-sm font-bold text-white tracking-wide truncate">SCHOOL OF HISTORY</h1>
+            <h1 className="text-xs sm:text-sm font-bold text-white tracking-wide truncate">PEACE AND WAR</h1>
             <p className="text-[9px] sm:text-[10px] text-slate-500 -mt-0.5 hidden sm:block">Geopolitical Atlas · Every Country · Every Conflict</p>
           </div>
         </div>
