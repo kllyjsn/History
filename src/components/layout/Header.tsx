@@ -5,10 +5,14 @@ interface HeaderProps {
   onToggleTrends: () => void;
   onToggleAbout: () => void;
   onToggleCompare: () => void;
+  onToggleWars: () => void;
+  onToggleGraph: () => void;
   onOpenReader: () => void;
   showTrends: boolean;
   showAbout: boolean;
   showCompare: boolean;
+  showWars: boolean;
+  showGraph: boolean;
 }
 
 const Header: FC<HeaderProps> = ({
@@ -16,10 +20,14 @@ const Header: FC<HeaderProps> = ({
   onToggleTrends,
   onToggleAbout,
   onToggleCompare,
+  onToggleWars,
+  onToggleGraph,
   onOpenReader,
   showTrends,
   showAbout,
   showCompare,
+  showWars,
+  showGraph,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -38,7 +46,9 @@ const Header: FC<HeaderProps> = ({
 
         {/* Desktop nav */}
         <nav className="hidden sm:flex items-center gap-2">
+          <NavButton label="Wars" active={showWars} onClick={onToggleWars} activeColor="red" />
           <NavButton label="Trends" active={showTrends} onClick={onToggleTrends} activeColor="amber" />
+          <NavButton label="Graph" active={showGraph} onClick={onToggleGraph} activeColor="emerald" />
           <NavButton label="Compare" active={showCompare} onClick={onToggleCompare} activeColor="purple" />
           <NavButton label="Read" active={false} onClick={onOpenReader} activeColor="emerald" />
           <NavButton label="About" active={showAbout} onClick={onToggleAbout} activeColor="blue" />
@@ -88,7 +98,9 @@ const Header: FC<HeaderProps> = ({
       {/* Mobile dropdown menu */}
       {mobileMenuOpen && (
         <div className="sm:hidden border-t border-slate-800 px-3 py-2 flex gap-2">
+          <NavButton label="Wars" active={showWars} onClick={() => { onToggleWars(); setMobileMenuOpen(false); }} activeColor="red" />
           <NavButton label="Trends" active={showTrends} onClick={() => { onToggleTrends(); setMobileMenuOpen(false); }} activeColor="amber" />
+          <NavButton label="Graph" active={showGraph} onClick={() => { onToggleGraph(); setMobileMenuOpen(false); }} activeColor="emerald" />
           <NavButton label="Compare" active={showCompare} onClick={() => { onToggleCompare(); setMobileMenuOpen(false); }} activeColor="purple" />
           <NavButton label="Read" active={false} onClick={() => { onOpenReader(); setMobileMenuOpen(false); }} activeColor="emerald" />
           <NavButton label="About" active={showAbout} onClick={() => { onToggleAbout(); setMobileMenuOpen(false); }} activeColor="blue" />
@@ -107,13 +119,14 @@ function NavButton({
   label: string;
   active: boolean;
   onClick: () => void;
-  activeColor: 'amber' | 'blue' | 'purple' | 'emerald';
+  activeColor: 'amber' | 'blue' | 'purple' | 'emerald' | 'red';
 }) {
   const colorMap = {
     amber: 'bg-amber-500/20 text-amber-400',
     blue: 'bg-blue-500/20 text-blue-400',
     purple: 'bg-purple-500/20 text-purple-400',
     emerald: 'bg-emerald-500/20 text-emerald-400',
+    red: 'bg-red-500/20 text-red-400',
   };
   return (
     <button

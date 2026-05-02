@@ -6,6 +6,7 @@ interface TimelineScrubberProps {
   selectedYear: number;
   minYear?: number;
   maxYear?: number;
+  activeConflictCount?: number;
 }
 
 const TimelineScrubber: FC<TimelineScrubberProps> = ({
@@ -13,6 +14,7 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
   selectedYear,
   minYear = 1500,
   maxYear = 2025,
+  activeConflictCount,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,7 +22,8 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
   const playRef = useRef<ReturnType<typeof setInterval>>(undefined);
   const yearRef = useRef(selectedYear);
 
-  const activeConflicts = getConflictsByDateRange(selectedYear, selectedYear);
+  const fallbackConflicts = getConflictsByDateRange(selectedYear, selectedYear);
+  const activeConflictDisplay = activeConflictCount ?? fallbackConflicts.length;
   const totalRange = maxYear - minYear;
   const pct = ((selectedYear - minYear) / totalRange) * 100;
 
@@ -148,7 +151,7 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
             {selectedYear}
           </span>
           <div className="text-[8px] sm:text-[9px] text-slate-500 -mt-0.5">
-            {activeConflicts.length} active
+            {activeConflictDisplay} active
           </div>
         </div>
 

@@ -25,6 +25,8 @@ interface WorldMapProps {
   peaceYears: Record<string, number>;
   onSelectCountry: (id: string) => void;
   selectedCountry: string | null;
+  timelineYear?: number;
+  timelineCountries?: Set<string>;
 }
 
 interface CountryProperties {
@@ -74,6 +76,8 @@ const WorldMap: FC<WorldMapProps> = ({
   peaceYears,
   onSelectCountry,
   selectedCountry,
+  timelineYear,
+  timelineCountries,
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const gRef = useRef<SVGGElement>(null);
@@ -179,12 +183,22 @@ const WorldMap: FC<WorldMapProps> = ({
   const spherePath = pathGen(sphere as GeoPermissibleObjects) ?? '';
 
   return (
-    <div className="relative w-full h-full overflow-hidden" style={{ background: '#0a0f1a' }}>
+    <div className="relative w-full h-full overflow-hidden" style={{ background: '#0a0f1a' }} role="img" aria-label="Interactive world map showing countries and conflict data">
+      {!topoData && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-3">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-600 border-t-amber-400" />
+            <p className="text-xs text-slate-500">Loading map data...</p>
+          </div>
+        </div>
+      )}
       <svg
         ref={svgRef}
         width={dimensions.width}
         height={dimensions.height}
         className="cursor-grab active:cursor-grabbing"
+        role="presentation"
+        aria-hidden="true"
       >
         <defs>
           <radialGradient id="ocean-gradient" cx="50%" cy="50%" r="60%">
@@ -200,13 +214,16 @@ const WorldMap: FC<WorldMapProps> = ({
             const f = feature as Feature<Geometry, CountryProperties>;
             const iso = getIso3(f);
             const region = countries[iso]?.region ?? '';
-            const fill = getCountryColor(
-              colorMode,
-              conflictCounts[iso] ?? 0,
-              peaceYears[iso] ?? 0,
-              region,
-              activeCountries.has(iso),
-            );
+            const isNotCurrentYear = timelineYear !== undefined && timelineYear < 2025 && timelineCountries && timelineCountries.size > 0 && !timelineCountries.has(iso);
+            const fill = isNotCurrentYear
+              ? '#0f172a'
+              : getCountryColor(
+                  colorMode,
+                  conflictCounts[iso] ?? 0,
+                  peaceYears[iso] ?? 0,
+                  region,
+                  activeCountries.has(iso),
+                );
             const isSelected = selectedCountry === iso;
             const d = pathGen(f as GeoPermissibleObjects) ?? '';
 
