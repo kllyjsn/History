@@ -58,6 +58,16 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Correlates of War Project', 'Keegan (1998)', 'Clark (2012)', 'Strachan (2001)'],
     tags: ['world_war', 'trench_warfare', 'chemical_weapons', 'empire_collapse'],
+    keyFigures: [
+      { name: 'Gavrilo Princip', role: 'Assassin of Archduke Franz Ferdinand', country: 'SRB' },
+      { name: 'Kaiser Wilhelm II', role: 'German Emperor', country: 'DEU' },
+      { name: 'Woodrow Wilson', role: 'US President who entered the war', country: 'USA' },
+    ],
+    treaties: [
+      { name: 'Treaty of Versailles', year: 1919, description: 'Main peace treaty ending WWI, imposed harsh reparations on Germany.' },
+      { name: 'Treaty of Saint-Germain', year: 1919, description: 'Dissolved the Austro-Hungarian Empire.' },
+    ],
+    relatedConflicts: ['ww2', 'russian-civil-war'],
   },
   {
     id: 'ww2',
@@ -122,6 +132,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['National WWII Museum', 'Keegan (1989)', 'Weinberg (1994)', 'Glantz (1995)'],
     tags: ['world_war', 'nuclear', 'genocide', 'holocaust', 'decolonization'],
+    treaties: [
+      { name: 'Potsdam Agreement', year: 1945, description: 'Post-war settlement for Germany and Europe.' },
+      { name: 'San Francisco Treaty', year: 1951, description: 'Peace treaty between Japan and Allied Powers.' },
+    ],
+    relatedConflicts: ['ww1', 'korean-war', 'chinese-civil-war'],
   },
 
   // ═══════════════════════════════════════
@@ -177,6 +192,15 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['COW Project', 'Cumings (2010)', 'Halberstam (2007)', 'Hastings (1987)'],
     tags: ['cold_war', 'proxy_war', 'divided_nation', 'armistice'],
+    keyFigures: [
+      { name: 'Douglas MacArthur', role: 'Supreme UN Commander', country: 'USA' },
+      { name: 'Kim Il-sung', role: 'North Korean leader', country: 'PRK' },
+      { name: 'Syngman Rhee', role: 'South Korean president', country: 'KOR' },
+    ],
+    treaties: [
+      { name: 'Korean Armistice Agreement', year: 1953, description: 'Ceasefire establishing the DMZ; no peace treaty ever signed.' },
+    ],
+    relatedConflicts: ['ww2', 'vietnam-war'],
   },
   {
     id: 'vietnam-war',
@@ -226,6 +250,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Hirschman et al. (1995)', 'Karnow (1983)', 'Sheehan (1988)', 'COW Project'],
     tags: ['cold_war', 'proxy_war', 'guerrilla', 'chemical_weapons', 'media_war'],
+    treaties: [
+      { name: 'Paris Peace Accords', year: 1973, description: 'Ceasefire agreement; US withdrawal. Fighting continued until 1975.' },
+    ],
+    relatedConflicts: ['korean-war', 'cambodian-genocide', 'secret-war-laos'],
   },
   {
     id: 'soviet-afghan-war',
@@ -273,6 +301,14 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Kalinovsky (2011)', 'Coll (2004)', 'Braithwaite (2011)', 'COW Project'],
     tags: ['cold_war', 'proxy_war', 'guerrilla', 'blowback', 'empire_decline'],
+    keyFigures: [
+      { name: 'Ahmad Shah Massoud', role: 'Mujahideen commander', country: 'AFG' },
+      { name: 'Leonid Brezhnev', role: 'Soviet leader who ordered invasion', country: 'RUS' },
+    ],
+    treaties: [
+      { name: 'Geneva Accords', year: 1988, description: 'Framework for Soviet withdrawal from Afghanistan.' },
+    ],
+    relatedConflicts: ['us-war-on-terror-afghanistan'],
   },
 
   // ═══════════════════════════════════════
@@ -367,6 +403,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Oren (2002)', 'Shlaim (2000)', 'Segev (2007)', 'COW Project'],
     tags: ['preemptive_strike', 'occupation', 'territorial_expansion'],
+    keyFigures: [
+      { name: 'Moshe Dayan', role: 'Israeli Defense Minister', country: 'ISR' },
+      { name: 'Gamal Abdel Nasser', role: 'Egyptian President', country: 'EGY' },
+    ],
+    relatedConflicts: ['yom-kippur-war', 'arab-israeli-1948'],
   },
   {
     id: 'iran-iraq-war',
@@ -409,6 +450,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Murray & Woods (2014)', 'Razoux (2015)', 'COW Project'],
     tags: ['chemical_weapons', 'trench_warfare', 'proxy_support', 'oil'],
+    keyFigures: [
+      { name: 'Saddam Hussein', role: 'Iraqi president', country: 'IRQ' },
+      { name: 'Ruhollah Khomeini', role: 'Iranian Supreme Leader', country: 'IRN' },
+    ],
+    relatedConflicts: ['gulf-war-1991', 'iraq-war-2003'],
   },
   {
     id: 'gulf-war-1991',
@@ -452,6 +498,12 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Freedman & Karsh (1993)', 'Atkinson (1993)', 'COW Project'],
     tags: ['coalition', 'oil', 'air_power', 'un_authorized'],
+    keyFigures: [
+      { name: 'Saddam Hussein', role: 'Iraqi president who invaded Kuwait', country: 'IRQ' },
+      { name: 'George H.W. Bush', role: 'US President leading coalition', country: 'USA' },
+      { name: 'Norman Schwarzkopf', role: 'US Central Command General', country: 'USA' },
+    ],
+    relatedConflicts: ['iran-iraq-war', 'iraq-war-2003'],
   },
   {
     id: 'iraq-war-2003',
@@ -499,6 +551,12 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Ricks (2006)', 'Iraq Body Count', 'Cockburn (2016)', 'Chandrasekaran (2006)'],
     tags: ['regime_change', 'wmd_pretext', 'insurgency', 'sectarian'],
+    keyFigures: [
+      { name: 'George W. Bush', role: 'US President who ordered invasion', country: 'USA' },
+      { name: 'Saddam Hussein', role: 'Iraqi president (captured, executed)', country: 'IRQ' },
+      { name: 'Tony Blair', role: 'UK Prime Minister', country: 'GBR' },
+    ],
+    relatedConflicts: ['gulf-war-1991', 'syrian-civil-war'],
   },
   {
     id: 'syrian-civil-war',
@@ -547,6 +605,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['SOHR', 'UN reports', 'Yassin-Kassab & Al-Shami (2016)', 'UCDP'],
     tags: ['civil_war', 'chemical_weapons', 'refugee_crisis', 'proxy_war', 'arab_spring'],
+    keyFigures: [
+      { name: 'Bashar al-Assad', role: 'Syrian president', country: 'SYR' },
+    ],
+    relatedConflicts: ['arab-spring', 'iraq-war-2003', 'isis-insurgency'],
   },
   {
     id: 'russia-ukraine-war',
@@ -594,6 +656,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['UN OHCHR', 'Plokhy (2023)', 'IISS', 'UCDP'],
     tags: ['interstate_war', 'nuclear_threats', 'sanctions', 'energy_crisis', 'ongoing'],
+    keyFigures: [
+      { name: 'Vladimir Putin', role: 'Russian President', country: 'RUS' },
+      { name: 'Volodymyr Zelenskyy', role: 'Ukrainian President', country: 'UKR' },
+    ],
+    relatedConflicts: ['ukrainian-crisis-2014'],
   },
 
   // ═══════════════════════════════════════
@@ -637,6 +704,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Des Forges (1999)', 'Mamdani (2001)', 'Dallaire (2003)', 'UCDP'],
     tags: ['genocide', 'colonial_legacy', 'international_failure', 'ethnic_violence'],
+    keyFigures: [
+      { name: 'Paul Kagame', role: 'RPF leader, later president', country: 'RWA' },
+    ],
+    relatedConflicts: ['first-congo-war', 'second-congo-war'],
   },
   {
     id: 'nigerian-civil-war',
@@ -849,6 +920,7 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['ICTY records', 'Silber & Little (1997)', 'Judah (2000)', 'UCDP'],
     tags: ['ethnic_cleansing', 'genocide', 'nato_intervention', 'dissolution', 'war_crimes_tribunal'],
+    relatedConflicts: ['bosnian-war', 'kosovo-war'],
   },
   {
     id: 'russo-georgian-war',
@@ -980,6 +1052,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Blanning (1996)', 'Palmer (1959)', 'COW Project'],
     tags: ['revolution', 'ideology', 'coalition_wars', 'enlightenment'],
+    keyFigures: [
+      { name: 'Louis XVI', role: 'French King (executed)', country: 'FRA' },
+      { name: 'Maximilien Robespierre', role: 'Jacobin leader', country: 'FRA' },
+    ],
+    relatedConflicts: ['napoleonic-wars'],
   },
   {
     id: 'napoleonic-wars',
@@ -1024,6 +1101,15 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Roberts (2014)', 'Esdaile (2007)', 'COW Project'],
     tags: ['imperialism', 'coalition_wars', 'legal_reform', 'balance_of_power'],
+    keyFigures: [
+      { name: 'Napoleon Bonaparte', role: 'French Emperor', country: 'FRA' },
+      { name: 'Duke of Wellington', role: 'British commander at Waterloo', country: 'GBR' },
+      { name: 'Tsar Alexander I', role: 'Russian Emperor', country: 'RUS' },
+    ],
+    treaties: [
+      { name: 'Congress of Vienna', year: 1815, description: 'Redrew European borders and established the Concert of Europe.' },
+    ],
+    relatedConflicts: ['french-revolution-wars'],
   },
   {
     id: 'algerian-independence',
@@ -1189,6 +1275,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['McPherson (1988)', 'Hacker (2011)', 'Blight (2001)', 'COW Project'],
     tags: ['civil_war', 'slavery', 'deadliest_american_war', 'emancipation'],
+    keyFigures: [
+      { name: 'Abraham Lincoln', role: 'US President', country: 'USA' },
+      { name: 'Robert E. Lee', role: 'Confederate general', country: 'USA' },
+      { name: 'Ulysses S. Grant', role: 'Union general', country: 'USA' },
+    ],
   },
   {
     id: 'mexican-american-war',
@@ -1343,6 +1434,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Hastings & Jenkins (1983)', 'Freedman (2005)', 'COW Project'],
     tags: ['territorial_dispute', 'naval_war', 'dictatorship_fall', 'self_determination'],
+    keyFigures: [
+      { name: 'Margaret Thatcher', role: 'UK Prime Minister', country: 'GBR' },
+      { name: 'Leopoldo Galtieri', role: 'Argentine military dictator', country: 'ARG' },
+    ],
   },
 
   // ═══════════════════════════════════════
@@ -1386,6 +1481,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Kiernan (2004)', 'Shawcross (1979)', 'ECCC records', 'UCDP'],
     tags: ['genocide', 'ideology', 'cold_war_alignment', 'auto_genocide'],
+    keyFigures: [
+      { name: 'Pol Pot', role: 'Khmer Rouge leader', country: 'KHM' },
+    ],
+    relatedConflicts: ['vietnam-war'],
   },
 
   // ═══════════════════════════════════════
@@ -1517,6 +1616,14 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Costs of War Project', 'Gopal (2014)', 'Whitlock (2021)', 'UCDP'],
     tags: ['war_on_terror', 'longest_us_war', 'nation_building_failure', 'taliban_return'],
+    keyFigures: [
+      { name: 'Osama bin Laden', role: 'Al-Qaeda leader (killed 2011)', country: 'AFG' },
+      { name: 'Hamid Karzai', role: 'First post-Taliban president', country: 'AFG' },
+    ],
+    treaties: [
+      { name: 'Doha Agreement', year: 2020, description: 'US-Taliban deal leading to US withdrawal by 2021.' },
+    ],
+    relatedConflicts: ['soviet-afghan-war', 'iraq-war-2003'],
   },
   {
     id: 'winter-war',
@@ -1594,6 +1701,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Preston (2006)', 'Beevor (2006)', 'Thomas (1961)', 'COW Project'],
     tags: ['civil_war', 'fascism_vs_democracy', 'international_brigades', 'prelude_to_ww2'],
+    keyFigures: [
+      { name: 'Francisco Franco', role: 'Nationalist leader', country: 'ESP' },
+    ],
+    relatedConflicts: ['ww2'],
   },
   {
     id: 'boer-wars',
@@ -1719,6 +1830,7 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Figes (1996)', 'Mawdsley (2007)', 'COW Project'],
     tags: ['revolution', 'foreign_intervention', 'famine', 'ideology', 'empire_collapse'],
+    relatedConflicts: ['ww1'],
   },
   {
     id: 'yom-kippur-war',
@@ -1763,6 +1875,14 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Rabinovich (2004)', 'Insight Team (1974)', 'COW Project'],
     tags: ['surprise_attack', 'oil_crisis', 'peace_process', 'cold_war_proxy'],
+    keyFigures: [
+      { name: 'Anwar Sadat', role: 'Egyptian President', country: 'EGY' },
+      { name: 'Golda Meir', role: 'Israeli Prime Minister', country: 'ISR' },
+    ],
+    treaties: [
+      { name: 'Camp David Accords', year: 1978, description: 'Peace framework between Egypt and Israel.' },
+    ],
+    relatedConflicts: ['six-day-war'],
   },
   {
     id: 'sudanese-civil-wars',
@@ -2035,6 +2155,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Gott (2004)', 'Thomas (1971)', 'COW Project'],
     tags: ['revolution', 'cold_war', 'communism', 'embargo', 'guerrilla'],
+    keyFigures: [
+      { name: 'Fidel Castro', role: 'Revolutionary leader', country: 'CUB' },
+      { name: 'Che Guevara', role: 'Revolutionary commander', country: 'CUB' },
+      { name: 'Fulgencio Batista', role: 'Cuban dictator (overthrown)', country: 'CUB' },
+    ],
   },
   {
     id: 'irish-war-of-independence',
@@ -7394,6 +7519,7 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Lynch (2012)', 'Achcar (2013)', 'ACLED'],
     tags: ['revolution', 'democracy', 'social_media', 'counter_revolution', 'youth'],
+    relatedConflicts: ['syrian-civil-war', 'libyan-civil-war', 'yemen-civil-war'],
     keyFigures: [
       { name: 'Mohamed Bouazizi', role: 'Tunisian vendor whose self-immolation sparked the movement', country: 'TUN' },
       { name: 'Hosni Mubarak', role: 'Egyptian president (overthrown)', country: 'EGY' },
