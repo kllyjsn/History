@@ -1,0 +1,17 @@
+{
+  "name": "Peace and War — Interactive Geopolitical Atlas",
+  "short_name": "Peace & War",
+  "description": "Explore every country and every conflict from 1500 to present. Interactive map, timeline, and historical data.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

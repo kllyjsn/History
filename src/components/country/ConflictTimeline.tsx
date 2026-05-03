@@ -5,6 +5,7 @@ import { getConflictTypeColor, getConflictTypeBadge } from '../../utils/colorSca
 import { formatDateRange, formatCasualtyRange } from '../../utils/formatters';
 import { countries } from '../../data/countries';
 import { guessArticleUrls } from '../../utils/articleScraper';
+import { getCuratedLinks } from '../../data/curatedLinks';
 
 interface ConflictTimelineProps {
   conflicts: Conflict[];
@@ -272,7 +273,10 @@ function ConflictCard({ conflict, countryId, onOpenArticle }: { conflict: Confli
                   Read Articles
                 </p>
                 <div className="space-y-1">
-                  {guessArticleUrls(conflict.name, conflict.sources[0] || conflict.name).map((link) => (
+                  {(getCuratedLinks(conflict.id).length > 0
+                    ? getCuratedLinks(conflict.id).map((cl) => ({ label: cl.label, url: cl.url }))
+                    : guessArticleUrls(conflict.name, conflict.sources[0] || conflict.name)
+                  ).map((link) => (
                     <button
                       key={link.url}
                       onClick={(e) => {

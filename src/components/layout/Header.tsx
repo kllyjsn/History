@@ -7,12 +7,16 @@ interface HeaderProps {
   onToggleCompare: () => void;
   onToggleWars: () => void;
   onToggleGraph: () => void;
+  onTogglePeace: () => void;
+  onToggleAlliances: () => void;
   onOpenReader: () => void;
   showTrends: boolean;
   showAbout: boolean;
   showCompare: boolean;
   showWars: boolean;
   showGraph: boolean;
+  showPeace: boolean;
+  showAlliances: boolean;
 }
 
 const Header: FC<HeaderProps> = ({
@@ -22,12 +26,16 @@ const Header: FC<HeaderProps> = ({
   onToggleCompare,
   onToggleWars,
   onToggleGraph,
+  onTogglePeace,
+  onToggleAlliances,
   onOpenReader,
   showTrends,
   showAbout,
   showCompare,
   showWars,
   showGraph,
+  showPeace,
+  showAlliances,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -49,6 +57,8 @@ const Header: FC<HeaderProps> = ({
           <NavButton label="Wars" active={showWars} onClick={onToggleWars} activeColor="red" />
           <NavButton label="Trends" active={showTrends} onClick={onToggleTrends} activeColor="amber" />
           <NavButton label="Graph" active={showGraph} onClick={onToggleGraph} activeColor="emerald" />
+          <NavButton label="Peace" active={showPeace} onClick={onTogglePeace} activeColor="emerald" />
+          <NavButton label="Alliances" active={showAlliances} onClick={onToggleAlliances} activeColor="blue" />
           <NavButton label="Compare" active={showCompare} onClick={onToggleCompare} activeColor="purple" />
           <NavButton label="Read" active={false} onClick={onOpenReader} activeColor="emerald" />
           <NavButton label="About" active={showAbout} onClick={onToggleAbout} activeColor="blue" />
@@ -101,6 +111,8 @@ const Header: FC<HeaderProps> = ({
           <NavButton label="Wars" active={showWars} onClick={() => { onToggleWars(); setMobileMenuOpen(false); }} activeColor="red" />
           <NavButton label="Trends" active={showTrends} onClick={() => { onToggleTrends(); setMobileMenuOpen(false); }} activeColor="amber" />
           <NavButton label="Graph" active={showGraph} onClick={() => { onToggleGraph(); setMobileMenuOpen(false); }} activeColor="emerald" />
+          <NavButton label="Peace" active={showPeace} onClick={() => { onTogglePeace(); setMobileMenuOpen(false); }} activeColor="emerald" />
+          <NavButton label="Alliances" active={showAlliances} onClick={() => { onToggleAlliances(); setMobileMenuOpen(false); }} activeColor="blue" />
           <NavButton label="Compare" active={showCompare} onClick={() => { onToggleCompare(); setMobileMenuOpen(false); }} activeColor="purple" />
           <NavButton label="Read" active={false} onClick={() => { onOpenReader(); setMobileMenuOpen(false); }} activeColor="emerald" />
           <NavButton label="About" active={showAbout} onClick={() => { onToggleAbout(); setMobileMenuOpen(false); }} activeColor="blue" />
