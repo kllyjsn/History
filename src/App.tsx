@@ -259,9 +259,7 @@ function App() {
         onClose={handleCloseReader}
       />
 
-      {showIntro && (
-        <IntroTooltip onDismiss={() => { setShowIntro(false); localStorage.setItem('pw-intro-dismissed', '1'); }} />
-      )}
+      <IntroTooltip visible={showIntro} onDismiss={() => { setShowIntro(false); localStorage.setItem('pw-intro-dismissed', '1'); }} />
     </div>
   );
 }

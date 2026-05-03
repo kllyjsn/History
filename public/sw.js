@@ -22,8 +22,35 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+function isNavigationRequest(request) {
+  return request.mode === 'navigate' ||
+    request.destination === 'document' ||
+    request.url.endsWith('/') ||
+    request.url.endsWith('/index.html');
+}
+
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+
+  if (isNavigationRequest(event.request)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() =>
+          caches.match(event.request).then((cached) =>
+            cached || new Response('Offline', { status: 503, statusText: 'Service Unavailable' })
+          )
+        )
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const fetched = fetch(event.request).then((response) => {
@@ -32,7 +59,7 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
         }
         return response;
-      }).catch(() => cached);
+      }).catch(() => cached || new Response('Offline', { status: 503, statusText: 'Service Unavailable' }));
       return cached || fetched;
     })
   );
