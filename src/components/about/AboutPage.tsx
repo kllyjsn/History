@@ -12,7 +12,7 @@ const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries
       <div className="mx-auto max-w-3xl px-3 py-4 sm:px-6 sm:py-8">
         <div className="flex items-center justify-between mb-4 sm:mb-8 gap-3">
           <div className="min-w-0">
-            <h2 className="text-lg sm:text-2xl font-bold text-white">About School of History</h2>
+            <h2 className="text-lg sm:text-2xl font-bold text-white">About Peace and War</h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">Methodology, philosophy, and sources</p>
           </div>
           <button
@@ -26,7 +26,7 @@ const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries
         <div className="space-y-6">
           <Section title="Mission">
             <p>
-              School of History exists to provide an accessible, bias-aware reference for the
+              Peace and War exists to provide an accessible, bias-aware reference for the
               geopolitical history of armed conflicts worldwide. Our goal is to illuminate patterns
               that could contribute to lasting peace — by understanding how conflicts start, escalate,
               and end across different contexts and eras.
@@ -36,8 +36,8 @@ const AboutPage: FC<AboutPageProps> = ({ onClose, totalConflicts, totalCountries
           <Section title="Philosophy: Multiperspectivity">
             <p>
               History is written by the victors — and by their opponents, their allies, their descendants,
-              and their scholars. Every conflict is experienced differently by each party involved. School
-              of History presents <strong>2-4 perspectives</strong> for each conflict, drawn from academic
+              and their scholars. Every conflict is experienced differently by each party involved. Peace
+              and War presents <strong>2-4 perspectives</strong> for each conflict, drawn from academic
               sources representing different national, ideological, and analytical viewpoints.
             </p>
             <p className="mt-2">
