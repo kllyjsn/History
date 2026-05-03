@@ -11,6 +11,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'North America',
     flagEmoji: '🇺🇸',
+    independence: 1776,
+    governmentType: 'Federal presidential constitutional republic',
   },
   GBR: {
     id: 'GBR',
@@ -23,6 +25,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Northern Europe',
     flagEmoji: '🇬🇧',
+    governmentType: 'Parliamentary constitutional monarchy',
   },
   FRA: {
     id: 'FRA',
@@ -36,6 +39,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Western Europe',
     flagEmoji: '🇫🇷',
+    governmentType: 'Unitary semi-presidential constitutional republic',
   },
   DEU: {
     id: 'DEU',
@@ -52,6 +56,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Western Europe',
     flagEmoji: '🇩🇪',
+    governmentType: 'Federal parliamentary republic',
   },
   RUS: {
     id: 'RUS',
@@ -65,6 +70,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Eastern Europe',
     flagEmoji: '🇷🇺',
+    governmentType: 'Federal semi-presidential constitutional republic',
   },
   CHN: {
     id: 'CHN',
@@ -78,6 +84,7 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Eastern Asia',
     flagEmoji: '🇨🇳',
+    governmentType: 'Unitary Marxist-Leninist one-party socialist republic',
   },
   JPN: {
     id: 'JPN',
@@ -90,6 +97,7 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Eastern Asia',
     flagEmoji: '🇯🇵',
+    governmentType: 'Unitary parliamentary constitutional monarchy',
   },
   IND: {
     id: 'IND',
@@ -102,6 +110,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Southern Asia',
     flagEmoji: '🇮🇳',
+    independence: 1947,
+    governmentType: 'Federal parliamentary constitutional republic',
   },
   TUR: {
     id: 'TUR',
@@ -113,6 +123,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇹🇷',
+    independence: 1923,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   IRN: {
     id: 'IRN',
@@ -126,6 +138,7 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Southern Asia',
     flagEmoji: '🇮🇷',
+    governmentType: 'Unitary theocratic presidential Islamic republic',
   },
   IRQ: {
     id: 'IRQ',
@@ -139,6 +152,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇮🇶',
+    independence: 1932,
+    governmentType: 'Federal parliamentary republic',
   },
   ISR: {
     id: 'ISR',
@@ -150,6 +165,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇮🇱',
+    independence: 1948,
+    governmentType: 'Unitary parliamentary republic',
   },
   EGY: {
     id: 'EGY',
@@ -163,6 +180,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Northern Africa',
     flagEmoji: '🇪🇬',
+    independence: 1922,
+    governmentType: 'Unitary semi-presidential republic',
   },
   ZAF: {
     id: 'ZAF',
@@ -175,6 +194,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Southern Africa',
     flagEmoji: '🇿🇦',
+    independence: 1910,
+    governmentType: 'Unitary parliamentary constitutional republic',
   },
   BRA: {
     id: 'BRA',
@@ -187,6 +208,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇧🇷',
+    independence: 1822,
+    governmentType: 'Federal presidential constitutional republic',
   },
   MEX: {
     id: 'MEX',
@@ -199,6 +222,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'Central America',
     flagEmoji: '🇲🇽',
+    independence: 1821,
+    governmentType: 'Federal presidential constitutional republic',
   },
   KOR: {
     id: 'KOR',
@@ -212,6 +237,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Eastern Asia',
     flagEmoji: '🇰🇷',
+    independence: 1945,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   PRK: {
     id: 'PRK',
@@ -222,6 +249,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Eastern Asia',
     flagEmoji: '🇰🇵',
+    independence: 1948,
+    governmentType: 'Unitary one-party republic under a totalitarian dictatorship',
   },
   VNM: {
     id: 'VNM',
@@ -234,6 +263,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'South-Eastern Asia',
     flagEmoji: '🇻🇳',
+    independence: 1945,
+    governmentType: 'Unitary Marxist-Leninist one-party socialist republic',
   },
   AFG: {
     id: 'AFG',
@@ -247,6 +278,7 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Southern Asia',
     flagEmoji: '🇦🇫',
+    governmentType: 'Unitary theocratic emirate (de facto)',
   },
   UKR: {
     id: 'UKR',
@@ -259,6 +291,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Eastern Europe',
     flagEmoji: '🇺🇦',
+    independence: 1991,
+    governmentType: 'Unitary semi-presidential republic',
   },
   POL: {
     id: 'POL',
@@ -273,6 +307,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Eastern Europe',
     flagEmoji: '🇵🇱',
+    independence: 1918,
+    governmentType: 'Unitary parliamentary republic',
   },
   ESP: {
     id: 'ESP',
@@ -284,6 +320,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Southern Europe',
     flagEmoji: '🇪🇸',
+    governmentType: 'Unitary parliamentary constitutional monarchy',
   },
   ITA: {
     id: 'ITA',
@@ -296,6 +333,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Southern Europe',
     flagEmoji: '🇮🇹',
+    independence: 1861,
+    governmentType: 'Unitary parliamentary constitutional republic',
   },
   AUT: {
     id: 'AUT',
@@ -309,6 +348,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Western Europe',
     flagEmoji: '🇦🇹',
+    independence: 1918,
+    governmentType: 'Federal parliamentary republic',
   },
   SRB: {
     id: 'SRB',
@@ -322,6 +363,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Southern Europe',
     flagEmoji: '🇷🇸',
+    independence: 2006,
+    governmentType: 'Unitary parliamentary constitutional republic',
   },
   ETH: {
     id: 'ETH',
@@ -334,6 +377,7 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Eastern Africa',
     flagEmoji: '🇪🇹',
+    governmentType: 'Federal parliamentary republic',
   },
   NGA: {
     id: 'NGA',
@@ -345,6 +389,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Western Africa',
     flagEmoji: '🇳🇬',
+    independence: 1960,
+    governmentType: 'Federal presidential constitutional republic',
   },
   COD: {
     id: 'COD',
@@ -358,6 +404,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Central Africa',
     flagEmoji: '🇨🇩',
+    independence: 1960,
+    governmentType: 'Unitary semi-presidential republic',
   },
   RWA: {
     id: 'RWA',
@@ -369,6 +417,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Eastern Africa',
     flagEmoji: '🇷🇼',
+    independence: 1962,
+    governmentType: 'Unitary presidential republic',
   },
   SYR: {
     id: 'SYR',
@@ -381,6 +431,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇸🇾',
+    independence: 1946,
+    governmentType: 'Unitary presidential republic (transitional)',
   },
   SAU: {
     id: 'SAU',
@@ -391,6 +443,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇸🇦',
+    independence: 1932,
+    governmentType: 'Unitary absolute monarchy',
   },
   YEM: {
     id: 'YEM',
@@ -402,6 +456,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇾🇪',
+    independence: 1967,
+    governmentType: 'Unitary presidential republic (disputed)',
   },
   LBY: {
     id: 'LBY',
@@ -416,6 +472,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Northern Africa',
     flagEmoji: '🇱🇾',
+    independence: 1951,
+    governmentType: 'Provisional government (divided)',
   },
   SOM: {
     id: 'SOM',
@@ -427,6 +485,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Eastern Africa',
     flagEmoji: '🇸🇴',
+    independence: 1960,
+    governmentType: 'Federal parliamentary republic',
   },
   SDN: {
     id: 'SDN',
@@ -438,6 +498,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Northern Africa',
     flagEmoji: '🇸🇩',
+    independence: 1956,
+    governmentType: 'Federal presidential republic (transitional)',
   },
   SSD: {
     id: 'SSD',
@@ -448,6 +510,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Eastern Africa',
     flagEmoji: '🇸🇸',
+    independence: 2011,
+    governmentType: 'Federal presidential constitutional republic',
   },
   MMR: {
     id: 'MMR',
@@ -460,6 +524,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'South-Eastern Asia',
     flagEmoji: '🇲🇲',
+    independence: 1948,
+    governmentType: 'Unitary parliamentary republic (under military junta)',
   },
   PAK: {
     id: 'PAK',
@@ -471,6 +537,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Southern Asia',
     flagEmoji: '🇵🇰',
+    independence: 1947,
+    governmentType: 'Federal parliamentary republic',
   },
   COL: {
     id: 'COL',
@@ -483,6 +551,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇨🇴',
+    independence: 1810,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   ARG: {
     id: 'ARG',
@@ -494,6 +564,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇦🇷',
+    independence: 1816,
+    governmentType: 'Federal presidential constitutional republic',
   },
   CAN: {
     id: 'CAN',
@@ -505,6 +577,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'North America',
     flagEmoji: '🇨🇦',
+    independence: 1867,
+    governmentType: 'Federal parliamentary constitutional monarchy',
   },
   AUS: {
     id: 'AUS',
@@ -516,6 +590,8 @@ export const countries: Record<string, Country> = {
     region: 'Oceania',
     subregion: 'Australia and New Zealand',
     flagEmoji: '🇦🇺',
+    independence: 1901,
+    governmentType: 'Federal parliamentary constitutional monarchy',
   },
   NLD: {
     id: 'NLD',
@@ -527,6 +603,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Western Europe',
     flagEmoji: '🇳🇱',
+    governmentType: 'Unitary parliamentary constitutional monarchy',
   },
   BEL: {
     id: 'BEL',
@@ -537,6 +614,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Western Europe',
     flagEmoji: '🇧🇪',
+    independence: 1830,
+    governmentType: 'Federal parliamentary constitutional monarchy',
   },
   PRT: {
     id: 'PRT',
@@ -548,6 +627,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Southern Europe',
     flagEmoji: '🇵🇹',
+    governmentType: 'Unitary semi-presidential constitutional republic',
   },
   GRC: {
     id: 'GRC',
@@ -560,6 +640,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Southern Europe',
     flagEmoji: '🇬🇷',
+    independence: 1829,
+    governmentType: 'Unitary parliamentary republic',
   },
   SWE: {
     id: 'SWE',
@@ -571,6 +653,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Northern Europe',
     flagEmoji: '🇸🇪',
+    governmentType: 'Unitary parliamentary constitutional monarchy',
   },
   KHM: {
     id: 'KHM',
@@ -584,6 +667,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'South-Eastern Asia',
     flagEmoji: '🇰🇭',
+    independence: 1953,
+    governmentType: 'Unitary dominant-party parliamentary constitutional monarchy',
   },
   CUB: {
     id: 'CUB',
@@ -595,6 +680,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'Caribbean',
     flagEmoji: '🇨🇺',
+    independence: 1902,
+    governmentType: 'Unitary one-party socialist republic',
   },
   PSE: {
     id: 'PSE',
@@ -607,6 +694,7 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇵🇸',
+    governmentType: 'Semi-presidential republic (limited sovereignty)',
   },
   LBN: {
     id: 'LBN',
@@ -618,6 +706,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇱🇧',
+    independence: 1943,
+    governmentType: 'Unitary confessionalist parliamentary republic',
   },
   GEO: {
     id: 'GEO',
@@ -629,6 +719,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Western Asia',
     flagEmoji: '🇬🇪',
+    independence: 1991,
+    governmentType: 'Unitary parliamentary republic',
   },
   FIN: {
     id: 'FIN',
@@ -640,6 +732,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Northern Europe',
     flagEmoji: '🇫🇮',
+    independence: 1917,
+    governmentType: 'Unitary parliamentary republic',
   },
   MOZ: {
     id: 'MOZ',
@@ -651,6 +745,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Eastern Africa',
     flagEmoji: '🇲🇿',
+    independence: 1975,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   AGO: {
     id: 'AGO',
@@ -662,6 +758,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Central Africa',
     flagEmoji: '🇦🇴',
+    independence: 1975,
+    governmentType: 'Unitary presidential republic',
   },
   DZA: {
     id: 'DZA',
@@ -673,6 +771,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Northern Africa',
     flagEmoji: '🇩🇿',
+    independence: 1962,
+    governmentType: 'Unitary semi-presidential republic',
   },
   IDN: {
     id: 'IDN',
@@ -684,6 +784,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'South-Eastern Asia',
     flagEmoji: '🇮🇩',
+    independence: 1945,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   PHL: {
     id: 'PHL',
@@ -696,6 +798,8 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'South-Eastern Asia',
     flagEmoji: '🇵🇭',
+    independence: 1946,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   HTI: {
     id: 'HTI',
@@ -707,6 +811,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'Caribbean',
     flagEmoji: '🇭🇹',
+    independence: 1804,
+    governmentType: 'Unitary semi-presidential republic',
   },
   BOL: {
     id: 'BOL',
@@ -718,6 +824,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇧🇴',
+    independence: 1825,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   PRY: {
     id: 'PRY',
@@ -728,6 +836,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇵🇾',
+    independence: 1811,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   CHL: {
     id: 'CHL',
@@ -739,6 +849,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇨🇱',
+    independence: 1818,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   PER: {
     id: 'PER',
@@ -750,6 +862,8 @@ export const countries: Record<string, Country> = {
     region: 'Americas',
     subregion: 'South America',
     flagEmoji: '🇵🇪',
+    independence: 1821,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   KEN: {
     id: 'KEN',
@@ -761,6 +875,8 @@ export const countries: Record<string, Country> = {
     region: 'Africa',
     subregion: 'Eastern Africa',
     flagEmoji: '🇰🇪',
+    independence: 1963,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   ARM: {
     id: 'ARM',
@@ -773,6 +889,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Asia',
     flagEmoji: '🇦🇲',
     independence: 1991,
+    governmentType: 'Unitary parliamentary republic',
   },
   AZE: {
     id: 'AZE',
@@ -785,6 +902,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Asia',
     flagEmoji: '🇦🇿',
     independence: 1991,
+    governmentType: 'Unitary semi-presidential republic',
   },
   BGR: {
     id: 'BGR',
@@ -797,6 +915,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Eastern Europe',
     flagEmoji: '🇧🇬',
+    independence: 1908,
+    governmentType: 'Unitary parliamentary republic',
   },
   CMR: {
     id: 'CMR',
@@ -810,6 +930,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central Africa',
     flagEmoji: '🇨🇲',
     independence: 1960,
+    governmentType: 'Unitary presidential republic',
   },
   ERI: {
     id: 'ERI',
@@ -823,6 +944,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Eastern Africa',
     flagEmoji: '🇪🇷',
     independence: 1993,
+    governmentType: 'Unitary one-party presidential republic',
   },
   GTM: {
     id: 'GTM',
@@ -835,6 +957,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central America',
     flagEmoji: '🇬🇹',
     independence: 1821,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   HUN: {
     id: 'HUN',
@@ -847,6 +970,7 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Eastern Europe',
     flagEmoji: '🇭🇺',
+    governmentType: 'Unitary parliamentary republic',
   },
   IRL: {
     id: 'IRL',
@@ -861,6 +985,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Northern Europe',
     flagEmoji: '🇮🇪',
     independence: 1922,
+    governmentType: 'Unitary parliamentary republic',
   },
   LKA: {
     id: 'LKA',
@@ -873,6 +998,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Southern Asia',
     flagEmoji: '🇱🇰',
     independence: 1948,
+    governmentType: 'Unitary semi-presidential constitutional republic',
   },
   NAM: {
     id: 'NAM',
@@ -886,6 +1012,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Southern Africa',
     flagEmoji: '🇳🇦',
     independence: 1990,
+    governmentType: 'Unitary presidential republic',
   },
   NER: {
     id: 'NER',
@@ -898,6 +1025,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Africa',
     flagEmoji: '🇳🇪',
     independence: 1960,
+    governmentType: 'Unitary semi-presidential republic (military junta)',
   },
   NIC: {
     id: 'NIC',
@@ -909,6 +1037,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central America',
     flagEmoji: '🇳🇮',
     independence: 1821,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   ROU: {
     id: 'ROU',
@@ -922,6 +1051,8 @@ export const countries: Record<string, Country> = {
     region: 'Europe',
     subregion: 'Eastern Europe',
     flagEmoji: '🇷🇴',
+    independence: 1877,
+    governmentType: 'Unitary semi-presidential republic',
   },
   SLE: {
     id: 'SLE',
@@ -934,6 +1065,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Africa',
     flagEmoji: '🇸🇱',
     independence: 1961,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   VEN: {
     id: 'VEN',
@@ -947,6 +1079,7 @@ export const countries: Record<string, Country> = {
     subregion: 'South America',
     flagEmoji: '\u{1F1FB}\u{1F1EA}',
     independence: 1811,
+    governmentType: 'Federal presidential republic',
   },
   SLV: {
     id: 'SLV',
@@ -958,6 +1091,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central America',
     flagEmoji: '🇸🇻',
     independence: 1821,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   BFA: {
     id: 'BFA',
@@ -970,6 +1104,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Africa',
     flagEmoji: '\u{1F1E7}\u{1F1EB}',
     independence: 1960,
+    governmentType: 'Unitary semi-presidential republic (military junta)',
   },
   ECU: {
     id: 'ECU',
@@ -982,6 +1117,7 @@ export const countries: Record<string, Country> = {
     subregion: 'South America',
     flagEmoji: '\u{1F1EA}\u{1F1E8}',
     independence: 1830,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   HND: {
     id: 'HND',
@@ -993,6 +1129,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central America',
     flagEmoji: '\u{1F1ED}\u{1F1F3}',
     independence: 1821,
+    governmentType: 'Unitary presidential republic',
   },
   MLI: {
     id: 'MLI',
@@ -1006,6 +1143,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Africa',
     flagEmoji: '\u{1F1F2}\u{1F1F1}',
     independence: 1960,
+    governmentType: 'Unitary semi-presidential republic (military junta)',
   },
   THA: {
     id: 'THA',
@@ -1015,8 +1153,9 @@ export const countries: Record<string, Country> = {
       { name: 'Kingdom of Thailand', startYear: 1939, endYear: null },
     ],
     region: 'Asia',
-    subregion: 'Southeast Asia',
+    subregion: 'South-Eastern Asia',
     flagEmoji: '\u{1F1F9}\u{1F1ED}',
+    governmentType: 'Unitary parliamentary constitutional monarchy',
   },
   UGA: {
     id: 'UGA',
@@ -1029,6 +1168,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Eastern Africa',
     flagEmoji: '\u{1F1FA}\u{1F1EC}',
     independence: 1962,
+    governmentType: 'Unitary presidential republic',
   },
   CAF: {
     id: 'CAF',
@@ -1041,6 +1181,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central Africa',
     flagEmoji: '🇨🇫',
     independence: 1960,
+    governmentType: 'Unitary presidential republic',
   },
   BDI: {
     id: 'BDI',
@@ -1053,6 +1194,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Eastern Africa',
     flagEmoji: '🇧🇮',
     independence: 1962,
+    governmentType: 'Unitary presidential republic',
   },
   TCD: {
     id: 'TCD',
@@ -1065,6 +1207,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central Africa',
     flagEmoji: '🇹🇩',
     independence: 1960,
+    governmentType: 'Unitary presidential republic (military junta)',
   },
   CIV: {
     id: 'CIV',
@@ -1077,6 +1220,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Africa',
     flagEmoji: '🇨🇮',
     independence: 1960,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   BGD: {
     id: 'BGD',
@@ -1089,6 +1233,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Southern Asia',
     flagEmoji: '🇧🇩',
     independence: 1971,
+    governmentType: 'Unitary parliamentary republic',
   },
   CYP: {
     id: 'CYP',
@@ -1101,6 +1246,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Southern Europe',
     flagEmoji: '🇨🇾',
     independence: 1960,
+    governmentType: 'Unitary presidential republic',
   },
   CRI: {
     id: 'CRI',
@@ -1113,6 +1259,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central America',
     flagEmoji: '🇨🇷',
     independence: 1821,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   HRV: {
     id: 'HRV',
@@ -1125,6 +1272,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Southern Europe',
     flagEmoji: '🇭🇷',
     independence: 1991,
+    governmentType: 'Unitary parliamentary republic',
   },
   EST: {
     id: 'EST',
@@ -1137,6 +1285,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Northern Europe',
     flagEmoji: '🇪🇪',
     independence: 1991,
+    governmentType: 'Unitary parliamentary republic',
   },
   JOR: {
     id: 'JOR',
@@ -1149,6 +1298,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Asia',
     flagEmoji: '🇯🇴',
     independence: 1946,
+    governmentType: 'Unitary parliamentary constitutional monarchy',
   },
   KWT: {
     id: 'KWT',
@@ -1161,6 +1311,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Western Asia',
     flagEmoji: '🇰🇼',
     independence: 1961,
+    governmentType: 'Unitary constitutional monarchy',
   },
   TZA: {
     id: 'TZA',
@@ -1173,6 +1324,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Eastern Africa',
     flagEmoji: '🇹🇿',
     independence: 1961,
+    governmentType: 'Unitary presidential republic',
   },
   NPL: {
     id: 'NPL',
@@ -1184,6 +1336,7 @@ export const countries: Record<string, Country> = {
     region: 'Asia',
     subregion: 'Southern Asia',
     flagEmoji: '🇳🇵',
+    governmentType: 'Federal parliamentary republic',
   },
   LAO: {
     id: 'LAO',
@@ -1193,9 +1346,10 @@ export const countries: Record<string, Country> = {
       { name: 'Lao People\'s Democratic Republic', startYear: 1975, endYear: null },
     ],
     region: 'Asia',
-    subregion: 'Southeast Asia',
+    subregion: 'South-Eastern Asia',
     flagEmoji: '🇱🇦',
     independence: 1954,
+    governmentType: 'Unitary Marxist-Leninist one-party socialist republic',
   },
   TUN: {
     id: 'TUN',
@@ -1208,6 +1362,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Northern Africa',
     flagEmoji: '🇹🇳',
     independence: 1956,
+    governmentType: 'Unitary presidential republic',
   },
   URY: {
     id: 'URY',
@@ -1220,6 +1375,7 @@ export const countries: Record<string, Country> = {
     subregion: 'South America',
     flagEmoji: '🇺🇾',
     independence: 1828,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   PAN: {
     id: 'PAN',
@@ -1232,6 +1388,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Central America',
     flagEmoji: '🇵🇦',
     independence: 1903,
+    governmentType: 'Unitary presidential constitutional republic',
   },
   BIH: {
     id: 'BIH',
@@ -1244,6 +1401,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Southern Europe',
     flagEmoji: '🇧🇦',
     independence: 1992,
+    governmentType: 'Federal parliamentary republic',
   },
   MDA: {
     id: 'MDA',
@@ -1256,6 +1414,7 @@ export const countries: Record<string, Country> = {
     subregion: 'Eastern Europe',
     flagEmoji: '🇲🇩',
     independence: 1991,
+    governmentType: 'Unitary parliamentary republic',
   },
 };
 

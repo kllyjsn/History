@@ -6,6 +6,7 @@ interface TimelineScrubberProps {
   selectedYear: number;
   minYear?: number;
   maxYear?: number;
+  activeConflictCount?: number;
 }
 
 const TimelineScrubber: FC<TimelineScrubberProps> = ({
@@ -13,6 +14,7 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
   selectedYear,
   minYear = 1500,
   maxYear = 2025,
+  activeConflictCount,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,7 +22,8 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
   const playRef = useRef<ReturnType<typeof setInterval>>(undefined);
   const yearRef = useRef(selectedYear);
 
-  const activeConflicts = getConflictsByDateRange(selectedYear, selectedYear);
+  const fallbackConflicts = getConflictsByDateRange(selectedYear, selectedYear);
+  const activeConflictDisplay = activeConflictCount ?? fallbackConflicts.length;
   const totalRange = maxYear - minYear;
   const pct = ((selectedYear - minYear) / totalRange) * 100;
 
@@ -120,11 +123,39 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
     ticks.push(y);
   }
 
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      const step = e.shiftKey ? 50 : 10;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        onYearChange(Math.max(minYear, selectedYear - step));
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        onYearChange(Math.min(maxYear, selectedYear + step));
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        onYearChange(minYear);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        onYearChange(maxYear);
+      } else if (e.key === ' ') {
+        e.preventDefault();
+        togglePlay();
+      }
+    },
+    [selectedYear, minYear, maxYear, onYearChange, togglePlay],
+  );
+
   return (
-    <div className="border-t border-slate-800 bg-slate-900/90 px-2 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm">
+    <div
+      className="border-t border-slate-800 bg-slate-900/90 px-2 py-1.5 sm:px-4 sm:py-2 backdrop-blur-sm"
+      role="region"
+      aria-label="Timeline"
+    >
       <div className="flex items-center gap-2 sm:gap-3">
         <button
           onClick={togglePlay}
+          aria-label={isPlaying ? 'Pause timeline' : 'Play timeline'}
           className={`flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full transition-all shrink-0 ${
             isPlaying
               ? 'bg-amber-500/20 text-amber-400 ring-1 ring-amber-500/40'
@@ -148,7 +179,7 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
             {selectedYear}
           </span>
           <div className="text-[8px] sm:text-[9px] text-slate-500 -mt-0.5">
-            {activeConflicts.length} active
+            {activeConflictDisplay} active
           </div>
         </div>
 
@@ -156,8 +187,16 @@ const TimelineScrubber: FC<TimelineScrubberProps> = ({
           <div
             ref={trackRef}
             className="relative h-8 sm:h-10 cursor-pointer"
+            role="slider"
+            aria-label="Timeline year"
+            aria-valuemin={minYear}
+            aria-valuemax={maxYear}
+            aria-valuenow={selectedYear}
+            aria-valuetext={`Year ${selectedYear}, ${activeConflictDisplay} active conflicts`}
+            tabIndex={0}
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
+            onKeyDown={handleKeyDown}
           >
             {/* Conflict density heatmap */}
             <div className="absolute bottom-3.5 sm:bottom-4 left-0 right-0 h-2 sm:h-3 flex">

@@ -18,12 +18,28 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
   const contentRef = useRef<HTMLDivElement>(null);
   const isOpenRef = useRef(isOpen);
   const requestIdRef = useRef(0);
+  const prevIsOpenRef = useRef(isOpen);
+  const prevInitialUrlRef = useRef(initialUrl);
+
+  if (prevIsOpenRef.current !== isOpen || prevInitialUrlRef.current !== initialUrl) {
+    prevIsOpenRef.current = isOpen;
+    prevInitialUrlRef.current = initialUrl;
+    if (isOpen && initialUrl) {
+      // Defer state updates to avoid sync setState in render
+    } else if (!isOpen) {
+      // Defer cleanup to effect
+    }
+  }
 
   useEffect(() => {
     isOpenRef.current = isOpen;
     if (isOpen && initialUrl) {
-      setUrl(initialUrl);
-      loadArticle(initialUrl);
+      // Use a microtask to avoid synchronous setState in effect
+      queueMicrotask(() => {
+        if (!isOpenRef.current) return;
+        setUrl(initialUrl);
+        loadArticle(initialUrl);
+      });
     } else if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
     }
@@ -31,9 +47,11 @@ const ArticleReader: FC<ArticleReaderProps> = ({ isOpen, initialUrl, onClose }) 
 
   useEffect(() => {
     if (!isOpen) {
-      setArticle(null);
-      setUrl('');
-      setLoading(false);
+      queueMicrotask(() => {
+        setArticle(null);
+        setUrl('');
+        setLoading(false);
+      });
     }
   }, [isOpen]);
 

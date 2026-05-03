@@ -58,6 +58,16 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Correlates of War Project', 'Keegan (1998)', 'Clark (2012)', 'Strachan (2001)'],
     tags: ['world_war', 'trench_warfare', 'chemical_weapons', 'empire_collapse'],
+    keyFigures: [
+      { name: 'Gavrilo Princip', role: 'Assassin of Archduke Franz Ferdinand', country: 'SRB' },
+      { name: 'Kaiser Wilhelm II', role: 'German Emperor', country: 'DEU' },
+      { name: 'Woodrow Wilson', role: 'US President who entered the war', country: 'USA' },
+    ],
+    treaties: [
+      { name: 'Treaty of Versailles', year: 1919, description: 'Main peace treaty ending WWI, imposed harsh reparations on Germany.' },
+      { name: 'Treaty of Saint-Germain', year: 1919, description: 'Dissolved the Austro-Hungarian Empire.' },
+    ],
+    relatedConflicts: ['ww2', 'russian-civil-war'],
   },
   {
     id: 'ww2',
@@ -122,6 +132,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['National WWII Museum', 'Keegan (1989)', 'Weinberg (1994)', 'Glantz (1995)'],
     tags: ['world_war', 'nuclear', 'genocide', 'holocaust', 'decolonization'],
+    treaties: [
+      { name: 'Potsdam Agreement', year: 1945, description: 'Post-war settlement for Germany and Europe.' },
+      { name: 'San Francisco Treaty', year: 1951, description: 'Peace treaty between Japan and Allied Powers.' },
+    ],
+    relatedConflicts: ['ww1', 'korean-war', 'chinese-civil-war'],
   },
 
   // ═══════════════════════════════════════
@@ -177,6 +192,15 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['COW Project', 'Cumings (2010)', 'Halberstam (2007)', 'Hastings (1987)'],
     tags: ['cold_war', 'proxy_war', 'divided_nation', 'armistice'],
+    keyFigures: [
+      { name: 'Douglas MacArthur', role: 'Supreme UN Commander', country: 'USA' },
+      { name: 'Kim Il-sung', role: 'North Korean leader', country: 'PRK' },
+      { name: 'Syngman Rhee', role: 'South Korean president', country: 'KOR' },
+    ],
+    treaties: [
+      { name: 'Korean Armistice Agreement', year: 1953, description: 'Ceasefire establishing the DMZ; no peace treaty ever signed.' },
+    ],
+    relatedConflicts: ['ww2', 'vietnam-war'],
   },
   {
     id: 'vietnam-war',
@@ -226,6 +250,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Hirschman et al. (1995)', 'Karnow (1983)', 'Sheehan (1988)', 'COW Project'],
     tags: ['cold_war', 'proxy_war', 'guerrilla', 'chemical_weapons', 'media_war'],
+    treaties: [
+      { name: 'Paris Peace Accords', year: 1973, description: 'Ceasefire agreement; US withdrawal. Fighting continued until 1975.' },
+    ],
+    relatedConflicts: ['korean-war', 'cambodian-genocide', 'secret-war-laos'],
   },
   {
     id: 'soviet-afghan-war',
@@ -273,6 +301,14 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Kalinovsky (2011)', 'Coll (2004)', 'Braithwaite (2011)', 'COW Project'],
     tags: ['cold_war', 'proxy_war', 'guerrilla', 'blowback', 'empire_decline'],
+    keyFigures: [
+      { name: 'Ahmad Shah Massoud', role: 'Mujahideen commander', country: 'AFG' },
+      { name: 'Leonid Brezhnev', role: 'Soviet leader who ordered invasion', country: 'RUS' },
+    ],
+    treaties: [
+      { name: 'Geneva Accords', year: 1988, description: 'Framework for Soviet withdrawal from Afghanistan.' },
+    ],
+    relatedConflicts: ['us-war-on-terror-afghanistan'],
   },
 
   // ═══════════════════════════════════════
@@ -367,6 +403,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Oren (2002)', 'Shlaim (2000)', 'Segev (2007)', 'COW Project'],
     tags: ['preemptive_strike', 'occupation', 'territorial_expansion'],
+    keyFigures: [
+      { name: 'Moshe Dayan', role: 'Israeli Defense Minister', country: 'ISR' },
+      { name: 'Gamal Abdel Nasser', role: 'Egyptian President', country: 'EGY' },
+    ],
+    relatedConflicts: ['yom-kippur-war', 'arab-israeli-1948'],
   },
   {
     id: 'iran-iraq-war',
@@ -409,6 +450,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Murray & Woods (2014)', 'Razoux (2015)', 'COW Project'],
     tags: ['chemical_weapons', 'trench_warfare', 'proxy_support', 'oil'],
+    keyFigures: [
+      { name: 'Saddam Hussein', role: 'Iraqi president', country: 'IRQ' },
+      { name: 'Ruhollah Khomeini', role: 'Iranian Supreme Leader', country: 'IRN' },
+    ],
+    relatedConflicts: ['gulf-war-1991', 'iraq-war-2003'],
   },
   {
     id: 'gulf-war-1991',
@@ -452,6 +498,12 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Freedman & Karsh (1993)', 'Atkinson (1993)', 'COW Project'],
     tags: ['coalition', 'oil', 'air_power', 'un_authorized'],
+    keyFigures: [
+      { name: 'Saddam Hussein', role: 'Iraqi president who invaded Kuwait', country: 'IRQ' },
+      { name: 'George H.W. Bush', role: 'US President leading coalition', country: 'USA' },
+      { name: 'Norman Schwarzkopf', role: 'US Central Command General', country: 'USA' },
+    ],
+    relatedConflicts: ['iran-iraq-war', 'iraq-war-2003'],
   },
   {
     id: 'iraq-war-2003',
@@ -499,6 +551,12 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Ricks (2006)', 'Iraq Body Count', 'Cockburn (2016)', 'Chandrasekaran (2006)'],
     tags: ['regime_change', 'wmd_pretext', 'insurgency', 'sectarian'],
+    keyFigures: [
+      { name: 'George W. Bush', role: 'US President who ordered invasion', country: 'USA' },
+      { name: 'Saddam Hussein', role: 'Iraqi president (captured, executed)', country: 'IRQ' },
+      { name: 'Tony Blair', role: 'UK Prime Minister', country: 'GBR' },
+    ],
+    relatedConflicts: ['gulf-war-1991', 'syrian-civil-war'],
   },
   {
     id: 'syrian-civil-war',
@@ -547,6 +605,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['SOHR', 'UN reports', 'Yassin-Kassab & Al-Shami (2016)', 'UCDP'],
     tags: ['civil_war', 'chemical_weapons', 'refugee_crisis', 'proxy_war', 'arab_spring'],
+    keyFigures: [
+      { name: 'Bashar al-Assad', role: 'Syrian president', country: 'SYR' },
+    ],
+    relatedConflicts: ['arab-spring', 'iraq-war-2003', 'isis-insurgency'],
   },
   {
     id: 'russia-ukraine-war',
@@ -594,6 +656,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['UN OHCHR', 'Plokhy (2023)', 'IISS', 'UCDP'],
     tags: ['interstate_war', 'nuclear_threats', 'sanctions', 'energy_crisis', 'ongoing'],
+    keyFigures: [
+      { name: 'Vladimir Putin', role: 'Russian President', country: 'RUS' },
+      { name: 'Volodymyr Zelenskyy', role: 'Ukrainian President', country: 'UKR' },
+    ],
+    relatedConflicts: ['ukrainian-crisis-2014'],
   },
 
   // ═══════════════════════════════════════
@@ -637,6 +704,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Des Forges (1999)', 'Mamdani (2001)', 'Dallaire (2003)', 'UCDP'],
     tags: ['genocide', 'colonial_legacy', 'international_failure', 'ethnic_violence'],
+    keyFigures: [
+      { name: 'Paul Kagame', role: 'RPF leader, later president', country: 'RWA' },
+    ],
+    relatedConflicts: ['first-congo-war', 'second-congo-war'],
   },
   {
     id: 'nigerian-civil-war',
@@ -849,6 +920,7 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['ICTY records', 'Silber & Little (1997)', 'Judah (2000)', 'UCDP'],
     tags: ['ethnic_cleansing', 'genocide', 'nato_intervention', 'dissolution', 'war_crimes_tribunal'],
+    relatedConflicts: ['bosnian-war', 'kosovo-war'],
   },
   {
     id: 'russo-georgian-war',
@@ -980,6 +1052,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Blanning (1996)', 'Palmer (1959)', 'COW Project'],
     tags: ['revolution', 'ideology', 'coalition_wars', 'enlightenment'],
+    keyFigures: [
+      { name: 'Louis XVI', role: 'French King (executed)', country: 'FRA' },
+      { name: 'Maximilien Robespierre', role: 'Jacobin leader', country: 'FRA' },
+    ],
+    relatedConflicts: ['napoleonic-wars'],
   },
   {
     id: 'napoleonic-wars',
@@ -1024,6 +1101,15 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Roberts (2014)', 'Esdaile (2007)', 'COW Project'],
     tags: ['imperialism', 'coalition_wars', 'legal_reform', 'balance_of_power'],
+    keyFigures: [
+      { name: 'Napoleon Bonaparte', role: 'French Emperor', country: 'FRA' },
+      { name: 'Duke of Wellington', role: 'British commander at Waterloo', country: 'GBR' },
+      { name: 'Tsar Alexander I', role: 'Russian Emperor', country: 'RUS' },
+    ],
+    treaties: [
+      { name: 'Congress of Vienna', year: 1815, description: 'Redrew European borders and established the Concert of Europe.' },
+    ],
+    relatedConflicts: ['french-revolution-wars'],
   },
   {
     id: 'algerian-independence',
@@ -1189,6 +1275,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['McPherson (1988)', 'Hacker (2011)', 'Blight (2001)', 'COW Project'],
     tags: ['civil_war', 'slavery', 'deadliest_american_war', 'emancipation'],
+    keyFigures: [
+      { name: 'Abraham Lincoln', role: 'US President', country: 'USA' },
+      { name: 'Robert E. Lee', role: 'Confederate general', country: 'USA' },
+      { name: 'Ulysses S. Grant', role: 'Union general', country: 'USA' },
+    ],
   },
   {
     id: 'mexican-american-war',
@@ -1343,6 +1434,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Hastings & Jenkins (1983)', 'Freedman (2005)', 'COW Project'],
     tags: ['territorial_dispute', 'naval_war', 'dictatorship_fall', 'self_determination'],
+    keyFigures: [
+      { name: 'Margaret Thatcher', role: 'UK Prime Minister', country: 'GBR' },
+      { name: 'Leopoldo Galtieri', role: 'Argentine military dictator', country: 'ARG' },
+    ],
   },
 
   // ═══════════════════════════════════════
@@ -1386,6 +1481,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Kiernan (2004)', 'Shawcross (1979)', 'ECCC records', 'UCDP'],
     tags: ['genocide', 'ideology', 'cold_war_alignment', 'auto_genocide'],
+    keyFigures: [
+      { name: 'Pol Pot', role: 'Khmer Rouge leader', country: 'KHM' },
+    ],
+    relatedConflicts: ['vietnam-war'],
   },
 
   // ═══════════════════════════════════════
@@ -1517,6 +1616,14 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Costs of War Project', 'Gopal (2014)', 'Whitlock (2021)', 'UCDP'],
     tags: ['war_on_terror', 'longest_us_war', 'nation_building_failure', 'taliban_return'],
+    keyFigures: [
+      { name: 'Osama bin Laden', role: 'Al-Qaeda leader (killed 2011)', country: 'AFG' },
+      { name: 'Hamid Karzai', role: 'First post-Taliban president', country: 'AFG' },
+    ],
+    treaties: [
+      { name: 'Doha Agreement', year: 2020, description: 'US-Taliban deal leading to US withdrawal by 2021.' },
+    ],
+    relatedConflicts: ['soviet-afghan-war', 'iraq-war-2003'],
   },
   {
     id: 'winter-war',
@@ -1594,6 +1701,10 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Preston (2006)', 'Beevor (2006)', 'Thomas (1961)', 'COW Project'],
     tags: ['civil_war', 'fascism_vs_democracy', 'international_brigades', 'prelude_to_ww2'],
+    keyFigures: [
+      { name: 'Francisco Franco', role: 'Nationalist leader', country: 'ESP' },
+    ],
+    relatedConflicts: ['ww2'],
   },
   {
     id: 'boer-wars',
@@ -1719,6 +1830,7 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Figes (1996)', 'Mawdsley (2007)', 'COW Project'],
     tags: ['revolution', 'foreign_intervention', 'famine', 'ideology', 'empire_collapse'],
+    relatedConflicts: ['ww1'],
   },
   {
     id: 'yom-kippur-war',
@@ -1763,6 +1875,14 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Rabinovich (2004)', 'Insight Team (1974)', 'COW Project'],
     tags: ['surprise_attack', 'oil_crisis', 'peace_process', 'cold_war_proxy'],
+    keyFigures: [
+      { name: 'Anwar Sadat', role: 'Egyptian President', country: 'EGY' },
+      { name: 'Golda Meir', role: 'Israeli Prime Minister', country: 'ISR' },
+    ],
+    treaties: [
+      { name: 'Camp David Accords', year: 1978, description: 'Peace framework between Egypt and Israel.' },
+    ],
+    relatedConflicts: ['six-day-war'],
   },
   {
     id: 'sudanese-civil-wars',
@@ -2035,6 +2155,11 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Gott (2004)', 'Thomas (1971)', 'COW Project'],
     tags: ['revolution', 'cold_war', 'communism', 'embargo', 'guerrilla'],
+    keyFigures: [
+      { name: 'Fidel Castro', role: 'Revolutionary leader', country: 'CUB' },
+      { name: 'Che Guevara', role: 'Revolutionary commander', country: 'CUB' },
+      { name: 'Fulgencio Batista', role: 'Cuban dictator (overthrown)', country: 'CUB' },
+    ],
   },
   {
     id: 'irish-war-of-independence',
@@ -7394,10 +7519,404 @@ export const conflicts: Conflict[] = [
     ],
     sources: ['Lynch (2012)', 'Achcar (2013)', 'ACLED'],
     tags: ['revolution', 'democracy', 'social_media', 'counter_revolution', 'youth'],
+    relatedConflicts: ['syrian-civil-war', 'libyan-civil-war', 'yemen-civil-war'],
     keyFigures: [
       { name: 'Mohamed Bouazizi', role: 'Tunisian vendor whose self-immolation sparked the movement', country: 'TUN' },
       { name: 'Hosni Mubarak', role: 'Egyptian president (overthrown)', country: 'EGY' },
       { name: 'Muammar Gaddafi', role: 'Libyan leader (killed)', country: 'LBY' },
+    ],
+  },
+
+  // ═══════════════════════════════════════
+  // ADDITIONAL PROXY WARS (Cold War era)
+  // ═══════════════════════════════════════
+  {
+    id: 'angolan_civil_war_proxy',
+    name: 'Angolan Civil War (Proxy Phase)',
+    alternateNames: [{ name: 'Bush War in Angola', perspective: 'South African perspective' }],
+    type: 'proxy_war',
+    startYear: 1975,
+    endYear: 2002,
+    parties: [
+      { countryId: 'AGO', role: 'belligerent' },
+      { countryId: 'CUB', role: 'ally' },
+      { countryId: 'RUS', role: 'ally' },
+      { countryId: 'USA', role: 'ally' },
+      { countryId: 'ZAF', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 500000, high: 1500000 },
+      source: 'Uppsala Conflict Data Program',
+    },
+    territorialChanges: null,
+    outcome: 'MPLA government consolidation after UNITA leader Jonas Savimbi killed in 2002.',
+    summary: 'One of the longest proxy wars of the Cold War. The Soviet-backed MPLA fought US-backed UNITA and South African forces for control of Angola, with Cuba deploying tens of thousands of troops.',
+    perspectives: [
+      { viewpoint: 'MPLA/Soviet perspective', description: 'Liberation struggle against imperialist-backed forces seeking to overthrow a legitimate government.', source: 'Gleijeses, Piero. Conflicting Missions. 2002.' },
+      { viewpoint: 'Western/UNITA perspective', description: 'Resistance to Soviet expansion in southern Africa.', source: 'Stockwell, John. In Search of Enemies. 1978.' },
+    ],
+    sources: ['Gleijeses (2002)', 'UCDP'],
+    tags: ['cold_war', 'proxy_war', 'decolonization', 'africa'],
+    keyFigures: [
+      { name: 'Jonas Savimbi', role: 'UNITA leader', country: 'AGO' },
+      { name: 'Agostinho Neto', role: 'First MPLA president', country: 'AGO' },
+      { name: 'Fidel Castro', role: 'Deployed Cuban troops', country: 'CUB' },
+    ],
+    relatedConflicts: ['mozambican_civil_war'],
+  },
+  {
+    id: 'mozambican_civil_war',
+    name: 'Mozambican Civil War',
+    alternateNames: [{ name: 'FRELIMO-RENAMO War', perspective: 'Political framing' }],
+    type: 'proxy_war',
+    startYear: 1977,
+    endYear: 1992,
+    parties: [
+      { countryId: 'MOZ', role: 'belligerent' },
+      { countryId: 'ZAF', role: 'ally' },
+      { countryId: 'RUS', role: 'ally' },
+      { countryId: 'CUB', role: 'ally' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 600000, high: 1000000 },
+      source: 'Minter (1994)',
+    },
+    territorialChanges: null,
+    outcome: 'Rome General Peace Accords (1992). Multiparty democracy established.',
+    summary: 'Cold War proxy conflict where Rhodesia and then South Africa backed RENAMO insurgents against the Soviet-aligned FRELIMO government, devastating the country.',
+    perspectives: [
+      { viewpoint: 'FRELIMO perspective', description: 'A struggle to defend national sovereignty against apartheid-backed destabilization.', source: 'Minter, William. Apartheid\'s Contras. 1994.' },
+    ],
+    sources: ['Minter (1994)', 'UCDP'],
+    tags: ['cold_war', 'proxy_war', 'decolonization', 'africa'],
+    relatedConflicts: ['angolan_civil_war_proxy'],
+  },
+  {
+    id: 'nicaraguan_contra_war',
+    name: 'Nicaraguan Contra War',
+    alternateNames: [{ name: 'Iran-Contra Affair', perspective: 'US political scandal aspect' }],
+    type: 'proxy_war',
+    startYear: 1981,
+    endYear: 1990,
+    parties: [
+      { countryId: 'NIC', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally' },
+      { countryId: 'CUB', role: 'ally' },
+      { countryId: 'RUS', role: 'ally' },
+      { countryId: 'HND', role: 'ally' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 30000, high: 50000 },
+      source: 'UCDP',
+    },
+    territorialChanges: null,
+    outcome: 'Sandinistas lost 1990 elections. Contras demobilized.',
+    summary: 'US-funded Contra rebels fought the Soviet-aligned Sandinista government. The covert US funding through Iran arms sales created the Iran-Contra scandal.',
+    perspectives: [
+      { viewpoint: 'US/Contra perspective', description: 'Resistance to communist expansion in Central America during the Cold War.', source: 'Kagan, Robert. A Twilight Struggle. 1996.' },
+      { viewpoint: 'Sandinista perspective', description: 'US imperialism undermining a popular revolution and national self-determination.', source: 'Walker, Thomas. Nicaragua: Living in the Shadow of the Eagle. 2003.' },
+    ],
+    sources: ['Kagan (1996)', 'UCDP'],
+    tags: ['cold_war', 'proxy_war', 'central_america', 'iran_contra'],
+    keyFigures: [
+      { name: 'Daniel Ortega', role: 'Sandinista leader', country: 'NIC' },
+      { name: 'Ronald Reagan', role: 'US President who funded Contras', country: 'USA' },
+    ],
+    relatedConflicts: ['salvadoran_civil_war'],
+  },
+  {
+    id: 'salvadoran_civil_war',
+    name: 'Salvadoran Civil War',
+    alternateNames: [{ name: 'La Guerra Civil', perspective: 'Spanish' }],
+    type: 'civil_war',
+    startYear: 1979,
+    endYear: 1992,
+    parties: [
+      { countryId: 'SLV', role: 'belligerent' },
+      { countryId: 'USA', role: 'ally' },
+      { countryId: 'CUB', role: 'ally' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 70000, high: 80000 },
+      source: 'UN Truth Commission (1993)',
+    },
+    territorialChanges: null,
+    outcome: 'Chapultepec Peace Accords (1992). Military reformed, FMLN became political party.',
+    summary: 'FMLN guerrillas fought the US-backed military government. Marked by death squads, massacres, and Cold War proxy dynamics.',
+    perspectives: [
+      { viewpoint: 'Government/US perspective', description: 'Counter-insurgency against communist guerrillas threatening democracy.', source: 'Bacevich, A.J. American Military Policy in Small Wars. 1988.' },
+      { viewpoint: 'FMLN perspective', description: 'Popular uprising against a brutal military dictatorship backed by US imperialism.', source: 'UN Truth Commission Report. 1993.' },
+    ],
+    sources: ['UN Truth Commission (1993)', 'UCDP'],
+    tags: ['cold_war', 'proxy_war', 'central_america', 'death_squads'],
+    keyFigures: [
+      { name: 'Oscar Romero', role: 'Archbishop assassinated by death squad', country: 'SLV' },
+    ],
+    relatedConflicts: ['nicaraguan_contra_war'],
+  },
+
+  // ═══════════════════════════════════════
+  // MODERN CONFLICTS (2020s)
+  // ═══════════════════════════════════════
+  {
+    id: 'tigray_war',
+    name: 'Tigray War',
+    alternateNames: [{ name: 'Northern Ethiopia Conflict', perspective: 'Ethiopian government framing' }],
+    type: 'civil_war',
+    startYear: 2020,
+    endYear: 2022,
+    parties: [
+      { countryId: 'ETH', role: 'belligerent' },
+      { countryId: 'ERI', role: 'ally' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 300000, high: 600000 },
+      source: 'Ghent University, AU estimates',
+    },
+    territorialChanges: null,
+    outcome: 'Pretoria Agreement (Nov 2022) ended active fighting. Humanitarian crisis ongoing.',
+    summary: 'Ethiopian federal forces and Eritrean allies fought the Tigray People\'s Liberation Front (TPLF). One of the deadliest conflicts of the 21st century, marked by famine and atrocities.',
+    perspectives: [
+      { viewpoint: 'Ethiopian government', description: 'Law enforcement operation against a rebel group that attacked federal military bases.', source: 'Ethiopian government statements.' },
+      { viewpoint: 'TPLF/Tigrayan perspective', description: 'Federal aggression and Eritrean invasion aimed at destroying Tigray\'s political autonomy.', source: 'Various international reports.' },
+    ],
+    sources: ['Ghent University study', 'ACLED', 'UCDP'],
+    tags: ['modern', 'civil_war', 'famine', 'ethnic_conflict', 'africa'],
+    keyFigures: [
+      { name: 'Abiy Ahmed', role: 'Ethiopian PM', country: 'ETH' },
+      { name: 'Debretsion Gebremichael', role: 'TPLF leader', country: 'ETH' },
+    ],
+  },
+  {
+    id: 'myanmar_civil_war_2021',
+    name: 'Myanmar Civil War (Post-Coup)',
+    alternateNames: [{ name: 'Spring Revolution', perspective: 'Pro-democracy movement' }],
+    type: 'civil_war',
+    startYear: 2021,
+    endYear: null,
+    parties: [
+      { countryId: 'MMR', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 40000, high: 80000 },
+      source: 'ACLED, AAPP estimates',
+    },
+    territorialChanges: 'Resistance forces and ethnic armed organizations control significant territory.',
+    outcome: 'Ongoing. Military junta losing territory to resistance coalition.',
+    summary: 'Following the Feb 2021 military coup that overthrew Aung San Suu Kyi, widespread armed resistance emerged. Ethnic armed organizations and People\'s Defence Forces fight the Tatmadaw.',
+    perspectives: [
+      { viewpoint: 'Pro-democracy perspective', description: 'Popular resistance against an illegitimate military coup that overturned democratic elections.', source: 'AAPP (Assistance Association for Political Prisoners).' },
+      { viewpoint: 'Military (Tatmadaw)', description: 'Restoration of order against election fraud and threats to national unity.', source: 'Myanmar military statements.' },
+    ],
+    sources: ['ACLED', 'AAPP', 'UCDP'],
+    tags: ['modern', 'coup', 'democracy', 'ethnic_conflict', 'resistance'],
+    keyFigures: [
+      { name: 'Min Aung Hlaing', role: 'Military junta leader', country: 'MMR' },
+      { name: 'Aung San Suu Kyi', role: 'Deposed civilian leader', country: 'MMR' },
+    ],
+  },
+  {
+    id: 'sudan_civil_war_2023',
+    name: 'Sudan Civil War (2023)',
+    alternateNames: [{ name: 'RSF-SAF Conflict', perspective: 'Military factions' }],
+    type: 'civil_war',
+    startYear: 2023,
+    endYear: null,
+    parties: [
+      { countryId: 'SDN', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 20000, high: 150000 },
+      source: 'ACLED, Sudan health ministry, various estimates',
+    },
+    territorialChanges: 'RSF controls much of Darfur and Khartoum; SAF holds Port Sudan and east.',
+    outcome: 'Ongoing. Massive humanitarian crisis with millions displaced.',
+    summary: 'Power struggle between the Sudanese Armed Forces (SAF) under Gen. al-Burhan and the Rapid Support Forces (RSF) under Gen. Hemedti erupted into full-scale war.',
+    perspectives: [
+      { viewpoint: 'SAF perspective', description: 'Defense of state sovereignty against a paramilitary force refusing integration.', source: 'SAF statements.' },
+      { viewpoint: 'RSF perspective', description: 'Resistance against military establishment that monopolized power.', source: 'RSF statements.' },
+    ],
+    sources: ['ACLED', 'UCDP', 'UN OCHA'],
+    tags: ['modern', 'civil_war', 'humanitarian_crisis', 'displacement', 'africa'],
+    keyFigures: [
+      { name: 'Abdel Fattah al-Burhan', role: 'SAF commander, de facto head of state', country: 'SDN' },
+      { name: 'Mohamed Hamdan Dagalo', role: 'RSF commander (Hemedti)', country: 'SDN' },
+    ],
+  },
+
+  // ═══════════════════════════════════════
+  // TRADE WARS
+  // ═══════════════════════════════════════
+  {
+    id: 'us_china_trade_war',
+    name: 'US-China Trade War',
+    alternateNames: [{ name: 'Tech Cold War', perspective: 'Technology sector framing' }],
+    type: 'trade_war',
+    startYear: 2018,
+    endYear: null,
+    parties: [
+      { countryId: 'USA', role: 'belligerent' },
+      { countryId: 'CHN', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: null,
+      source: 'Economic conflict — no military casualties',
+    },
+    territorialChanges: null,
+    outcome: 'Ongoing. Tariffs expanded under multiple administrations. Technology decoupling accelerating.',
+    summary: 'Escalating economic confrontation between the world\'s two largest economies, involving tariffs on hundreds of billions of dollars in goods, technology export controls, and semiconductor restrictions.',
+    perspectives: [
+      { viewpoint: 'US perspective', description: 'Correcting unfair trade practices, IP theft, forced technology transfer, and strategic dependency on China.', source: 'USTR reports; Lighthizer testimony.' },
+      { viewpoint: 'Chinese perspective', description: 'US containment strategy to suppress China\'s legitimate economic development and technological rise.', source: 'Chinese government white papers on trade.' },
+    ],
+    sources: ['USTR', 'WTO', 'Peterson Institute'],
+    tags: ['trade_war', 'technology', 'tariffs', 'modern', 'economic_warfare'],
+    keyFigures: [
+      { name: 'Donald Trump', role: 'Initiated tariffs as US President', country: 'USA' },
+      { name: 'Xi Jinping', role: 'Chinese President', country: 'CHN' },
+      { name: 'Robert Lighthizer', role: 'US Trade Representative', country: 'USA' },
+    ],
+  },
+  {
+    id: 'smoot_hawley_trade_war',
+    name: 'Smoot-Hawley Tariff War',
+    alternateNames: [{ name: 'Great Depression Trade Wars', perspective: 'Economic history' }],
+    type: 'trade_war',
+    startYear: 1930,
+    endYear: 1934,
+    parties: [
+      { countryId: 'USA', role: 'aggressor' },
+      { countryId: 'GBR', role: 'belligerent' },
+      { countryId: 'FRA', role: 'belligerent' },
+      { countryId: 'DEU', role: 'belligerent' },
+      { countryId: 'CAN', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: null,
+      source: 'Economic conflict — no military casualties',
+    },
+    territorialChanges: null,
+    outcome: 'Global trade collapsed ~65%. Contributed to deepening Great Depression. Led to GATT/WTO system.',
+    summary: 'US raised tariffs on over 20,000 imported goods, triggering retaliatory tariffs worldwide. Global trade collapsed, worsening the Great Depression.',
+    perspectives: [
+      { viewpoint: 'Protectionist perspective', description: 'Tariffs were needed to protect American farmers and workers from foreign competition during economic crisis.', source: 'Congressional Record, 1930.' },
+      { viewpoint: 'Free trade perspective', description: 'Smoot-Hawley worsened the Depression by collapsing international trade. A cautionary tale against protectionism.', source: 'Irwin, Douglas. Peddling Protectionism. 2011.' },
+    ],
+    sources: ['Irwin (2011)', 'Eichengreen (1989)'],
+    tags: ['trade_war', 'great_depression', 'tariffs', 'protectionism'],
+  },
+
+  // ═══════════════════════════════════════
+  // CARIBBEAN & UNDERREPRESENTED REGIONS
+  // ═══════════════════════════════════════
+  {
+    id: 'haitian_revolution',
+    name: 'Haitian Revolution',
+    alternateNames: [{ name: 'Saint-Domingue Slave Revolt', perspective: 'French colonial perspective' }],
+    type: 'revolution',
+    startYear: 1791,
+    endYear: 1804,
+    parties: [
+      { countryId: 'HTI', role: 'belligerent' },
+      { countryId: 'FRA', role: 'belligerent' },
+      { countryId: 'GBR', role: 'belligerent' },
+      { countryId: 'ESP', role: 'belligerent' },
+    ],
+    casualties: {
+      military: null,
+      civilian: null,
+      total: { low: 200000, high: 350000 },
+      source: 'Popkin (2010)',
+    },
+    territorialChanges: 'Haiti became independent from France — the first successful slave revolution.',
+    outcome: 'Haitian independence. First Black republic. Only successful large-scale slave uprising in history.',
+    summary: 'Enslaved people in the French colony of Saint-Domingue overthrew slavery and colonial rule, defeating French, Spanish, and British forces to establish Haiti.',
+    perspectives: [
+      { viewpoint: 'Haitian perspective', description: 'A glorious revolution for human freedom and dignity, proving enslaved people could forge their own destiny.', source: 'James, C.L.R. The Black Jacobins. 1938.' },
+      { viewpoint: 'Colonial/French perspective', description: 'A catastrophic loss of the wealthiest colony in the Caribbean, driven by Enlightenment ideals taken to their extreme.', source: 'Popkin, Jeremy. A Concise History of the Haitian Revolution. 2010.' },
+    ],
+    sources: ['James (1938)', 'Popkin (2010)'],
+    tags: ['revolution', 'slavery', 'caribbean', 'decolonization', 'independence'],
+    keyFigures: [
+      { name: 'Toussaint Louverture', role: 'Revolutionary leader', country: 'HTI' },
+      { name: 'Jean-Jacques Dessalines', role: 'First ruler of independent Haiti', country: 'HTI' },
+    ],
+  },
+  {
+    id: 'grenada_invasion',
+    name: 'US Invasion of Grenada',
+    alternateNames: [{ name: 'Operation Urgent Fury', perspective: 'US military designation' }],
+    type: 'interstate_war',
+    startYear: 1983,
+    endYear: 1983,
+    parties: [
+      { countryId: 'USA', role: 'aggressor' },
+      { countryId: 'CUB', role: 'defender' },
+    ],
+    casualties: {
+      military: { low: 45, high: 70 },
+      civilian: { low: 24, high: 24 },
+      total: { low: 69, high: 94 },
+      source: 'DoD reports',
+    },
+    territorialChanges: null,
+    outcome: 'US-installed interim government. Cuban and Soviet influence removed.',
+    summary: 'US-led invasion of the Caribbean island of Grenada following a Marxist coup. Cited protection of US medical students and request from Organization of Eastern Caribbean States.',
+    perspectives: [
+      { viewpoint: 'US perspective', description: 'Rescue mission to protect American citizens and prevent Soviet/Cuban expansion in the Caribbean.', source: 'Weinberger, Caspar. Fighting for Peace. 1990.' },
+      { viewpoint: 'Anti-interventionist perspective', description: 'Illegal invasion of a sovereign nation to overthrow a government Washington opposed ideologically.', source: 'UN General Assembly Resolution 38/7.' },
+    ],
+    sources: ['DoD', 'UN GA Resolution 38/7'],
+    tags: ['cold_war', 'caribbean', 'intervention', 'proxy_war'],
+    relatedConflicts: ['nicaraguan_contra_war'],
+  },
+  {
+    id: 'panama_invasion',
+    name: 'US Invasion of Panama',
+    alternateNames: [{ name: 'Operation Just Cause', perspective: 'US military designation' }],
+    type: 'interstate_war',
+    startYear: 1989,
+    endYear: 1990,
+    parties: [
+      { countryId: 'USA', role: 'aggressor' },
+      { countryId: 'PAN', role: 'defender' },
+    ],
+    casualties: {
+      military: { low: 300, high: 500 },
+      civilian: { low: 200, high: 3000 },
+      total: { low: 500, high: 3500 },
+      source: 'Americas Watch, DoD reports',
+    },
+    territorialChanges: null,
+    outcome: 'Noriega captured. Democratic government installed.',
+    summary: 'US military operation to depose Panamanian dictator Manuel Noriega, a former US ally turned adversary.',
+    perspectives: [
+      { viewpoint: 'US perspective', description: 'Necessary action to protect American lives, defend democracy, combat drug trafficking, and protect Canal treaties.', source: 'Bush administration statements.' },
+      { viewpoint: 'Panamanian/Latin American perspective', description: 'Unjustified military intervention violating Panamanian sovereignty and international law.', source: 'OAS and UN resolutions condemning the invasion.' },
+    ],
+    sources: ['Americas Watch', 'DoD'],
+    tags: ['cold_war', 'central_america', 'intervention', 'drug_war'],
+    keyFigures: [
+      { name: 'Manuel Noriega', role: 'Panamanian dictator (captured)', country: 'PAN' },
+      { name: 'George H.W. Bush', role: 'US President who ordered invasion', country: 'USA' },
     ],
   },
 

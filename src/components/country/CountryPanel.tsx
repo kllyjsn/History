@@ -33,7 +33,15 @@ const CountryPanel: FC<CountryPanelProps> = ({ countryId, onClose, getCountrySta
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-          className="absolute inset-0 sm:left-auto sm:right-0 sm:top-0 z-30 h-full w-full sm:max-w-md overflow-y-auto sm:border-l border-slate-700 bg-slate-900/95 backdrop-blur-md"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={(_e, info) => {
+            if (info.offset.x > 100 || info.velocity.x > 300) {
+              onClose();
+            }
+          }}
+          className="absolute inset-0 sm:left-auto sm:right-0 sm:top-0 z-30 h-full w-full sm:max-w-md overflow-y-auto sm:border-l border-slate-700 bg-slate-900/95 backdrop-blur-md touch-pan-y"
         >
           <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-700 bg-slate-900/95 px-4 py-3 backdrop-blur-md">
             <h2 className="text-lg font-bold text-white">Country Profile</h2>
