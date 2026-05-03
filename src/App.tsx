@@ -122,12 +122,12 @@ function App() {
         if (showReader) handleCloseReader();
         else if (showSearch) setShowSearch(false);
         else if (page !== 'map') setPage('map');
-        else if (selectedCountry) selectCountry(null);
+        else if (selectedCountry) handleCloseCountry();
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [showSearch, showReader, handleCloseReader, page, selectedCountry, selectCountry, setPage]);
+  }, [showSearch, showReader, handleCloseReader, page, selectedCountry, handleCloseCountry, setPage]);
 
   const activeCount = getActiveConflicts().length;
   const countryCount = Object.keys(countries).length;
